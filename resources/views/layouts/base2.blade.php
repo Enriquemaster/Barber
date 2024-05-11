@@ -23,7 +23,7 @@
                 <li><a href="{{url('')}}">Inicio</a></li>
             </ul>
             <ul class="py-1 hover:underline">
-                <li><a href="{{url('/conocenos')}}">Acerca de nosotros</a></li>
+                <li><a href="{{url('/conocenos')}}">Contacto</a></li>
             </ul>
             <ul class="py-1 hover:underline">
                 <li><a href="{{url('/servicios')}}">Servicios</a></li> 
@@ -32,14 +32,18 @@
                 <li><a href="{{url('/productos')}}">Productos</a></li>
             </ul>
 
-            <ul class="py-1 hover:underline">
-                <li><a href="{{ route('register') }}">Registro</a></li>
-            </ul>
-
-            <ul class="py-1 hover:underline">
-                <li><a href="{{ route('login') }}">Iniciar Sesión</a></li>
-            </ul>
-
+             <a href="#membresia" class="bg-blue-900 text-white font-semibold py-2 px-4 rounded-full flex items-center space-x-2">
+                <img src="https://placehold.co/20x20" alt="Crown Icon" class="h-10 w-10" />
+                 <span>Membresia</span>
+                </a>
+              
+                <x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Dashboard') }}
+        </h2>
+    </x-slot>
+    </x-app-layout>
 
         </div>
     </nav>
