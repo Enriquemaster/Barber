@@ -3,13 +3,13 @@
 <nav x-data="{ open: false }" class="bg-black border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
-        <div class="flex justify-between h-16 ">
+        <div class="flex justify-between h-20 ">
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
-                        <x-application-mark class="block h-9 w-auto " />
-                    </a>
+                <div class="">
+            <a href="{{url('dashboard')}}"><img   src="{{ asset('IMG/TheBarber2.png')}}" alt="logotipo" class="w-32 h-10 md:w-64 md:h-auto" /></a>
+        </div>
                 </div>
 
                 <!-- Navigation Links -->
@@ -19,6 +19,56 @@
                     </x-nav-link>
                 </div>
             </div>
+
+
+
+
+
+ <!-- ul propios -->
+ <div class="md:flex md:justify-between md:items-center md:space-x-6 md:py-6 md:text-white md:hover:underline">
+    <!-- Elementos para PC -->
+    <ul class="hidden md:flex md:space-x-6">
+        <li ><a href="{{url('/conocenos')}}" class="block py-2 px-4 text-white">Acerca de nosotros</a></li>
+        <li><a href="{{url('/servicios')}}" class="block py-2 px-4 text-white">Servicios</a></li> 
+        <li><a href="{{url('/productos')}}" class="block py-2 px-4 text-white">Productos</a></li>
+
+        <li class="flex justify-end">
+  <a href="#membresia" class="bg-slate-500 text-white font-semibold py-2 px-4 rounded-full flex items-center space-x-2">
+    <img src="https://placehold.co/20x20" alt="Crown Icon" class="h-8 w-8" />
+    <span>Membresia</span>
+  </a>
+</li>
+
+  
+    </ul>
+
+    <!-- Elemento para PC -->
+  
+
+    <!-- Menú desplegable para dispositivos móviles -->
+    <div class="md:hidden bg-black pt-6 ml-32 pb-4">
+        <div x-data="{ open: false }">
+            <!-- Botón del menú -->
+            <button @click="open = !open" class="text-white focus:outline-none bg-amber-700 rounded-md px-2 p-2" > Ver mas...
+           
+            </button>
+
+            <!-- Contenido del menú -->
+            <div x-show="open" @click.away="open = false" class="mt-2">
+                <ul class="py-2">
+                    <li><a href="{{ url('/conocenos') }}" class="block py-2 px-4 hover:bg-gray-700 text-white">Acerca de nosotros</a></li>
+                    <li><a href="{{ url('/servicios') }}" class="block py-2 px-4 hover:bg-gray-700 text-white">Servicios</a></li>
+                    <li><a href="{{ url('/productos') }}" class="block py-2 px-4 hover:bg-gray-700 text-white">Productos</a></li>
+                </ul>
+                <a href="#membresia" class="block bg-blue-900 text-white font-semibold py-2 px-4 my-2 rounded-full flex items-center space-x-2">
+                    <img src="https://placehold.co/20x20" alt="Crown Icon" class="h-5 w-5"/>
+                    <span>Membresia</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
 
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 <!-- Teams Dropdown -->
@@ -37,7 +87,7 @@
                                 </span>
                             </x-slot>
 
-                            <x-slot name="content">
+                            <x-slot name="content" >
                                 <div class="w-60">
                                     <!-- Team Management -->
                                     <div class="block px-4 py-2 text-xs text-gray-400">
@@ -74,7 +124,8 @@
                 @endif
 
                 <!-- Settings Dropdown -->
-                <div class="ms-3 relative">
+                <div class="ms-3 relative ">
+              
                     <x-dropdown align="right" width="48">
                         <x-slot name="trigger">
                             @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
@@ -83,7 +134,7 @@
                                 </button>
                             @else
                                 <span class="inline-flex rounded-md">
-                                    <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition ease-in-out duration-150">
+                                    <button type="button" class="bg-amber-700 text-white font-semibold py-2 px-2 my-4 rounded-full flex items-center space-x-2">
                                         {{ Auth::user()->name }}
 
                                         <svg class="ms-2 -me-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -94,14 +145,15 @@
                             @endif
                         </x-slot>
 
+                        
                         <x-slot name="content">
                             <!-- Account Management -->
-                            <div class="block px-4 py-2 text-xs text-gray-400">
-                                {{ __('Manage Account') }}
+                            <div class="block px-4 py-2 text-xs text-gray-400 bg-black">
+                                {{ __('Acciones') }}
                             </div>
 
                             <x-dropdown-link href="{{ route('profile.show') }}">
-                                {{ __('Profile') }}
+                                {{ __('Perfil') }}
                             </x-dropdown-link>
 
                             @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
@@ -118,11 +170,16 @@
 
                                 <x-dropdown-link href="{{ route('logout') }}"
                                          @click.prevent="$root.submit();">
-                                    {{ __('Log Out') }}
+                                    {{ __('Cerrar sesión') }}
                                 </x-dropdown-link>
+
+                                
                             </form>
                         </x-slot>
+
+                        
                     </x-dropdown>
+                  
                 </div>
             </div>
 
@@ -141,9 +198,9 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
-            </x-responsive-nav-link>
+             <!--<x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">-->
+                <!-- {{ __('Dashboard') }}-->
+             <!--</x-responsive-nav-link>-->
         </div>
 
         <!-- Responsive Settings Options -->
@@ -164,7 +221,7 @@
             <div class="mt-3 space-y-1">
                 <!-- Account Management -->
                 <x-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
-                    {{ __('Profile') }}
+                    {{ __('perfil') }}
                 </x-responsive-nav-link>
 
                 @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
@@ -179,7 +236,7 @@
 
                     <x-responsive-nav-link href="{{ route('logout') }}"
                                    @click.prevent="$root.submit();">
-                        {{ __('Log Out') }}
+                        {{ __('Cerrar sesión') }}
                     </x-responsive-nav-link>
                 </form>
 
