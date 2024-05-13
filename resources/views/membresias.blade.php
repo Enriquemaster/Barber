@@ -13,7 +13,7 @@
         <div class="p-6 bg-zinc-800 rounded-lg">
             <p class="mb-4">TE RETAMOS A QUE TE RAPES LA CABEZA</p>
             <button class="bg-yellow-400 text-black px-4 py-2 rounded">OBTENER</button>
-            <p class="text-sm mt-4">VALIDO HASTA EL 10/04/2024</p>
+            <p class="text-sm mt-4">VALIDOa HASTA EL 10/04/2024</p>
         </div>
         <div class="p-6 bg-zinc-800 rounded-lg">
             <p class="mb-4">TE RETAMOS A QUE TE RAPES LA CABEZA</p>
