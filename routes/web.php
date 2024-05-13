@@ -6,9 +6,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/membresias', function () {
-    return view('membresias');
-    name ('membresias');
+Route::get('/retos', function () {
+    return view('retos');
+    name ('retos');
+});
+
+Route::get('/tiposmembresia', function () {
+    return view('tiposmembresia');
 });
 
 
