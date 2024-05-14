@@ -15,6 +15,9 @@ Route::get('/tiposmembresia', function () {
     return view('tiposmembresia');
 });
 
+Route::get('/servicios', function () {
+    return view('servicios');
+});
 
 Route::middleware([
     'auth:sanctum',
