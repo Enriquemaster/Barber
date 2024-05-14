@@ -18,22 +18,17 @@
     <body class="bg-slate-900 min-h-screen flex items-center justify-center ">
     <div class="flex flex-wrap lg:flex-nowrap bg-white rounded-lg shadow-xl overflow-hidden w-full lg:w-full my-8 mx-8">
         
-        <div class="bg-purple-700 text-white p-6 flex flex-col items-center justify-between w-full lg:w-1/3 ">
-            <div class="space-y-4 ">
+    
+  
+    <img   src="{{ asset('IMG/log.jpg')}}" alt="login" class="w-full h-full lg:w-3/5" />
                 <div class="justify-center flex items-center">
                 </div>
-                <div>
-
-
-                
-                    <p class="text-sm">You can edit your profile or upload a new one on app or web.</p>
-                </div>
-            </div>
-        </div>
+      
 
         
         <div class="flex-1 p-2 ">
             <div class="mb-2 ">
+          
                 {{ $slot }}
         </div>
     </div>

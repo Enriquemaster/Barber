@@ -1,7 +1,8 @@
 <x-guest-layout>
     <x-authentication-card>
         <x-slot name="logo">
-            <x-authentication-card-logo />
+            <h1>Login</h1>
+            
         </x-slot>
 
         <x-validation-errors class="mb-4" />
@@ -15,14 +16,19 @@
         <form method="POST" action="{{ route('login') }}">
             @csrf
 
-            <div>
-                <x-label for="email" value="{{ __('Email') }}" />
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
+           
+            <x-label class="px-6" for="email" value="{{ __('Email') }}" />
+            <div class="flex flex-wrap">
+            <div class="px-4"><img   src="{{ asset('IMG/loginIconic.png')}}" alt="login" class="w-10" /></div>
+            <div><x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" /></div>
             </div>
+           
 
             <div class="mt-4">
-                <x-label for="password" value="{{ __('Password') }}" />
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
+            <x-label  class="px-6" for="password" value="{{ __('Password') }}" />
+            <div class="flex flex-wrap">
+            <div class="px-4"><img   src="{{ asset('IMG/passIconic.png')}}" alt="login" class="w-10" /></div>
+            <div><x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" /></div>
             </div>
 
             <div class="block mt-4">
@@ -43,6 +49,7 @@
                     {{ __('Log in') }}
                 </x-button>
             </div>
+
         </form>
     </x-authentication-card>
 </x-guest-layout>
