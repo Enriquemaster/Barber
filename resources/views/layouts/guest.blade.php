@@ -15,17 +15,11 @@
 
      
     </head>
-    <body class="bg-slate-900 min-h-screen flex items-center justify-center ">
+    <body class="bg-black min-h-screen flex items-center justify-center ">
     <div class="flex flex-wrap lg:flex-nowrap bg-white rounded-lg shadow-xl overflow-hidden w-full lg:w-full my-8 mx-8">
-        
-    
   
-    <img   src="{{ asset('IMG/log.jpg')}}" alt="login" class="w-full h-full lg:w-3/5" />
-                <div class="justify-center flex items-center">
-                </div>
-      
+    <img   src="{{ asset('IMG/log.jpg')}}" alt="login" class="w-full h-full lg:w-3/5 opacity-80" />
 
-        
         <div class="flex-1 p-2 ">
             <div class="mb-2 ">
           
@@ -34,15 +28,7 @@
     </div>
 </body>
 
-     
-    </body>
 </html>
-
-
-
-
- 
-
 
   <!-- funcion para cargar imagenn por si acaso -->
   <!-- Scripts -->
