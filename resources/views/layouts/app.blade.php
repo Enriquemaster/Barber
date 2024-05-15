@@ -20,9 +20,9 @@
     <body class="font-sans antialiased">
         <x-banner />
 
-        <div class="min-h-screen bg-gray-100">
+        <div class="min-h-screen bg-black">
             @livewire('navigation-menu')
-
+            @extends('layouts.base2')
             <!-- Page Heading -->
             @if (isset($header))
                 <header class="bg-white shadow">
