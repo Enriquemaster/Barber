@@ -17,7 +17,7 @@
         <!-- Styles -->
         @livewireStyles
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-sans antialiased bg-black">
         <x-banner />
 
         <div class="min-h-screen bg-black">
@@ -33,7 +33,7 @@
             @endif
 
             <!-- Page Content -->
-            <main>
+            <main class="bg-black">
                 {{ $slot }}
             </main>
         </div>

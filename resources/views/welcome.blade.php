@@ -1,8 +1,6 @@
-@extends('layouts.base')
 
-@section('content')
-    
-    <div class="bg-black bg-cover bg-center bg-no-repeat bg-opacity-50 w-full h-full relative">
+<x-app-layout>
+    <div class="bg-black bg-cover bg-center bg-opacity-50 w-full h-full relative">
         <img src="IMG/Fondo4.png" alt="fondo" class="w-full h-full object-cover opacity-50">
     </div>
     <h1 class="absolute md:top-96 top-72 md:left-40 md:right-40 text-white text-center Bodoni md:text-5xl">DONDE EL ARTE DE SER BARBERO LE DA DISTINCIÓN AL CABALLERO</h1>
@@ -33,7 +31,7 @@
             </div>
         </div>
     </div>
-    <div class="flex justify-center">
+    <div class="flex justify-center ">
        <div class="w-3/4">
         <h3 class="text-white text-center Bodoni md:text-3xl">Nuestro trabajo</h3>
         <div class="flex flex-nowrap p-4">
@@ -45,21 +43,21 @@
        </div>
        </div>
     </div>
-    <div class="flex justify-center ">
-        <div class="w-3/4">
+    <div class="flex justify-center bg-black ">
+        <div class="w-3/4 bg-black">
             <p class=" text-white text-justify md:text-justify montserrat md:px-6">En "The Barber's House", la precisión y la creatividad se combinan para dar vida a una amplia gama de cortes de cabello. Desde los estilos clásicos que resisten el paso del tiempo hasta las últimas tendencias</p>
         </div>
     </div>
     </div>      
 
-    <div class="flex justify-center px-2 mt-10 mb-5">
+    <div class="flex justify-center px-2 mt-10 mb-5 bg-black">
         <div class="w-full lg:w-3/4">
             <h3 class="text-white text-center Bodoni md:text-3xl">Nuestro equipo de barberos</h3>
         </div>
     </div>
     
-    <div class="flex flex-col lg:flex-row justify-center p-4">
+    <div class="flex flex-col lg:flex-row justify-center p-4 bg-black">
         <div class="mb-4 lg:mr-4"><h4 class="text-white text-center text-xl md:text-2xl Bodoni">David Alberto Tec Chi</h4><img src="{{ asset('IMG/Barbero1.jpg')}}" alt="Local" class="w-1/2 h-auto md:w-full md:h-auto p-4 mx-auto"></div>
         <div><h4 class="text-white text-center text-xl md:text-2xl Bodoni">Cristian de Jesus Chan</h4><img src="{{ asset('IMG/Barbero2.png')}}" alt="Local" class="w-1/2 h-auto md:w-full md:h-auto p-4 mx-auto"></div>
     </div>    
-@endsection
+</x-app-layout>

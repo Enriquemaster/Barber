@@ -1,6 +1,32 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+/*
+Rutas Clientes
+*/
+
+Route::get('/', function () {
+    return view('Home');
+});
+
+Route::get('/productos', function () {
+    return view('productos');
+});
+
+Route::get('/conocenos', function () {
+    return view('conocenos');
+});
+
+Route::get('/validacion', function () {
+    return view('validacion');
+});
+Route::get('/Confirmacion', function () {
+    return view('Confirmacion');
+});
+
+Route::get('/agendar', [citascontroller::class, 'create'])
+    ->name('agendar');
+
 
 Route::get('/', function () {
     return view('welcome');
