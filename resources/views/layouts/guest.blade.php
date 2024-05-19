@@ -1,33 +1,29 @@
 @vite(['resources/css/app.css', 'resources/js/app.js'])
-<script src="https://cdn.tailwindcss.com"></script>
+
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-
-        <title>{{ config('app.name', 'Laravel') }}</title>
-
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-
-     
-    </head>
-    <body class="bg-black min-h-screen flex items-center justify-center ">
-    <div class="flex flex-wrap lg:flex-nowrap bg-white rounded-lg shadow-xl overflow-hidden w-full lg:w-full my-8 mx-8">
-  
-    <img   src="{{ asset('IMG/log.jpg')}}" alt="login" class="w-full h-full lg:w-3/5 opacity-80" />
-
-        <div class="flex-1 p-2 ">
-            <div class="mb-2 ">
-          
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>{{ config('app.name', 'Laravel') }}</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+</head>
+<body class="bg-black flex justify-center items-center min-h-screen">
+    <div class="flex flex-wrap lg:flex-nowrap rounded-lg shadow-xl overflow-hidden">
+        <div class="w-full lg:w-3/5 p-3">
+            <img src="{{ asset('IMG/log.jpg') }}" alt="login" class="w-auto" />
+        </div>
+        <div class="w-full lg:w-2/5 p-3">
+            <div class="mb-2">
                 {{ $slot }}
+            </div>
         </div>
     </div>
 </body>
-
 </html>
 
   <!-- funcion para cargar imagenn por si acaso -->
