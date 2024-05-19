@@ -8,7 +8,7 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                 <div class="">
-            <a href="{{url('dashboard')}}"><img   src="{{ asset('IMG/TheBarber2.png')}}" alt="logotipo" class="w-32 h-10 md:w-64 md:h-auto" /></a>
+            <a href="{{url('dashboard')}}"><img src="{{ asset('IMG/TheBarber2.png')}}" alt="logotipo" class="w-32 h-10 md:w-64 md:h-20" /></a>
         </div>
                 </div>
 
@@ -276,4 +276,7 @@
         </div>
     </div>
 </nav>
+
+
+
 <script src="https://cdn.tailwindcss.com"></script>

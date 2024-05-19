@@ -17,12 +17,12 @@
         <!-- Styles -->
         @livewireStyles
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-sans antialiased bg-black">
         <x-banner />
 
-        <div class="min-h-screen bg-gray-100">
+        <div class="min-h-screen bg-black">
             @livewire('navigation-menu')
-
+            @extends('layouts.base2')
             <!-- Page Heading -->
             @if (isset($header))
                 <header class="bg-white shadow">
@@ -33,7 +33,7 @@
             @endif
 
             <!-- Page Content -->
-            <main>
+            <main class="bg-black">
                 {{ $slot }}
             </main>
         </div>

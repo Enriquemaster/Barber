@@ -26,13 +26,6 @@
                 <li><a href="{{url('/conocenos')}}">Acerca de nosotros</a></li>
             </ul>
             <ul class="py-1 hover:underline">
-                <li><a href="{{url('/servicios')}}">Servicios</a></li> 
-            </ul>
-            <ul class="py-1 hover:underline">
-                <li><a href="{{url('/productos')}}">Productos</a></li>
-            </ul>
-
-            <ul class="py-1 hover:underline">
                 <li><a href="{{ route('register') }}">Registro</a></li>
             </ul>
 
