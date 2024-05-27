@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Products; 
+
 
 class ControllerProducts extends Controller
 {
@@ -15,7 +17,7 @@ class ControllerProducts extends Controller
                 'descripccion' => 'required|string',
                 'marca' => 'required|string',
                 'modelo' => 'required|string',
-                'precio' => 'required|double',
+                'precio' => 'required|numeric',
                 
             ]);
     // Procesar la imagen
@@ -31,7 +33,7 @@ class ControllerProducts extends Controller
         // Guardar la imagen en la carpeta de almacenamiento
         $imagen->storeAs('public/Recursos', $nombreImagen);
     }
-            $producto = new productos([
+            $producto = new Products([
                 'nombre' => $request->input('nombre'),
                 'descripccion' => $request->input('descripccion'),
                 'marca' => $request->input('marca'),
@@ -40,7 +42,7 @@ class ControllerProducts extends Controller
                 'foto' => $nombreImagen,
                 
             ]);    
-            $mascota->save();
+            $producto->save();
             return redirect()->route('dashboard')->with('success', 'Producto creado exitosamente.');
         
           

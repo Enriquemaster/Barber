@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ControllerProducts;
 /*
 Rutas Clientes
 */
@@ -16,6 +17,8 @@ Route::get('/productos', function () {
 Route::get('/agregarProductos', function () {
     return view('agregarProductos');
 });
+
+Route::post('/registrar-producto', [ControllerProducts::class, 'registrarProducto'])->name('registrar-producto');
 
 Route::get('/conocenos', function () {
     return view('conocenos');

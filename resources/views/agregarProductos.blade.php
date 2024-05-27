@@ -16,7 +16,7 @@
        
         <div class="md:container md:mx-auto md:w-5/12 md:max-w-screen-md py-10 sm:py-8">
           <div class=" p-10 rounded shadow-md w-full bg-[#FDFCF8] ">
-                <form method="post" class="relative z-10" enctype="multipart/form-data">
+                <form method="post" action="{{ route('registrar-producto') }}"  class="relative z-10" enctype="multipart/form-data">
                 @csrf
                 
 <div class="mb-4  justify-center">
@@ -56,6 +56,12 @@
                    <div class="mb-4">
                             <label for="marca" class="block text-sm italic font-sans-serif text-gray-600">Modelo</label>
                            <input type="text" id="modelo" name="modelo" class="w-3/4 sm:w-11/12 px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300" placeholder="Inserta el modelo del producto" required>
+                            <span id="errorModelo" class="text-red-500 text-sm"></span>
+                   </div>
+
+                   <div class="mb-4">
+                            <label for="marca" class="block text-sm italic font-sans-serif text-gray-600">precio</label>
+                           <input type="text" id="precio" name="precio" class="w-3/4 sm:w-11/12 px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300" placeholder="Inserta el modelo del producto" required>
                             <span id="errorModelo" class="text-red-500 text-sm"></span>
                    </div>
                    
