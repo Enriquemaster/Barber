@@ -13,6 +13,10 @@ Route::get('/productos', function () {
     return view('productos');
 });
 
+Route::get('/agregarProductos', function () {
+    return view('agregarProductos');
+});
+
 Route::get('/conocenos', function () {
     return view('conocenos');
 });
