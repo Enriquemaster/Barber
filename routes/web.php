@@ -5,9 +5,9 @@ use Illuminate\Support\Facades\Route;
 Rutas Clientes
 */
 
-Route::get('/', function () {
-    return view('Home');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
 Route::get('/productos', function () {
     return view('productos');

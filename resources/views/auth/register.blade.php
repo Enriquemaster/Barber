@@ -29,6 +29,11 @@
                 <x-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
             </div>
 
+            <div class="mt-4">
+                <input type="checkbox" id="show-passwords" onclick="togglePasswordVisibility()">
+                <label for="show-passwords">{{ __('Mostrar contraseñas') }}</label>
+            </div>
+
             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
                 <div class="mt-4">
                     <x-label for="terms">
@@ -46,15 +51,31 @@
                 </div>
             @endif
 
-            <div class="flex items-center justify-end mt-4">
+            <div class="flex items-center justify-center mt-4">
+                <x-button class="ms-4">
+                    {{ __('Registrar') }}
+                </x-button>
+            </div>
+            <div class="flex items-center justify-center mt-4">
                 <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
                     {{ __('¿Ya tienes una cuenta?') }}
                 </a>
-
-                <x-button class="ms-4">
-                    {{ __('Acceso') }}
-                </x-button>
             </div>
         </form>
     </x-authentication-card>
+
+    <!-- JavaScript para mostrar/ocultar contraseñas -->
+    <script>
+        function togglePasswordVisibility() {
+            const passwordFields = ['password', 'password_confirmation'];
+            passwordFields.forEach(fieldId => {
+                const field = document.getElementById(fieldId);
+                if (field.type === 'password') {
+                    field.type = 'text';
+                } else {
+                    field.type = 'password';
+                }
+            });
+        }
+    </script>
 </x-guest-layout>

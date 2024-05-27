@@ -29,6 +29,15 @@ class User extends Authenticatable
         'password',
     ];
 
+    public function administrador(): BelongsTo
+    {
+        return $this->belongsTo(administrador::class);
+    }
+
+    public function customer(): BelongsTo
+    {
+        return $this->belongsTo(customer::class);
+    }
     /**
      * The attributes that should be hidden for serialization.
      *

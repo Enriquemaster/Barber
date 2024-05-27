@@ -26,8 +26,6 @@
 </body>
 </html>
 
-  <!-- funcion para cargar imagenn por si acaso -->
-  <!-- Scripts -->
 <script>
    // Función para manejar el cambio en el input de la imagen
    function mostrarImagenPreview() {
