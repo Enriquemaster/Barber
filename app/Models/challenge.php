@@ -8,4 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 class challenge extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'titulo',
+        'descripcion',
+        'recompensa',
+        'fecha_inicio',
+        'fecha_final',
+    ];
+
+    public function Memeber()
+    {
+        return $this->hasMany(Member::class);
+    }
+
 }

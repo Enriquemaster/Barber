@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\challenge;
+use App\Models\Member;
 use Illuminate\Http\Request;
 
 class ChallengeController extends Controller
@@ -13,11 +14,11 @@ class ChallengeController extends Controller
     public function index()
     {
 
-             $retos = challenge::join('challenges', 'challenges.id', '=', 'members.challenge_id')
-                 ->select('members.*', 'challenges.titulo', 'challenges.descripcion', 'challenges.recompensa', 'challenges.fecha_inicio', 'challenges.fecha_final')
-//                 ->where('listaxes.teacher_id', $teacher_id)
-                 ->whereNotNull('members.challenge_id')
-                 ->get();
+        // Utilizamos un alias para la tabla 'challenges' para evitar conflictos
+        $retos = Member::join('challenges as c', 'c.id', '=', 'members.challenge_id')
+            ->select('members.*', 'c.titulo', 'c.descripcion', 'c.recompensa', 'c.fecha_inicio', 'c.fecha_final')
+            ->whereNotNull('members.challenge_id')
+            ->get();
 
         return view('dashboard', compact('retos'));
     }
