@@ -8,4 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class promotion extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'titulo',
+        'descripcion',
+        'fecha_inicio',
+        'fecha_final',
+    ];
+
+    public function Memeber()
+    {
+        return $this->hasMany(Member::class);
+    }
+
 }
+
