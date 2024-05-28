@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
+      @vite(['resources/css/app.css', 'resources/js/app.js'])
   </head>
   <body>
     <div class="xl:p-24 p-4">
@@ -61,7 +61,7 @@
         <td class="border px-4 py-2">emp1</td>
         <td class="border px-4 py-2">1111111</td>
         <td class="border px-4 py-2">Cra 3 # 45-58</td>
-      
+
       </tr>
       <tr>
         <td class="border px-4 py-2">

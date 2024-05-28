@@ -4,22 +4,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <link rel="preconnect" href="https://fonts.googleapis.com"> 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet"> 
-    <script src="https://cdn.tailwindcss.com"></script> 
-    <link rel="stylesheet" href="{{ asset('CSS/style.css') }}"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link rel="stylesheet" href="{{ asset('CSS/style.css') }}">
     @vite('resources/css/app.css')
-    <title>TecNM Campus Motul</title> 
-   
+    <title>TecNM Campus Motul</title>
+
 </head>
 
         <div class="md:container md:mx-auto md:w-5/12 md:max-w-screen-md py-10 sm:py- ">
           <div class=" p-16 rounded-lg shadow-md w-full bg-zinc-800">
                 <form method="post" action="{{ route('registrar-producto') }}"  class="relative z-10" enctype="multipart/form-data">
                 @csrf
-                
+
 <div class="mb-4  justify-center">
 <div class="flex items-center justify-center" id="lol">
     <input type="file" id="imagenInput" name="foto" class="hidden" accept="image/*">
@@ -46,7 +46,7 @@
                     <input type="text" id="descripccion" name="descripccion" class="w-3/4 sm:w-11/12 px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300" placeholder="Inserta la descripcion del producto" required>
                      <span id="errorDescripccion" class="text-red-500 text-sm"></span>
                </div>
-                
+
 
     <div class="mb-4">
         <label for="marca" class="block text-sm italic font-sans-serif text-gray-600">Marca</label>
@@ -66,17 +66,17 @@
                            <input type="text" id="precio" name="precio" class="w-3/4 sm:w-11/12 px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300" placeholder="Inserta el modelo del producto" required>
                             <span id="errorModelo" class="text-red-500 text-sm"></span>
                    </div>
-                   
+
                         <div class="flex justify-between items-center mb-4">
                                 <button id="registro"  type="submit" class="font-sans-serif text-white px-8 py-2 mx-auto rounded-full focus:outline-none focus:ring focus:border-blue-300 bg-[#B1796C] font-bold">Registro</button>
-                                    <div class="flex relative">       
+                                    <div class="flex relative">
                                     </div>
                                     </div>
                 </form>
                     </div>
-        </div>  
+        </div>
 </body>
-</html> 
+</html>
 </x-app-layout>
 
         <!-- Bootstrap JS y Popper.js -->
@@ -133,4 +133,4 @@ nombre.addEventListener("input", function (event) {
     </script>
 
 
-   
+
