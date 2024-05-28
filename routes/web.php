@@ -18,6 +18,10 @@ Route::get('/agregarProductos', function () {
     return view('agregarProductos');
 });
 
+Route::get('/accionesProductos', function () {
+    return view('accionesProductos');
+});
+
 Route::post('/registrar-producto', [ControllerProducts::class, 'registrarProducto'])->name('registrar-producto');
 Route::get('/productos', [ControllerProducts::class, 'mostrarProductos'])->name('productos');
 
