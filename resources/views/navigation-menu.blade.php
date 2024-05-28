@@ -1,5 +1,4 @@
 
-
 <nav x-data="{ open: false }" class="bg-black border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
@@ -29,7 +28,7 @@
     <!-- Elementos para PC -->
     <ul class="hidden md:flex md:space-x-6">
         <li ><a href="{{url('/conocenos')}}" class="block py-2 px-4 text-white">Acerca de nosotros</a></li>
-        <li><a href="{{url('/servicios')}}" class="block py-2 px-4 text-white">Servicios</a></li> 
+        <li><a href="{{url('/servicios')}}" class="block py-2 px-4 text-white">Servicios</a></li>
         <li><a href="{{url('/productos')}}" class="block py-2 px-4 text-white">Productos</a></li>
 
         <li class="flex justify-end">
@@ -39,18 +38,18 @@
   </a>
 </li>
 
-  
+
     </ul>
 
     <!-- Elemento para PC -->
-  
+
 
     <!-- Menú desplegable para dispositivos móviles -->
     <div class="md:hidden bg-black pt-6 ml-32 pb-4">
         <div x-data="{ open: false }">
             <!-- Botón del menú -->
             <button @click="open = !open" class="text-white focus:outline-none bg-amber-700 rounded-md px-2 p-2" > Ver mas...
-           
+
             </button>
 
             <!-- Contenido del menú -->
@@ -125,7 +124,7 @@
 
                 <!-- Settings Dropdown -->
                 <div class="ms-3 relative ">
-              
+
                     <x-dropdown align="right" width="48">
                         <x-slot name="trigger">
                             @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
@@ -145,7 +144,7 @@
                             @endif
                         </x-slot>
 
-                        
+
                         <x-slot name="content">
                             <!-- Account Management -->
                             <div class="block px-4 py-2 text-xs text-gray-400 bg-black">
@@ -173,13 +172,13 @@
                                     {{ __('Cerrar sesión') }}
                                 </x-dropdown-link>
 
-                                
+
                             </form>
                         </x-slot>
 
-                        
+
                     </x-dropdown>
-                  
+
                 </div>
             </div>
 
@@ -278,5 +277,3 @@
 </nav>
 
 
-
-<script src="https://cdn.tailwindcss.com"></script>
