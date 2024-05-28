@@ -100,7 +100,7 @@ HTML;
     }
     // Método que redirige al usuario a la ruta "/dashboard" cuando se confirma la creación de la clase
     public function confirmarReto(){
-        $this->redirect('/dashboard');
+        $this->redirect('/agregarRetos');
 
     }
 }

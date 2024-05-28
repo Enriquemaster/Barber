@@ -15,6 +15,6 @@
 
         Finaliza: {{$fecha_final}}
     </p>
-    {{-- Incluimos el componente Livewire para eliminar la asignatura --}}
-{{--    <livewire:Deletecomponet :id="$id" />--}}
+    {{-- Incluimos el componente Livewire para eliminar el reto --}}
+    <livewire:delete-challenge :id="$id" />
 </div>

@@ -1,11 +1,10 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class challenge extends Model
+class Challenge extends Model
 {
     use HasFactory;
 
@@ -15,11 +14,11 @@ class challenge extends Model
         'recompensa',
         'fecha_inicio',
         'fecha_final',
+        'image_url',
     ];
 
-    public function Memeber()
+    public function members()
     {
         return $this->hasMany(Member::class);
     }
-
 }

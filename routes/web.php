@@ -58,7 +58,11 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/dashboard', [\App\Http\Controllers\ChallengeController::class, 'index'], function () {
+    Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
 });
+
+
+Route::get('/agregarRetos', [\App\Http\Controllers\ChallengeController::class, 'index'])->name('agregarRetos');
+

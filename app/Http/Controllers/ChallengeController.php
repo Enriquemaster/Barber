@@ -20,7 +20,7 @@ class ChallengeController extends Controller
             ->whereNotNull('members.challenge_id')
             ->get();
 
-        return view('dashboard', compact('retos'));
+        return view('agregarRetos', compact('retos'));
     }
 
     /**

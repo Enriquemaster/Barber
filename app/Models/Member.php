@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -16,23 +15,23 @@ class Member extends Model
         'promotion_id',
     ];
 
-    public function Administrador()
+    public function administrador()
     {
         return $this->belongsTo(Administrador::class);
     }
-    public function Customer()
+
+    public function customer()
     {
         return $this->belongsTo(Customer::class);
     }
 
-    public function Challenge()
+    public function challenge()
     {
-        return $this->belongsTo(challenge::class);
+        return $this->belongsTo(Challenge::class);
     }
 
     public function promotion()
     {
-        return $this->belongsTo(promotion::class);
+        return $this->belongsTo(Promotion::class);
     }
-
 }
