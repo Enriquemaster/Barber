@@ -1,4 +1,6 @@
+@extends('layouts.base')
 
+@section('content')
 
     <div class="bg-black bg-cover bg-center bg-opacity-50 w-full h-full relative">
         <img src="IMG/Fondo4.png" alt="fondo" class="w-full h-full object-cover opacity-50">
@@ -60,3 +62,4 @@
         <div class="mb-4 lg:mr-4"><h4 class="text-white text-center text-xl md:text-2xl Bodoni">David Alberto Tec Chi</h4><img src="{{ asset('IMG/Barbero1.jpg')}}" alt="Local" class="w-1/2 h-auto md:w-full md:h-auto p-4 mx-auto"></div>
         <div><h4 class="text-white text-center text-xl md:text-2xl Bodoni">Cristian de Jesus Chan</h4><img src="{{ asset('IMG/Barbero2.png')}}" alt="Local" class="w-1/2 h-auto md:w-full md:h-auto p-4 mx-auto"></div>
     </div>
+    @endsection

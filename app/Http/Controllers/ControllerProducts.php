@@ -51,6 +51,17 @@ class ControllerProducts extends Controller
             \Log::error('Error al intentar guardar los datos: ' . $e->getMessage());
             dd($e->getMessage());
         }
+
+        
     }
 
+    // Método para mostrar los productos
+    public function mostrarProductos()
+    {
+        $productos = Products::all();
+        return view('productos', compact('productos'));
+    }
 }
+
+    
+

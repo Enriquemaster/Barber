@@ -1,3 +1,5 @@
+
+<x-app-layout>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,21 +14,21 @@
     <title>TecNM Campus Motul</title> 
    
 </head>
-<body class="bg-amber-100"> 
-       
-        <div class="md:container md:mx-auto md:w-5/12 md:max-w-screen-md py-10 sm:py-8">
-          <div class=" p-10 rounded shadow-md w-full bg-[#FDFCF8] ">
+
+        <div class="md:container md:mx-auto md:w-5/12 md:max-w-screen-md py-10 sm:py- ">
+          <div class=" p-16 rounded-lg shadow-md w-full bg-zinc-800">
                 <form method="post" action="{{ route('registrar-producto') }}"  class="relative z-10" enctype="multipart/form-data">
                 @csrf
                 
 <div class="mb-4  justify-center">
 <div class="flex items-center justify-center" id="lol">
     <input type="file" id="imagenInput" name="foto" class="hidden" accept="image/*">
-    <div class="bg-[#B1796C] w-64 h-64 relative rounded-full overflow-hidden">
+    <div class="bg-[#B1796C] w-52 h-52 relative rounded-full overflow-hidden">
         <div id="imagenPreview" class="w-full h-full bg-cover bg-center"></div>
 
         <button type="button" onclick="document.getElementById('imagenInput').click()" class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-20 text-white hover:bg-opacity-50 transition">
-            Seleccionar Imagen
+          <br>  Selecciona la imagen </br>
+            del producto
         </button>
     </div>
 </div>
@@ -59,7 +61,7 @@
                             <span id="errorModelo" class="text-red-500 text-sm"></span>
                    </div>
 
-                   <div class="mb-4">
+                   <div class="mb-16">
                             <label for="marca" class="block text-sm italic font-sans-serif text-gray-600">precio</label>
                            <input type="text" id="precio" name="precio" class="w-3/4 sm:w-11/12 px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300" placeholder="Inserta el modelo del producto" required>
                             <span id="errorModelo" class="text-red-500 text-sm"></span>
@@ -75,7 +77,7 @@
         </div>  
 </body>
 </html> 
-
+</x-app-layout>
 
         <!-- Bootstrap JS y Popper.js -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-eMEnHw8gHEm02Ll6dPQndvqSMaL81gj9CSe5MAqN63pFpWqadqBQPYckJxXM+I1a" crossorigin="anonymous"></script>
