@@ -61,6 +61,14 @@ class ControllerProducts extends Controller
         $productos = Products::all();
         return view('productos', compact('productos'));
     }
+
+      // Método para mostrar los productos
+      public function acciones()
+      {
+          $productos = Products::all();
+          return view('accionesProductos', compact('productos'));
+      }
+
 }
 
     

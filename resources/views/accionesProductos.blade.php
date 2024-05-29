@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
       @vite(['resources/css/app.css', 'resources/js/app.js'])
+
   </head>
   <body>
     <div class="xl:p-24 p-4">
@@ -40,40 +41,23 @@
       </tr>
     </thead>
     <tbody>
+    @foreach($productos as $producto)
       <tr>
         <td class="border px-4 py-2">
           <button class="bg-orange-500 text-white px-2 py-1 rounded">Editar</button>
-          <button class="bg-red-500 text-white px-2 py-1 rounded">Borrar</button>
-        </td>
-        <td class="border px-4 py-2">434534-4</td>
-        <td class="border px-4 py-2">Empresa3</td>
-        <td class="border px-4 py-2">-</td>
-        <td class="border px-4 py-2">3146942447</td>
-        <td class="border px-4 py-2">cra 3</td>
-      </tr>
-      <tr>
-        <td class="border px-4 py-2">
-          <button class="bg-orange-500 text-white px-2 py-1 rounded">Editar</button>
-          <button class="bg-red-500 text-white px-2 py-1 rounded">Borrar</button>
-        </td>
-        <td class="border px-4 py-2">3345-6</td>
-        <td class="border px-4 py-2">Empresa1</td>
-        <td class="border px-4 py-2">emp1</td>
-        <td class="border px-4 py-2">1111111</td>
-        <td class="border px-4 py-2">Cra 3 # 45-58</td>
+                      @can('delete', $productos)
+                            <livewire:delete-product :id="$productos->id" />
+                        @endcan
 
-      </tr>
-      <tr>
-        <td class="border px-4 py-2">
-          <button class="bg-orange-500 text-white px-2 py-1 rounded">Editar</button>
-          <button class="bg-red-500 text-white px-2 py-1 rounded">Borrar</button>
         </td>
-        <td class="border px-4 py-2">22222222-2</td>
-        <td class="border px-4 py-2">Empresa2</td>
-        <td class="border px-4 py-2">E2</td>
-        <td class="border px-4 py-2">482222222</td>
-        <td class="border px-4 py-2">Calle 59#45-221</td>
+       
+        <td class="border px-4 py-2">{{ $producto->nombre }}</td>
+              <td class="border px-4 py-2">{{ $producto->descripccion }}</td>
+              <td class="border px-4 py-2">{{ $producto->marca }}</td>
+              <td class="border px-4 py-2">{{ $producto->modelo }}</td>
+              <td class="border px-4 py-2">{{ $producto->precio }}</td>
       </tr>
+      @endforeach
     </tbody>
   </table>
   <div class="flex justify-between items-center mt-4">
@@ -86,5 +70,7 @@
   </div>
 </div>
   </body>
+
 </html>
+
 </x-app-layout>
