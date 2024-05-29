@@ -16,6 +16,12 @@
             <p class="mt-2 mb-6 text-center">{{ $producto->descripccion }}</p>
             <p class="mt-2 mb-6 text-center">{{ $producto->marca }} {{ $producto->modelo }}</p>
             <p class="mt-2 text-center">{{ $producto->precio }}</p>
+
+            <div class="flex justify-center mt-4">
+    <button class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded">
+        Obtener
+    </button>
+</div>
         </div>
     @endforeach
 </x-app-layout>
