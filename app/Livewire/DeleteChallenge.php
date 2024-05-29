@@ -35,21 +35,20 @@ class DeleteChallenge extends Component
 
         HTML;
     }
-
     // Propiedades del componente
     public $modal=false;
-    public $challenge;
+    public $clase;
 
     // Método para inicializar el componente con datos
     public function mount($id){
         // Busca la clase por su ID y la almacena en la propiedad $clase
-        $this->challenge=Member::find($id);
+        $this->clase=Member::find($id);
     }
 
     // Método para confirmar la eliminación de la clase
     public function confirmarEliminacion(){
-        $this->challenge->delete();
+        $this->clase->delete();
         $this->modal=false;
-        $this->redirect('/dashboard');
+        $this->redirect('/agregarRetos');
     }
 }

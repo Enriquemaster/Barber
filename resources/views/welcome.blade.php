@@ -3,18 +3,21 @@
 @section('content')
 
     <div class="bg-black bg-cover bg-center bg-opacity-50 w-full h-full relative">
-        <img src="IMG/Fondo4.png" alt="fondo" class="w-full h-full object-cover opacity-50">
+        <img src="{{ asset('IMG/Fondo4.png') }}" alt="fondo" class="w-full h-full object-cover opacity-50">
     </div>
-    <h1 class="absolute md:top-96 top-72 md:left-40 md:right-40 text-white text-center Bodoni md:text-5xl">DONDE EL ARTE DE SER BARBERO LE DA DISTINCIÓN AL CABALLERO</h1>
-    <a  href="{{url('/agendar')}}" class="absolute bg-yellow-600 text-white text-xl px-5 rounded-full hover:bg-yellow-800 focus:outline-none focus:ring focus:border-blue-100 md:px-10 md:py-2 Bodoni top-1/4 left-1/4  md:top-1/2 md:left-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2 md:translate-y-40 ">Agendar cita</a>
 
-    <div class="flex flex-col md:flex-row p-4 md:p-8 text-center md:text-left items-center w-full md:w-11/12 mx-auto">
+    <h1 class="absolute md:top-96 top-72 md:left-40 md:right-40 text-white text-center font-futura md:text-5xl">DONDE EL ARTE DE SER BARBERO LE DA DISTINCIÓN AL CABALLERO</h1>
+    <a href="{{ url('/agendar') }}" class="absolute bg-yellow-600 text-white text-xl px-5 rounded-full hover:bg-yellow-800 focus:outline-none focus:ring focus:border-blue-100 md:px-10 md:py-4 Bodoni top-1/4 left-1/4 md:top-1/2 md:left-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2 md:translate-y-40 flex items-center">
+        <i class="fas fa-calendar-alt mr-2"></i> Agendar cita
+    </a>
+
+    <div class="bg-zinc-800 flex flex-col md:flex-row p-4 md:p-8 text-center md:text-left items-center w-full md:w-full mx-auto">
         <div class="flex-1 md:mt-4 md:p-4 md:flex md:flex-col md:items-start">
 
-            <h2 class="text-2xl md:text-4xl text-white Bodoni text-center">INTRODUCCIÓN</h2>
+{{--            <h2 class="text-2xl md:text-4xl text-white Bodoni text-center">INTRODUCCIÓN</h2>--}}
 
             <div class="md:text-left mt-4 px-3">
-                <p class=" text-white text-justify md:text-justify montserrat md:px-6">
+                <p class=" text-black text-justify md:text-justify montserrat md:px-6">
                     The Barber's House va más allá de ser simplemente una barbería. Desde su establecimiento en octubre de 2023, se ha comprometido a cultivar un estilo moderno-clásico, donde la personalización y la atención al cliente son nuestras joyas más preciadas. No solo proporcionamos servicios de calidad, sino que también ofrecemos una selección de productos profesionales para el cuidado del cabello.
                 </p>
             </div>
@@ -50,7 +53,7 @@
             <p class=" text-white text-justify md:text-justify montserrat md:px-6">En "The Barber's House", la precisión y la creatividad se combinan para dar vida a una amplia gama de cortes de cabello. Desde los estilos clásicos que resisten el paso del tiempo hasta las últimas tendencias</p>
         </div>
     </div>
-    </div>
+
 
     <div class="flex justify-center px-2 mt-10 mb-5 bg-black">
         <div class="w-full lg:w-3/4">

@@ -32,15 +32,11 @@
             <ul class="py-1 hover:underline">
                 <li><a href="{{ route('login') }}">Iniciar Sesión</a></li>
             </ul>
-
-
         </div>
     </nav>
 
-
-
-    <div class="bg-black md:container md:mx-auto">
-        <div class="container mx-auto mt-8">
+    <div class="bg-zinc-700 md:mx-auto">
+        <div class=" mx-auto mt-8">
             @yield('content');
         </div>
     </div>
