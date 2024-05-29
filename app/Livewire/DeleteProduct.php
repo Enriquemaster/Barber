@@ -24,7 +24,7 @@ class DeleteProduct extends Component
                     <p class="text-xl">¿Está seguro de hacerlo?</p>
                 </x-slot:content>
                 <x-slot:footer>
-                    <x-button wire:click="confirmarEliminacion()">Eliminar el producto</x-button>
+                    <x-button wire:click="confirmar()">Eliminar el producto</x-button>
                 </x-slot:footer>
             </x-confirmation-modal>
         </div>
@@ -33,15 +33,15 @@ class DeleteProduct extends Component
     }
 
     public $modal=false;
-    public $productos;
+    public $product;
 
     public function mount($id){
-        $this->productos=Products::find($id);
+        $this->product=Products::find($id);
     }
 
-    public function confirmarEliminacion(){
-        $this->productos->delete();
+    public function confirmar(){
+        $this->product->delete();
         $this->modal=false;
-        $this->redirect('/');
+        $this->redirect('/accionesProductos');
     }
 }

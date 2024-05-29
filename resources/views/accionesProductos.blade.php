@@ -41,16 +41,17 @@
       </tr>
     </thead>
     <tbody>
+    @props(['id'])
     @foreach($productos as $producto)
       <tr>
         <td class="border px-4 py-2">
           <button class="bg-orange-500 text-white px-2 py-1 rounded">Editar</button>
-                      @can('delete', $productos)
-                            <livewire:delete-product :id="$productos->id" />
-                        @endcan
+
+            <livewire:delete-product :id="$producto->id" />
+
 
         </td>
-       
+          <td class="border px-4 py-2">{{ $producto->nombre }}</td>
         <td class="border px-4 py-2">{{ $producto->nombre }}</td>
               <td class="border px-4 py-2">{{ $producto->descripccion }}</td>
               <td class="border px-4 py-2">{{ $producto->marca }}</td>

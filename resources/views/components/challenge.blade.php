@@ -16,5 +16,5 @@
         Finaliza: {{$fecha_final}}
     </p>
     {{-- Incluimos el componente Livewire para eliminar el reto --}}
-    <livewire:delete-challenge :id="$id" />
+    <livewire:DeleteChallenge :id="$id" />
 </div>

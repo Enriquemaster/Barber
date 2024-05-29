@@ -15,9 +15,9 @@
 </head>
 <body class="bg-black">
     <nav class="bg-black w-full text-white flex flex-col md:flex-row md:text-center md:px-7 md:py-5 justify-center items-center">
-        <div class="absolute top-0 left-0 md:top-0 md:left-2">
-            <a href="{{url('')}}"><img   src="{{ asset('IMG/TheBarber2.png')}}" alt="logotipo" class="w-32 h-10 md:w-64 md:h-auto" /></a>
-        </div>
+{{--        <div class="absolute top-0 left-0 md:top-0 md:left-2">--}}
+{{--            <a href="{{url('')}}"><img   src="{{ asset('IMG/TheBarber2.png')}}" alt="logotipo" class="w-32 h-10 md:w-64 md:h-auto" /></a>--}}
+{{--        </div>--}}
         <div class="flex flex-col md:flex-row md:gap-5 mt-4 text-center Bodoni">
             <ul class="py-1 hover:underline">
                 <li><a href="{{url('')}}">Inicio</a></li>

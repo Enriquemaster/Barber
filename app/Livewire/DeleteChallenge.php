@@ -2,9 +2,9 @@
 
 namespace App\Livewire;
 
-
-use App\Models\Member;
 use Livewire\Component;
+use App\Models\Member;
+
 
 class DeleteChallenge extends Component
 {
