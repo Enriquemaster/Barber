@@ -10,7 +10,7 @@
     <div class="xl:p-24 p-4">
   <div class="flex justify-between items-center mb-4">
     <div class="flex space-x-2">
-      <button class="bg-blue-500 text-white px-4 py-2 rounded">Agregar</button>
+    <a href="/agregarProductos" class="bg-blue-500 text-white px-4 py-2 rounded">Agregar</a>
     </div>
     <div class="flex space-x-2 items-center">
       <input type="text" placeholder="Buscar..." class="border rounded px-2 py-1">
@@ -41,14 +41,13 @@
       </tr>
     </thead>
     <tbody>
-    @props(['id'])
     @foreach($productos as $producto)
       <tr>
         <td class="border px-4 py-2">
-          <button class="bg-orange-500 text-white px-2 py-1 rounded">Editar</button>
+       
 
             <livewire:delete-product :id="$producto->id" />
-
+            <a class="bg-blue-500 text-white rounded">Actualizar</a>
 
         </td>
           <td class="border px-4 py-2">{{ $producto->nombre }}</td>

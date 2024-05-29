@@ -43,7 +43,7 @@ class ControllerProducts extends Controller
                 
             ]);    
             $producto->save();
-            return redirect()->route('dashboard')->with('success', 'Producto creado exitosamente.');
+            return redirect()->route('accionesProductos')->with('success', 'Producto creado exitosamente.');
         
           
         } catch (\Exception $e) {
