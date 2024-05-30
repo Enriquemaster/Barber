@@ -24,6 +24,7 @@ Route::get('/accionesProductos', function () {
 
 Route::post('/registrar-producto', [ControllerProducts::class, 'registrarProducto'])->name('registrar-producto');
 Route::get('/productos', [ControllerProducts::class, 'mostrarProductos'])->name('productos');
+Route::get('/accionesProductos', [ControllerProducts::class, 'acciones'])->name('accionesProductos');
 
 Route::get('/conocenos', function () {
     return view('conocenos');

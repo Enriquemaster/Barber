@@ -43,7 +43,7 @@ class ControllerProducts extends Controller
                 
             ]);    
             $producto->save();
-            return redirect()->route('dashboard')->with('success', 'Producto creado exitosamente.');
+            return redirect()->route('accionesProductos')->with('success', 'Producto creado exitosamente.');
         
           
         } catch (\Exception $e) {
@@ -61,6 +61,14 @@ class ControllerProducts extends Controller
         $productos = Products::all();
         return view('productos', compact('productos'));
     }
+
+      // Método para mostrar los productos
+      public function acciones()
+      {
+          $productos = Products::all();
+          return view('accionesProductos', compact('productos'));
+      }
+
 }
 
     
