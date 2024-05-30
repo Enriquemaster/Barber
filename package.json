@@ -14,5 +14,15 @@
         "postcss": "^8.4.32",
         "tailwindcss": "^3.4.3",
         "vite": "^5.0"
+    },
+    "dependencies": {
+        "@fontsource-variable/dancing-script": "^5.0.18",
+        "@fontsource-variable/oswald": "^5.0.20",
+        "@fontsource/anton": "^5.0.20",
+        "@fontsource/bungee-shade": "^5.0.20",
+        "@fontsource/corinthia": "^5.0.20",
+        "@fontsource/oi": "^5.0.20",
+        "@fontsource/smooch": "^5.0.20",
+        "@fontsource/ultra": "^5.0.19"
     }
 }

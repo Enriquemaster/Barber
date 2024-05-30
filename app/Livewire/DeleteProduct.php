@@ -12,12 +12,12 @@ class DeleteProduct extends Component
         return <<<'HTML'
         <div>
             {{-- Knowing others is intelligence; knowing yourself is true wisdom. --}}
-            <button wire:click="$toggle('modal')" class=" px-4 py-2 border border-transparent rounded-md font-semibold text-xs text-black uppercase tracking-widest focus:bg-payneGray active:bg-payneGray focus:outline-none focus:ring-2 focus:ring-oxford focus:ring-offset-2 transition ease-in-out duration-150 bg-payneGray bg-[#a8dadc] ">
+            <button wire:click="$toggle('modal')" class="bg-orange-500 text-white px-2 py-1 rounded ">
             Eliminar producto </button>
 
             <x-confirmation-modal wire:model="modal">
                 <x-slot:title>
-                    <h1 class="text-2xl font-bold text-oxford ">Eliminar producto</h1>
+                    <h1 class="text-2xl font-bold text-black ">Eliminar producto</h1>
                 </x-slot:title>
                 <x-slot:content>
                     <p class="text-xl">Esto borrará el producto y no es recuperable.</p>
