@@ -3,9 +3,14 @@
 @section('content')
 
     <div class="bg-black bg-cover bg-center bg-opacity-50 w-full h-full relative">
-        <img src="IMG/Fondo4.png" alt="fondo" class="w-full h-full object-cover opacity-50">
+       
+    <video autoplay muted loop class="w-full h-full object-cover opacity-50">
+        <source src="VIDEO/Fondo1.mp4" type="video/mp4">
+        Tu navegador no soporta la reproducción de videos.
+    </video>
+
     </div>
-    <h1 class="absolute md:top-96 top-72 md:left-40 md:right-40 text-white text-center Bodoni md:text-5xl">DONDE EL ARTE DE SER BARBERO LE DA DISTINCIÓN AL CABALLERO</h1>
+    <h1 class="absolute md:top-96 top-72 md:left-40 md:right-40 text-white text-center Bodoni md:text-5xl">DONDE EL ARTE DE SER BARBERO LE DA DISTINCIÓN AL CABALLERO <br> SOMOS LA MEJOR OPCIÓN</h1>
     <a  href="{{url('/agendar')}}" class="absolute bg-yellow-600 text-white text-xl px-5 rounded-full hover:bg-yellow-800 focus:outline-none focus:ring focus:border-blue-100 md:px-10 md:py-2 Bodoni top-1/4 left-1/4  md:top-1/2 md:left-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2 md:translate-y-40 ">Agendar cita</a>
 
     <div class="flex flex-col md:flex-row p-4 md:p-8 text-center md:text-left items-center w-full md:w-11/12 mx-auto">
