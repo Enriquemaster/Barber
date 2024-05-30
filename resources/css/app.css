@@ -2,6 +2,100 @@
 @tailwind components;
 @tailwind utilities;
 
+
 [x-cloak] {
     display: none;
 }
+
+@font-face {
+    font-family: 'Anton';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+    src: url(@fontsource/anton/files/anton-latin-400-normal.woff2) format('woff2'), url(@fontsource/anton/files/anton-latin-400-normal.woff) format('woff');
+    unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+  }
+
+  /* corinthia-latin-400-normal */
+@font-face {
+    font-family: 'Corinthia';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+    src: url(@fontsource/corinthia/files/corinthia-latin-400-normal.woff2) format('woff2'), url(@fontsource/corinthia/files/corinthia-latin-400-normal.woff) format('woff');
+    unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+  }
+
+  /* bungee-shade-latin-400-normal */
+@font-face {
+    font-family: 'Bungee Shade';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+    src: url(@fontsource/bungee-shade/files/bungee-shade-latin-400-normal.woff2) format('woff2'), url(@fontsource/bungee-shade/files/bungee-shade-latin-400-normal.woff) format('woff');
+    unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+  }
+
+/* ultra-latin-400-normal */
+@font-face {
+    font-family: 'Ultra';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+    src: url(@fontsource/ultra/files/ultra-latin-400-normal.woff2) format('woff2'), url(@fontsource/ultra/files/ultra-latin-400-normal.woff) format('woff');
+    unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+  }
+
+  /* oi-latin-400-normal */
+@font-face {
+    font-family: 'Oi';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+    src: url(@fontsource/oi/files/oi-latin-400-normal.woff2) format('woff2'), url(@fontsource/oi/files/oi-latin-400-normal.woff) format('woff');
+    unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+  }
+
+  /* oswald-latin-wght-normal */
+@font-face {
+    font-family: 'Oswald Variable';
+    font-style: light;
+    font-display: swap;
+    font-weight: 200 700;
+    src: url(@fontsource-variable/oswald/files/oswald-latin-wght-normal.woff2) format('woff2-variations');
+    unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+  }
+
+
+#Eslogan1 {
+    font-family: 'Anton', sans-serif
+}
+
+
+#Eslogan1 {
+    font-family: 'Corinthia', cursive;
+  }
+
+#Eslogan1 {
+    font-family: 'Bungee Shade', system-ui;
+ }
+
+ #Eslogan {
+    font-family: 'Ultra', serif;
+  }
+
+  #agendar {
+    font-family: 'Anton', serif;
+  }
+
+  #titulo {
+    font-family: 'Ultra', serif;
+  }
+
+  #barbero {
+    font-family: 'Corinthia', cursive;
+  }
+
+  #contenido{
+    font-family: 'Oswald Variable', sans-serif;
+  }

@@ -19,12 +19,12 @@
         <!-- Styles -->
         @livewireStyles
     </head>
-    <body class="font-sans antialiased bg-black">
+    <body class="">
         <x-banner />
 
         <div class="min-h-screen bg-black">
             @livewire('navigation-menu')
-            @extends('layouts.base')
+    
             <!-- Page Heading -->
             @if (isset($header))
                 <header class="bg-[#353231] shadow">
