@@ -51,7 +51,6 @@
 
         </td>
           <td class="border px-4 py-2">{{ $producto->nombre }}</td>
-        <td class="border px-4 py-2">{{ $producto->nombre }}</td>
               <td class="border px-4 py-2">{{ $producto->descripccion }}</td>
               <td class="border px-4 py-2">{{ $producto->marca }}</td>
               <td class="border px-4 py-2">{{ $producto->modelo }}</td>
