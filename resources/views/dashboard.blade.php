@@ -22,20 +22,20 @@
       
       <div class="bg-zinc-800 flex justify-center align-center text-white text-5xl md:w-1/4 rounded-lg ml-4">
         <p class="text-center " id="titulodashboard" >Obten tu membresia</p>
-        <img src="https://placehold.co/200x200" alt="High-quality Icons" class="mt-4 mb-4">
-      </div>
-    </div>
-  <div class="grid grid-cols-1 md:grid-cols-4 gap-4 ">
-    <div class="bg-zinc-800 p-4 rounded-lg flex flex-col items-center" id="carouselContainer">
-      <p class="text-center" id="titulodashboard">Servicios</p>
-          
-<!-- Carrusel de imágenes -->
+        <!-- Carrusel de imágenes -->
         <div class="relative mt-4 mb-4 w-full h-64 overflow-hidden">
             <img src="IMG/Producto1.png" alt="Imagen 1" class="carousel-image w-full h-full object-cover rounded-lg absolute transition-transform duration-1000 transform translate-x-0">
             <img src="IMG/Producto2.png" alt="Imagen 2" class="carousel-image w-full h-full object-cover rounded-lg absolute transition-transform duration-1000 transform translate-x-full">
             <img src="IMG/Producto3.png" alt="Imagen 3" class="carousel-image w-full h-full object-cover rounded-lg absolute transition-transform duration-1000 transform translate-x-full">
             <!-- Agrega más imágenes según sea necesario -->
         </div>
+      </div>
+    </div>
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4 ">
+    <div class="bg-zinc-800 p-4 rounded-lg flex flex-col items-center" id="carouselContainer">
+      <p class="text-center" id="titulodashboard">Servicios</p>
+          
+      <img src="https://placehold.co/200x200" alt="High-quality Icons" class="mt-4 mb-4">
 
         
 
@@ -118,22 +118,3 @@
         });
     </script>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const carouselContainer = document.getElementById('carouselContainer');
-        const messageDiv = document.createElement('div');
-        messageDiv.textContent = 'Mensaje adicional';
-        messageDiv.classList.add('text-white', 'text-lg', 'bg-gray-800', 'p-2', 'rounded-lg', 'absolute', 'bottom-4', 'left-1/2', '-translate-x-1/2', 'hidden');
-        carouselContainer.appendChild(messageDiv);
-
-        carouselContainer.addEventListener('mouseenter', function () {
-            carouselContainer.style.transform = 'rotateY(180deg)';
-            messageDiv.classList.remove('hidden');
-        });
-
-        carouselContainer.addEventListener('mouseleave', function () {
-            carouselContainer.style.transform = 'rotateY(0deg)';
-            messageDiv.classList.add('hidden');
-        });
-    });
-</script>
