@@ -12,7 +12,7 @@ class DeleteProduct extends Component
         return <<<'HTML'
         <div>
             {{-- Knowing others is intelligence; knowing yourself is true wisdom. --}}
-            <button wire:click="$toggle('modal')" class="bg-orange-500 text-white px-2 py-1 rounded ">
+            <button wire:click="$toggle('modal')" class="bg-orange-500 text-white px-4 py-1 rounded  ">
             Eliminar producto </button>
 
             <x-confirmation-modal wire:model="modal">

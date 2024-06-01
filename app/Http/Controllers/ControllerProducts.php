@@ -8,6 +8,7 @@ use App\Models\Products;
 
 class ControllerProducts extends Controller
 {
+   //////////////////////////////////////////////////////////////////////////
     public function registrarProducto(Request $request)
     {
         try {
@@ -31,7 +32,7 @@ class ControllerProducts extends Controller
         $nombreImagen = time() . '.' . $imagen->getClientOriginalExtension();
 
         // Guardar la imagen en la carpeta de almacenamiento
-        $imagen->storeAs('public/Recursos', $nombreImagen);
+        $imagen->storeAs('Carrusel', $nombreImagen);
     }
             $producto = new Products([
                 'nombre' => $request->input('nombre'),
@@ -43,9 +44,8 @@ class ControllerProducts extends Controller
                 
             ]);    
             $producto->save();
-            return redirect()->route('accionesProductos')->with('success', 'Producto creado exitosamente.');
-        
-          
+            
+            return redirect()->route('accionesProductos')->with('success', true);
         } catch (\Exception $e) {
           
             \Log::error('Error al intentar guardar los datos: ' . $e->getMessage());
@@ -54,22 +54,72 @@ class ControllerProducts extends Controller
 
         
     }
+//////////////////////////////////////////////////////////////////////////
 
-    // Método para mostrar los productos
-    public function mostrarProductos()
+     public function mostrarFormularioActualizar($id)
     {
-        $productos = Products::all();
-        return view('productos', compact('productos'));
+        // Encuentra el producto por su ID
+        $producto = Products::findOrFail($id);
+
+        // Devuelve la vista con el formulario y los datos del producto
+        return view('actualizarProductos', compact('producto'));
     }
+//////////////////////////////////////////////////////////////////////////
+    // Función para procesar la actualización del producto
+    public function actualizar(Request $request, $id)
+    {
+        
+        // Encuentra el producto por su ID
+        $producto = Products::findOrFail($id);
+
+        // Valida los datos del formulario
+        $request->validate([
+            'nombre' => 'required',
+            'descripccion' => 'required',
+            'marca' => 'required',
+            'modelo' => 'required',
+            'precio' => 'required|numeric',
+        ]);
+
+        // Actualiza los datos del producto
+        $producto->update([
+            'nombre' => $request->nombre,
+            'descripccion' => $request->descripccion,
+            'marca' => $request->marca,
+            'modelo' => $request->modelo,
+            'precio' => $request->precio,
+
+            
+        ]);
+        
+      
+        // Redirige a alguna página después de la actualización (puedes ajustar esto según tus necesidades)
+        return redirect()->route('accionesProductos')->with('success', 'El producto ha sido actualizado correctamente.');
+    }
+//////////////////////////////////////////////////////////////////////////
 
       // Método para mostrar los productos
       public function acciones()
       {
-          $productos = Products::all();
+          $productos = Products::paginate(8);
           return view('accionesProductos', compact('productos'));
       }
 
+//////////////////////////////////////////////////////////////////////////
+public function buscarProductos(Request $request)
+{
+    $query = Products::query();
+
+    if ($request->has('buscar')) {
+        $buscar = $request->input('buscar');
+        $query->where('nombre', 'like', "%$buscar%");
+    }
+
+    $productos = $query->paginate(9);
+    return view('productos', compact('productos'));
+}
+   
 }
 
-    
+ //////////////////////////////////////////////////////////////////////////   
 
