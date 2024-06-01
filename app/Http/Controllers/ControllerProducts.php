@@ -32,7 +32,7 @@ class ControllerProducts extends Controller
         $nombreImagen = time() . '.' . $imagen->getClientOriginalExtension();
 
         // Guardar la imagen en la carpeta de almacenamiento
-        $imagen->storeAs('Carrusel', $nombreImagen);
+        $imagen->storeAs('public/Recursos', $nombreImagen);
     }
             $producto = new Products([
                 'nombre' => $request->input('nombre'),
@@ -51,8 +51,6 @@ class ControllerProducts extends Controller
             \Log::error('Error al intentar guardar los datos: ' . $e->getMessage());
             dd($e->getMessage());
         }
-
-        
     }
 //////////////////////////////////////////////////////////////////////////
 
