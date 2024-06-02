@@ -47,7 +47,6 @@ class ChallengeController extends Controller
         $retos = Member::find($id);
             return view('agregarRetos', compact('retos'));
     }
-
     /**
      * Show the form for editing the specified resource.
      */

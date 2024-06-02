@@ -68,6 +68,7 @@ Route::middleware([
     })->name('dashboard');
 });
 
+Route::view('/agregarRetos', 'agregarRetos')->name( 'agregarRetos');
 
-Route::get('/retos/{id}', [\App\Http\Controllers\ChallengeController::class, 'show'])->name('agregarRetos');
+//Route::get('/retos/{id}', [\App\Http\Controllers\ChallengeController::class, 'show'])->name('agregarRetos');
 

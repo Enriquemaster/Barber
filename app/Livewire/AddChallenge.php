@@ -13,14 +13,13 @@ use App\Models\User;
 class AddChallenge extends Component
 {
     // propiedades públicas del componente
+    public $modal = false;
     public $titulo= ''; // Almacena el nombre de la asignatura
     public $descripcion = ''; // Almacena la descripción de la asignatura
     public $recompensa = ''; // Almacena el nombre de la carrera
     public $fecha_inicio = ''; // Almacena el nombre de la carrera
-
     public $fecha_final = ''; // Almacena el nombre de la carrera
-    public $retoss; // Almacena todas las clases existentes
-    public $modal = false; // Controla la visibilidad del modal de creación de clase
+    public $retoss; // Almacena todos los retos existentes
 
     public function save()
     {
@@ -42,12 +41,8 @@ class AddChallenge extends Component
         $challenge->fecha_final = $validatedData['fecha_final'];
         $challenge->save();
 
-        // Obtenemos el ID del usuario actual y su ID de maestro
-//        $user_id = Auth::id();
-//        $user = User::findOrFail($user_id);
-//        $teacher_id = $user->teacher_id;
 
-        // Creamos un registro de Listax asociado a la nueva clase y al maestro
+        // Creamos un registro de Listax asociado.
         $member = Member::create([
             'challenge_id' => $challenge->id,
         ]);
@@ -61,7 +56,7 @@ class AddChallenge extends Component
     public function render()
     {
 //        return view('livewire.add-challenge');
-        // Cargamos todas las clases existentes y las pasamos a la variable $clases
+        // Cargamos todas las retos existentes y las pasamos a la variable $clases
         $this->retoss = Member::with('challenge')->get();
 
         // Retornamos el código HTML que se mostrará en la vista

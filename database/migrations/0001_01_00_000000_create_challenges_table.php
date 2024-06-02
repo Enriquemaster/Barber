@@ -20,7 +20,6 @@ return new class extends Migration
             $table->date('fecha_final');
             $table->string('image_url')->nullable();
             $table->timestamps();
-            $table->foreign('member_id')->references('id')->on('members')->onDelete('cascade');
 
         });
     }
