@@ -6,16 +6,17 @@
  <div class="flex-1 p-4 bg-black items-center w-11/12 mx-auto mt-5">
  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
     @foreach($productos as $producto)
-        <div class="tarjeta rounded-lg shadow p-4 transition duration-300 ease-in-out bg-black hover:bg-zinc-800 text-white">
-            <div class="flex items-center justify-center" id="imagenquequieroguardar">
-                <div class="bg-[#B1796C] w-52 h-52 relative rounded-full overflow-hidden">
+        <div class="tarjeta rounded-lg shadow p-4 transition duration-300 ease-in-out bg-black hover:bg-zinc-800 text-white shadow-[8px_13px_238px_80px_rgba(45,_44,_42,_0.4)]">
+            <div class="flex items-center justify-center" id="imagenquequieroguardar ">
+                <div class="bg-[#B1796C] w-52 h-52 relative rounded-full overflow-hidden shadow-[0px_2px_36px_5px_rgba(232,_167,_43,_0.72)]">
                     <img src="{{ asset('storage/Recursos/' . $producto->foto) }}" alt="{{ $producto->nombre }}" class="w-full h-full object-cover">
                 </div>
             </div>
             <h1 class="text-xl font-bold mt-4 text-center">{{ $producto->nombre }}</h1>
-            <p class="mt-2 mb-6 text-center">{{ $producto->descripccion }}</p>
-            <p class="mt-2 mb-6 text-center">{{ $producto->marca }} {{ $producto->modelo }}</p>
-            <p class="mt-2 text-center">{{ $producto->precio }}</p>
+            <p class="mt-2 mb-6 text-center">Descripcción: {{ $producto->descripccion }}</p>
+            <p class="mt-2 mb-6 text-center">Marca: {{ $producto->marca }} </p>
+            <p class="mt-2 mb-6 text-center">Modelo: {{ $producto->modelo }} </p>
+            <p class="mt-2 text-center"> Precio: ${{ $producto->precio }}</p>
 
             <div class="flex justify-center mt-4">
     <button class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded">
@@ -24,4 +25,10 @@
 </div>
         </div>
     @endforeach
+      <!-- Enlaces de paginación -->
+      <div class="flex justify-center items-center mt-4">
+                {{ $productos->links() }} <!-- Aquí se muestran los enlaces de paginación -->
+            </div>
+        </div>
+  </div>
 </x-app-layout>

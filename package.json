@@ -23,6 +23,7 @@
         "@fontsource/corinthia": "^5.0.20",
         "@fontsource/oi": "^5.0.20",
         "@fontsource/smooch": "^5.0.20",
-        "@fontsource/ultra": "^5.0.19"
+        "@fontsource/ultra": "^5.0.19",
+        "swiper": "^11.1.4"
     }
 }

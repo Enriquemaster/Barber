@@ -18,6 +18,10 @@ Route::get('/agregarProductos', function () {
     return view('agregarProductos');
 });
 
+Route::get('/actualizarProductos', function () {
+    return view('actualizarProductos');
+});
+
 Route::get('/accionesProductos', function () {
     return view('accionesProductos');
 });
@@ -25,6 +29,11 @@ Route::get('/accionesProductos', function () {
 Route::post('/registrar-producto', [ControllerProducts::class, 'registrarProducto'])->name('registrar-producto');
 Route::get('/productos', [ControllerProducts::class, 'mostrarProductos'])->name('productos');
 Route::get('/accionesProductos', [ControllerProducts::class, 'acciones'])->name('accionesProductos');
+Route::get('/productos', [ControllerProducts::class, 'buscarProductos'])->name('productos');
+
+Route::get('/producto/{id}/actualizar', [ControllerProducts::class, 'mostrarFormularioActualizar'])->name('productos.actualizar.formulario');
+Route::put('/producto/{id}/actualizar', [ControllerProducts::class, 'actualizar'])->name('productos.actualizar');
+
 
 Route::get('/conocenos', function () {
     return view('conocenos');
