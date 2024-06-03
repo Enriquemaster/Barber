@@ -56,7 +56,7 @@ Route::get('/', function () {
 
 Route::get('/retos', function () {
     return view('retos');
-    name ('retos');
+    //name ('retos');
 });
 
 Route::get('/tiposmembresia', function () {
