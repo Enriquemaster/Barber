@@ -23,16 +23,14 @@ class ControllerProducts extends Controller
             ]);
     // Procesar la imagen
     $nombreImagen = null;
-
     if ($request->hasFile('foto')) {
         // Obtener la imagen de la solicitud
         $imagen = $request->file('foto');
-
         // Generar un nombre único para la imagen
         $nombreImagen = time() . '.' . $imagen->getClientOriginalExtension();
 
         // Guardar la imagen en la carpeta de almacenamiento
-        $imagen->storeAs('public/Recursos', $nombreImagen);
+        $path = $imagen->storeAs('public/Recursos', $nombreImagen);
     }
             $producto = new Products([
                 'nombre' => $request->input('nombre'),
