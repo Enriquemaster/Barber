@@ -16,7 +16,7 @@
 
                     <a href="/agregarRetos" class="bg-[#302c2c] rounded-lg shadow-md p-4 md:p-6 text-center transform transition duration-300 hover:scale-105">
                         <h2 class="text-lg md:text-xl font-semibold mb-4 text-white">ADMINISTRAR RETOS</h2>
-                        <img src="{{ asset('Icons/Retos.png') }}" alt="login" class="w-full mx-auto md:w-auto py-10" />
+                        <img src="{{ asset('Icons/Retos.png') }}" alt="login" class="w-full mx-auto md:w-1/2 py-10" />
                     </a>
 
                     <a href="/accionesProductos" class="bg-[#302c2c] rounded-lg shadow-md p-4 md:p-6 text-center transform transition duration-300 hover:scale-105">

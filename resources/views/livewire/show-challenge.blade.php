@@ -1,11 +1,11 @@
 @php
     use Carbon\Carbon;
 @endphp
-<x-slot name="header">
-    <h2 class="font-semibold text-xl text-white leading-tight">
-        {{ __('Mis retos') }}
-    </h2>
-</x-slot>
+{{--<x-slot name="header">--}}
+{{--    <h2 class="font-semibold text-xl text-white leading-tight">--}}
+{{--        {{ __('Mis retos') }}--}}
+{{--    </h2>--}}
+{{--</x-slot>--}}
 <div class=" py-12">
     <div class="bg-black  overflow-hidden shadow-xl sm:rounded-lg">
         <div class="flex justify-center items-center text-black flex-wrap gap-4" >
