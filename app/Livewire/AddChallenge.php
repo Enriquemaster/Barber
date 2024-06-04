@@ -19,7 +19,7 @@ class AddChallenge extends Component
     public $recompensa = ''; // Almacena el nombre de la carrera
     public $fecha_inicio = ''; // Almacena el nombre de la carrera
     public $fecha_final = ''; // Almacena el nombre de la carrera
-    public $imagen;
+//    public $imagen;
     public $retoss; // Almacena todos los retos existentes
 
     public function save()
@@ -31,11 +31,11 @@ class AddChallenge extends Component
             'recompensa' => 'required',
             'fecha_inicio' => 'required',
             'fecha_final' => 'required',
-            'imagen' => 'required|image|max:10240',
+//            'imagen' => 'required|image|max:10240',
         ]);
 
-        $imageContent = file_get_contents($this->imagen->getRealPath());
-        $imagePath = $this->imagen->store('images', 'public');
+//        $imageContent = file_get_contents($this->imagen->getRealPath());
+//        $imagePath = $this->imagen->store('images', 'public');
 
         // Creamos un nuevo registro de Subject con los datos validados
         $challenge = new Challenge();
@@ -44,7 +44,7 @@ class AddChallenge extends Component
         $challenge->recompensa = $validatedData['recompensa'];
         $challenge->fecha_inicio = $validatedData['fecha_inicio'];
         $challenge->fecha_final = $validatedData['fecha_final'];
-        $challenge->image_url = $imagePath;
+//        $challenge->image_url = $imagePath;
 //        'imagen' => $imageContent,
         $challenge->save();
 
@@ -55,7 +55,7 @@ class AddChallenge extends Component
         ]);
 
         // Reseteamos los campos del formulario y ocultamos el modal
-        $this->reset(['titulo', 'descripcion', 'recompensa', 'fecha_inicio', 'fecha_final', 'imagen']);
+        $this->reset(['titulo', 'descripcion', 'recompensa', 'fecha_inicio', 'fecha_final']);
         $this->modal = false;
         // Mostramos un mensaje de éxito en la sesión
         session()->flash('status', 'Reto creado exitosamente.');
@@ -89,8 +89,8 @@ class AddChallenge extends Component
                 <input class="px-20 rounded-lg mb-4 " type="date" wire:model="fecha_inicio" ><br>
                 <label>Fecha de finalización: </label><br>
                 <input class="px-20 rounded-lg mb-4 " type="date" wire:model="fecha_final" ><br>
-                <label>Subir Imagen: </label><br>
-                <input class="px-20 rounded-lg mb-4" type="file" wire:model="imagen                          "><br>
+<!--                <label>Subir Imagen: </label><br>-->
+<!--                <input class="px-20 rounded-lg mb-4" type="file" wire:model="imagen                          "><br>-->
         </x-slot:content>
         <x-slot:footer>
         <div class="flex items-center justify-center">

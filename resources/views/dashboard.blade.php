@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.tailwindcss.com"></script>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
   <div class="bg-zinc-900 text-white xl:p-8 rounded-lg space-y-4 h-full">
@@ -18,8 +18,6 @@
     <h1 class="absolute inset-0 flex items-center justify-center text-white text-3xl md:text-4xl"  id="titulodashboard">Barber Shop</h1>
     </div>
 
-
-      
       <div class="bg-zinc-800 flex justify-center align-center text-white text-5xl md:w-1/4 rounded-lg ml-4">
         <p class="text-center " id="titulodashboard" >Obten tu membresia</p>
         <!-- Carrusel de imágenes -->
@@ -34,10 +32,8 @@
   <div class="grid grid-cols-1 md:grid-cols-4 gap-4 ">
     <div class="bg-zinc-800 p-4 rounded-lg flex flex-col items-center" id="carouselContainer">
       <p class="text-center" id="titulodashboard">Servicios</p>
-          
-      <img src="https://placehold.co/200x200" alt="High-quality Icons" class="mt-4 mb-4">
 
-        
+      <img src="https://placehold.co/200x200" alt="High-quality Icons" class="mt-4 mb-4">
 
       <p class="text-center text-2xl" id="contenido">Disfrute de todos nuestros servicios</p>
     </div>
@@ -58,7 +54,7 @@
 <p class="text-center text-2xl" id="contenido">Barberos de confianza</p>
     </div>
   </div>
-  
+
   <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:h-full">
     <div class="bg-zinc-800 p-4 rounded-lg flex flex-col items-center">
       <p class="text-center">pensando en que va ir.</p>

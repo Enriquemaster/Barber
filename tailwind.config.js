@@ -17,8 +17,12 @@ export default {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
                 'futura': ['Futura', 'sans-serif'],
             },
+            height: {
+                '80vh': '80vh',
+            },
         },
     },
 
     plugins: [forms, typography],
 };
+

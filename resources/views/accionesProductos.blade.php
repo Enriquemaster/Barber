@@ -1,15 +1,21 @@
 <x-app-layout>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-  </head>
-  <body>
-  
-    
- 
+{{--  <head>--}}
+{{--      --}}
+{{--    <meta charset="UTF-8">--}}
+{{--    <meta name="viewport" content="width=device-width, initial-scale=1.0">--}}
+{{--      @vite(['resources/css/app.css', 'resources/js/app.js'])--}}
+
+{{--  </head>--}}
+<x-slot name="header">
+    <h2 class="font-semibold text-xl text-white leading-tight">
+        {{ __('Mis productos') }}
+    </h2>
+</x-slot>
+<body>
+
+
+
     <div class="flex justify-center">
     <div class="xl:p-24 p-4">
   <div class="flex justify-between items-center mb-4">
@@ -45,7 +51,7 @@
             <livewire:delete-product :id="$producto->id" />
             <a href="{{ route('productos.actualizar.formulario', $producto->id) }}" class="bg-blue-500 text-white rounded ml-4 px-4 py-1">Actualizar</a>
         </td>
-        
+
           <td class="border px-4 py-2">{{ $producto->nombre }}</td>
               <td class="border px-4 py-2">{{ $producto->descripccion }}</td>
               <td class="border px-4 py-2">{{ $producto->marca }}</td>
@@ -62,7 +68,7 @@
         </div>
   </div>
 
- 
+
 
 
 <!-- Modal -->
@@ -81,6 +87,5 @@
 </script>
   </body>
 
-</html>
 
 </x-app-layout>

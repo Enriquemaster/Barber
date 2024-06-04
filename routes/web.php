@@ -77,6 +77,10 @@ Route::middleware([
     })->name('dashboard');
 });
 
+Route::get('/dashboard_admin', function () {
+    return view('dashboard_admin');
+})->name('dashboard_admin');
+
 Route::view('/agregarRetos', 'agregarRetos')->name( 'agregarRetos');
 
 //Route::get('/retos/{id}', [\App\Http\Controllers\ChallengeController::class, 'show'])->name('agregarRetos');

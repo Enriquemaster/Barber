@@ -3,8 +3,12 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             {{-- Incluimos el componente Livewire "add-component" --}}
             <livewire:AddChallenge/>
-            <livewire:show-challenge />
+            <div class="px-10">
+                <livewire:show-challenge />
+            </div>
+
         </div>
     </div>
 </x-app-layout>
+
 

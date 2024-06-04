@@ -16,8 +16,10 @@ class DeleteChallenge extends Component
         return <<<'HTML'
         <div class="flex items-center justify-center">
 
-            <button wire:click="$toggle('modal')" class=" px-4 py-2 border border-transparent rounded-md font-semibold text-xs text-black uppercase tracking-widest focus:bg-payneGray active:bg-payneGray focus:outline-none focus:ring-2 focus:ring-oxford focus:ring-offset-2 transition ease-in-out duration-150 bg-payneGray bg-[#a8dadc] ">
-            Eliminar reto </button>
+            <button wire:click="$toggle('modal')" class="px-4 py-2 border border-transparent rounded-lg font-semibold text-xs text-black uppercase tracking-widest focus:bg-payneGray active:bg-payneGray focus:outline-none focus:ring-2 focus:ring-oxford focus:ring-offset-2 transition ease-in-out duration-150 bg-payneGray bg-[#302c2c]">
+           <img src="{{ asset('Icons/Delete.png') }}"  alt="Eliminar reto" class="w-1/4 mx-auto md:w-1/4" />
+           <h1 class="text-white">Eliminar Reto</h1>
+            </button>
 
             <x-confirmation-modal wire:model="modal">
                 <x-slot:title>
