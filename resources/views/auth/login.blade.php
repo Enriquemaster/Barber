@@ -58,7 +58,7 @@
                     <div>
                         <label for="remember_me" class="flex items-center">
                             <x-checkbox id="remember_me" name="remember" />
-                            <span class="ml-2 text-sm text-gray-600">{{ __('¿Olvido su Contraseña?') }}</span>
+                            <span class="ml-2 text-sm text-white">{{ __('¿Olvido su Contraseña?') }}</span>
                         </label>
                     </div>
 

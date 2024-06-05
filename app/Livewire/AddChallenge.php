@@ -69,7 +69,7 @@ class AddChallenge extends Component
         // Retornamos el código HTML que se mostrará en la vista
         return <<<'HTML'
 <div>
-  <button wire:click="$toggle('modal')" class="inline-flex items-center px-4 py-2 rounded-md font-semibold text-xs text-white uppercase tracking-widest focus:bg-payneGray active:bg-payneGray focus:outline-none focus:ring-2 focus:ring-oxford focus:ring-offset-2 transition ease-in-out duration-150 bg-[#8B5F3D] hover:bg-syracuse">
+  <button wire:click="$toggle('modal')" class="inline-flex items-center px-4 py-2 rounded-md font-semibold text-xs text-white uppercase tracking-widest focus:bg-payneGray active:bg-payneGray focus:outline-none focus:ring-2 focus:ring-oxford focus:ring-offset-2 transition ease-in-out duration-150 bg-zinc-700 hover:bg-syracuse">
     Agregar reto
 </button>
 

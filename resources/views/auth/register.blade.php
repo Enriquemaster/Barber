@@ -59,7 +59,7 @@
 
             <div class="mt-4">
                 <input type="checkbox" id="show-passwords" onclick="togglePasswordVisibility()">
-                <label for="show-passwords">{{ __('Mostrar contraseñas') }}</label>
+                <label class="text-white" for="show-passwords">{{ __('Mostrar contraseñas') }}</label>
             </div>
 
             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())

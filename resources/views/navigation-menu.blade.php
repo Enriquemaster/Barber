@@ -48,7 +48,7 @@
     <div class="md:hidden bg-black pt-6 ml-32 pb-4">
         <div x-data="{ open: false }">
             <!-- Botón del menú -->
-            <button @click="open = !open" class="text-white focus:outline-none bg-amber-700 rounded-md px-2 p-2" > Ver mas...
+            <button @click="open = !open" class="text-white focus:outline-none bg-amber-700 rounded-md p-1 md:px-2 md:p-2" > Ver mas...
 
             </button>
 
