@@ -1,10 +1,13 @@
-<x-guest-layout>
-    <x-authentication-card>
-        <x-slot name="logo">
-            <x-authentication-card-logo />
-        </x-slot>
+<div class="flex flex-col md:flex-row">
 
-        <x-validation-errors class="mb-4" />
+    <div class="w-full md:w-2/5 bg-gray-300 ">
+        <x-guest-layout>
+        <x-authentication-card>
+            <x-slot name="logo">
+                <x-authentication-card-logo />
+            </x-slot>
+
+            <x-validation-errors class="mb-4" />
 
         <form method="POST" action="{{ route('register') }}">
             @csrf
@@ -57,12 +60,12 @@
                 </x-button>
             </div>
             <div class="flex items-center justify-center mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
+                <a class="underline text-sm text-blue-800 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
                     {{ __('¿Ya tienes una cuenta?') }}
                 </a>
             </div>
         </form>
-    </x-authentication-card>
+        </x-authentication-card>
 
     <!-- JavaScript para mostrar/ocultar contraseñas -->
     <script>
@@ -78,4 +81,11 @@
             });
         }
     </script>
-</x-guest-layout>
+        </x-guest-layout>
+    </div>
+
+        <div class="w-full md:w-3/5 bg-gray-200 ">
+            <img src="{{ asset('IMG/FondoBlack2.png') }}" alt="register" class="object-cover w-full h-full" />
+        </div>
+
+</div>

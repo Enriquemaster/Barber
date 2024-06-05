@@ -10,17 +10,16 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 </head>
-<body class="bg-black flex justify-center items-center min-h-screen">
-    <div class="flex flex-wrap lg:flex-nowrap rounded-lg shadow-xl overflow-hidden">
-        <div class="w-full lg:w-3/5 p-3">
-            <img src="{{ asset('IMG/log.jpg') }}" alt="login" class="w-auto" />
-        </div>
-        <div class="w-full lg:w-2/5 p-3">
-            <div class="mb-2">
-                {{ $slot }}
-            </div>
-        </div>
-    </div>
+<body class="bg-black flex justify-center items-center p-10">
+{{--<div class="flex flex-col md:flex-row">--}}
+{{--    <div class="w-full md:w-3/5 bg-gray-200 ">--}}
+{{--        <img src="{{ asset('IMG/log.jpg') }}" alt="login" class="w-full mx-auto md:w-auto" />--}}
+{{--    </div>--}}
+
+{{--    <div class="w-full md:w-2/5 bg-gray-300 ">--}}
+        {{ $slot }}
+{{--    </div>--}}
+{{--    </div>--}}
 </body>
 </html>
 
