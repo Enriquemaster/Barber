@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ControllerProducts;
+use App\Http\Controllers\ControllerServices;
 /*
 Rutas Clientes
 */
@@ -10,6 +11,8 @@ Rutas Clientes
 //    return view('welcome');
 //});
 
+
+//Productos
 Route::get('/productos', function () {
     return view('productos');
 });
@@ -27,12 +30,31 @@ Route::get('/accionesProductos', function () {
 });
 
 Route::post('/registrar-producto', [ControllerProducts::class, 'registrarProducto'])->name('registrar-producto');
-Route::get('/productos', [ControllerProducts::class, 'mostrarProductos'])->name('productos');
 Route::get('/accionesProductos', [ControllerProducts::class, 'acciones'])->name('accionesProductos');
 Route::get('/productos', [ControllerProducts::class, 'buscarProductos'])->name('productos');
-
 Route::get('/producto/{id}/actualizar', [ControllerProducts::class, 'mostrarFormularioActualizar'])->name('productos.actualizar.formulario');
 Route::put('/producto/{id}/actualizar', [ControllerProducts::class, 'actualizar'])->name('productos.actualizar');
+
+
+//Servicios
+Route::get('/servicios', function () {
+    return view('servicios');
+});
+
+Route::get('/accionesServicios', function () {
+    return view('accionesServicios');
+});
+
+Route::get('/agregarServicios', function () {
+    return view('agregarServicios');
+});
+
+Route::get('/accionesServicios', [ControllerServices::class, 'acciones'])->name('accionesServicios');
+Route::post('/registrar-servicio', [ControllerServices::class, 'registrarServicio'])->name('registrar-servicio');
+Route::get('/servicio/{id}/actualizar', [ControllerServices::class, 'mostrarFormularioActualizar'])->name('servicio.actualizar.formulario');
+Route::put('/servicio/{id}/actualizar', [ControllerServices::class, 'actualizar'])->name('servicios.actualizar');
+Route::get('/servicios', [ControllerServices::class, 'buscarServicios'])->name('servicios');
+
 
 
 Route::get('/conocenos', function () {
@@ -63,9 +85,6 @@ Route::get('/tiposmembresia', function () {
     return view('tiposmembresia');
 });
 
-Route::get('/servicios', function () {
-    return view('servicios');
-});
 
 Route::middleware([
     'auth:sanctum',
