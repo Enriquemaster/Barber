@@ -69,15 +69,15 @@
   
   <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:h-full">
     <div class="bg-zinc-800 p-4 rounded-lg flex flex-col items-center">
-      <p class="text-center">Tenemos la mejor<br> valoración </p>
+      <p class="text-center text-7xl" id="titulodashboard" >Tenemos la mejor<br> valoración </p>
       <div class="mt-4 w-full">
         <div class="flex justify-between text-sm">
-          <span>Clientes <br>felices</span>
-          <span>Estan a gusto <br>con el servicio</span>
+          <span id="contenido">Clientes <br>felices</span>
+          <span id="contenido">Estan a gusto <br>con el servicio</span>
         </div>
         <div class="flex justify-between text-sm mt-2">
-          <span>Porcentaje</span>
-          <span>75%</span>
+          <span id="contenido">Porcentaje</span>
+          <span id="contenido">75%</span>
          
         </div>
         <div class="mt-4">
