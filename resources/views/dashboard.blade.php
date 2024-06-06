@@ -1,13 +1,8 @@
 <x-app-layout>
 
  <div class="flex items-center justify-center text-white text-5xl h-full">
- <html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-</head>
-<body>
   <div class="bg-zinc-900 text-white xl:p-8 p-4 rounded-lg space-y-4 h-full ">
     <div class="flex flex-col md:flex-row items-center justify-between md:space-y-0 bg-zinc-900 rounded-lg  ">
   <div class="relative flex flex-col items-center justify-center md:items-start md:w-3/4 bg-zinc-900 rounded-lg mr-4 md:h-60">
@@ -68,12 +63,14 @@
   </a>
   
   <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:h-full">
-    <div class="bg-zinc-800 p-4 rounded-lg flex flex-col items-center">
+       <!-- <div class="bg-zinc-800 p-4 rounded-lg flex flex-col items-center">
       <p class="text-center text-7xl" id="titulodashboard" >Tenemos la mejor<br> valoración </p>
       <div class="mt-4 w-full">
         <div class="flex justify-between text-sm">
           <span id="contenido">Clientes <br>felices</span>
           <span id="contenido">Estan a gusto <br>con el servicio</span>
+     
+     
         </div>
         <div class="flex justify-between text-sm mt-2">
           <span id="contenido">Porcentaje</span>
@@ -90,10 +87,9 @@
 
       <button class="mt-4 bg-purple-600 text-white py-2 px-4 rounded-lg">Button</button>
     </div>
-  </div>
+  </div>-->
 </div>
-  </body>
-</html>
+ 
 </x-app-layout>
 
 <script>
