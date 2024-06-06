@@ -110,7 +110,7 @@
     </div>
 
         <div class="w-full md:w-3/5 bg-gray-200 order-first md:order-last ">
-            <img src="{{ asset('IMG/FondoBlack2.png') }}" alt="register" class="object-cover w-full h-full" />
+            <img src="{{ asset('IMG/FondoBlack5.png') }}" alt="register" class="object-cover w-full h-full" />
         </div>
 
 </div>
