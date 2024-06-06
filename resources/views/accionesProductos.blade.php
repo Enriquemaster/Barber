@@ -81,8 +81,45 @@
   </div>
   </div>
   </div>
+<<<<<<< HEAD
+=======
+
+  
+</div>
+>>>>>>> 471866dccc5f139cf7742e734b66dbf19f27aaaf
+
+
+
+</div>
+
+>>>>>>> cf609d6f955938214e970f9f6b3dd3fcbfbb3687
 </div>
 </div>
 </div>
+<<<<<<< HEAD
 </div>
+=======
+
+<script>
+    function closeModal() {
+        document.getElementById('successModal').classList.add('hidden');
+    }
+</script>
+  </body>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+>>>>>>> cf609d6f955938214e970f9f6b3dd3fcbfbb3687
 </x-app-layout>
