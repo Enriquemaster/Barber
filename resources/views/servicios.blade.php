@@ -1,6 +1,6 @@
 <x-app-layout>
 
-<div class="xl:py-44 sm:py-8 ">
+<!--<div class="xl:py-44 sm:py-8 ">
         <div class="mx-auto sm:px-6 lg:px-8 xl:px-56">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg ">
 
@@ -40,6 +40,25 @@
 
 </div>
  </div>
+</div>-->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="bg-zinc-800 min-h-screen flex items-center justify-center ">
+  <div class="relative">
+    <img src="https://placehold.co/600x800" alt="Menu Board" class="w-full h-auto sm:p-4">
+    <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white p-4">
+            @foreach($servicios as $servicio)
+            <ul>
+                <li class="mb-2 mx-8">{{ $servicio->corte }}<span class="float-right">${{ $servicio->precio }}</span></li>
+            </ul>
+            @endforeach
+    </div>
+  </div>
 </div>
+  </body>
+</html>
+
 
 </x-app-layout>
