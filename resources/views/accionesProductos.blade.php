@@ -2,7 +2,7 @@
 
 {{--      @vite(['resources/css/app.css', 'resources/js/app.js'])--}}
 
-@role('Administrador|Cliente')
+@role('Administrador')
 <div class="p-10 bg-black">
         <div class="max-w-7xl mx-auto  sm:px-6 lg:px-8">
 
@@ -164,7 +164,7 @@
 </script>
 
         </div>
-    </div>
+    </div>-->
 
     @endrole
 </x-app-layout>
