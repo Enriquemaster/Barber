@@ -30,6 +30,7 @@ Route::get('/accionesProductos', function () {
 });
 
 Route::post('/registrar-producto', [ControllerProducts::class, 'registrarProducto'])->name('registrar-producto');
+
 Route::get('/accionesProductos', [ControllerProducts::class, 'acciones'])->name('accionesProductos');
 Route::get('/productos', [ControllerProducts::class, 'buscarProductos'])->name('productos');
 Route::get('/producto/{id}/actualizar', [ControllerProducts::class, 'mostrarFormularioActualizar'])->name('productos.actualizar.formulario');
