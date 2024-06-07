@@ -91,7 +91,7 @@ class ControllerServices extends Controller
             $query->where('corte', 'like', "%$buscar%");
         }
     
-        $servicios = $query->paginate(11);
+        $servicios = $query->paginate(5);
         return view('servicios', compact('servicios'));
     }
        
