@@ -6,7 +6,7 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 px-10 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full">
                     <a href="/agregarCitas" class="bg-[#302c2c] rounded-lg shadow-md p-4 md:p-6 text-center transform transition duration-300 hover:scale-105">
                         <h2 class="text-lg md:text-xl font-semibold mb-4 text-white">MIS CITAS</h2>
-                        <img src="{{ asset('Icons/Citas.png') }}"  alt="login" class="w-full mx-auto md:w-auto py-10" />
+                        <img src="{{ asset('Icons/Citas.png') }}"  alt="login" class="w-full mx-auto md:w-1/2 py-10" />
                     </a>
 
                     <a href="/agregarEstadisticas" class="bg-[#302c2c] rounded-lg shadow-md p-4 md:p-6 text-center transform transition duration-300 hover:scale-105">

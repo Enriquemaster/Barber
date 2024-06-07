@@ -1,5 +1,6 @@
-<x-app-layout>
-<script src="https://cdn.tailwindcss.com"></script>
+@extends('layouts.base')
+
+@section('content')
 <body class="bg-cover bg-center bg-black">
   <div class="text-center py-12 px-4 text-white">
     <h1 class="text-3xl font-bold mb-4">Opciones de membresías</h1>
@@ -34,5 +35,4 @@
       </div>
     </div>
   </div>
-</body>
-</x-app-layout>
+@endsection

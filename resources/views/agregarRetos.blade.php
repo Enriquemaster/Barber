@@ -18,7 +18,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="">
                 <livewire:show-challenge />
             </div>
