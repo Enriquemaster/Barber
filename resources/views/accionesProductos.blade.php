@@ -1,10 +1,6 @@
 <x-app-layout>
-<<<<<<< HEAD
-      @vite(['resources/css/app.css', 'resources/js/app.js'])
-=======
-{{--      @vite(['resources/css/app.css', 'resources/js/app.js'])--}}
 
->>>>>>> e20806e40286e76c247dec48b231b219333e2cfa
+{{--      @vite(['resources/css/app.css', 'resources/js/app.js'])--}}
 
 @role('Administrador|Cliente')
 <div class="p-10 bg-black">
@@ -26,16 +22,6 @@
                     </div>
 
                 </div>
-
-<<<<<<< HEAD
-
-            </div>
-
-
-
-=======
-            </div>
->>>>>>> e20806e40286e76c247dec48b231b219333e2cfa
    <div class="xl:flex xl:justify-center xl:p-12">
 
     <div class="bg-zinc-900 p-4">
@@ -101,7 +87,7 @@
 </div>
 </div>
 </div>
-<<<<<<< HEAD
+
 
 
 
@@ -168,8 +154,7 @@
         <p>El producto ha sido registrado correctamente.</p>
         <button onclick="closeModal()" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded">Cerrar</button>
     </div>
-=======
->>>>>>> e20806e40286e76c247dec48b231b219333e2cfa
+
 </div>
 
 <script>
