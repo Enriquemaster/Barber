@@ -19,7 +19,7 @@
         <!-- Styles -->
         @livewireStyles
     </head>
-    <body class="">
+    <body class="bg-black">
         <x-banner />
 
         <div class="min-h-screen bg-black">
