@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Products; 
+use App\Models\Products;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Response;
 
@@ -16,7 +16,7 @@ class ControllerProducts extends Controller
         try {
             // Verificar si el usuario tiene el permiso 'crear producto'
             if (!Auth::user()->hasPermissionTo('crear producto')) {
-                return redirect()->route('dashboard')->with('success', true);
+                return response()->json(['message' => 'El producto se ha creado correctamente'], 500);
             }
 
             // Validación de campos
@@ -47,9 +47,9 @@ class ControllerProducts extends Controller
                 'modelo' => $request->input('modelo'),
                 'precio' => $request->input('precio'),
                 'foto' => $nombreImagen,
-            ]);    
+            ]);
             $producto->save();
-            
+
             return response()->json(['message' => 'Producto creado con éxito'], 201);
         } catch (\Exception $e) {
             \Log::error('Error al intentar guardar los datos: ' . $e->getMessage());
@@ -70,7 +70,7 @@ class ControllerProducts extends Controller
     // Función para procesar la actualización del producto
     public function actualizar(Request $request, $id)
     {
-        
+
         // Encuentra el producto por su ID
         $producto = Products::findOrFail($id);
 
@@ -91,10 +91,10 @@ class ControllerProducts extends Controller
             'modelo' => $request->modelo,
             'precio' => $request->precio,
 
-            
+
         ]);
-        
-      
+
+
         // Redirige a alguna página después de la actualización (puedes ajustar esto según tus necesidades)
         return redirect()->route('accionesProductos')->with('success', 'El producto ha sido actualizado correctamente.');
     }
@@ -120,8 +120,8 @@ public function buscarProductos(Request $request)
     $productos = $query->paginate(9);
     return view('productos', compact('productos'));
 }
-   
+
 }
 
- //////////////////////////////////////////////////////////////////////////   
+ //////////////////////////////////////////////////////////////////////////
 
