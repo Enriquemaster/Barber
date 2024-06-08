@@ -8,7 +8,7 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
         <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
         <!-- Fonts -->
 {{--        <link rel="preconnect" href="https://fonts.bunny.net">--}}
 {{--        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />--}}
@@ -20,6 +20,7 @@
         @livewireStyles
     </head>
     <body class="bg-black">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
         <x-banner />
 
         <div class="min-h-screen bg-black">

@@ -76,10 +76,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/retos', function () {
-    return view('retos');
-    //name ('retos');
-});
+Route::get('/retosClientes', [\App\Http\Controllers\ChallengeController::class, 'retosClientes'])->name('retos.clientes');
+
 
 
 
@@ -97,6 +95,7 @@ Route::middleware([
     })->name('dashboard_admin');
 });
 
+Route::get('/retos/{id}/recompensa', [\App\Http\Controllers\ChallengeController::class, 'getRecompensa']);
 
 Route::get('image/{id}', [\App\Http\Controllers\ImagenController::class, 'show'])->name('image.show');
 Route::view('/agregarRetos', 'agregarRetos')->name( 'agregarRetos');

@@ -1,59 +1,25 @@
+@php
+    use Carbon\Carbon;
+@endphp
 <x-app-layout>
-<script src="https://cdn.tailwindcss.com"></script>
-<body class="bg-black">
-
-  <div class="bg-black text-white p-8">
-    <h1 class="text-center text-3xl font-bold mb-10">NUESTROS RETOS</h1>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div class="p-6 bg-zinc-800 rounded-lg">
-            <p class="mb-4">TE RETAMOS A QUE TE RAPES LA CABEZA</p>
-            <button class="bg-yellow-400 text-black px-4 py-2 rounded">OBTENER</button>
-            <p class="text-sm mt-4">VALIDO HASTA EL 10/04/2024</p>
+    <div class="bg-black text-white p-8">
+        <h2 class="text-center text-2xl font-bold mb-8">NUESTROS RETOS</h2>
+        @if($retos->isEmpty())
+            <p class="text-white">No hay retos existentes</p>
+        @else
+            {{-- Si hay datos, itera sobre ellos --}}
+            @foreach ($retos as $reto)
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-zinc-700 p-4 rounded-lg text-center">
+                <h3 class="text-lg mb-4">{{ strtoupper($reto->titulo) }}</h3>
+                {{$reto->descripcion}}
+                <img src="{{ route('image.show', $reto->id) }}" alt="Imagen del reto" class="mx-auto mb-4">
+                <button class="bg-yellow-500 text-white font-bold py-2 px-4 rounded">OBTENER</button>
+                <p class="font-semibold">Válido hasta el {{ Carbon::parse($reto->fecha_final)->translatedFormat('d \d\e F \d\e\l Y') }}</p>
+            </div>
         </div>
-        <div class="p-6 bg-zinc-800 rounded-lg">
-            <p class="mb-4">TE RETAMOS A QUE TE RAPES LA CABEZA</p>
-            <button class="bg-yellow-400 text-black px-4 py-2 rounded">OBTENER</button>
-            <p class="text-sm mt-4">VALIDOa HASTA EL 10/04/2024</p>
-        </div>
-        <div class="p-6 bg-zinc-800 rounded-lg">
-            <p class="mb-4">TE RETAMOS A QUE TE RAPES LA CABEZA</p>
-            <button class="bg-yellow-400 text-black px-4 py-2 rounded">OBTENER</button>
-            <p class="text-sm mt-4">VALIDO HASTA EL 10/04/2024</p>
-        </div>
-        <div class="p-6 bg-zinc-800 rounded-lg">
-            <p class="mb-4">TE RETAMOS A QUE TE RAPES LA CABEZA</p>
-            <button class="bg-yellow-400 text-black px-4 py-2 rounded">OBTENER</button>
-            <p class="text-sm mt-4">VALIDO HASTA EL 10/04/2024</p>
-        </div>
-        <div class="p-6 bg-zinc-800 rounded-lg">
-            <p class="mb-4">TE RETAMOS A QUE TE RAPES LA CABEZA</p>
-            <button class="bg-yellow-400 text-black px-4 py-2 rounded">OBTENER</button>
-            <p class="text-sm mt-4">VALIDO HASTA EL 10/04/2024</p>
-        </div>
-        <div class="p-6 bg-zinc-800 rounded-lg">
-            <p class="mb-4">TE RETAMOS A QUE TE RAPES LA CABEZA</p>
-            <button class="bg-yellow-400 text-black px-4 py-2 rounded">OBTENER</button>
-            <p class="text-sm mt-4">VALIDO HASTA EL 10/04/2024</p>
-        </div>
-        <div class="p-6 bg-zinc-800 rounded-lg">
-            <p class="mb-4">TE RETAMOS A QUE TE RAPES LA CABEZA</p>
-            <button class="bg-yellow-400 text-black px-4 py-2 rounded">OBTENER</button>
-            <p class="text-sm mt-4">VALIDO HASTA EL 10/04/2024</p>
-        </div>
-        <div class="p-6 bg-zinc-800 rounded-lg">
-            <p class="mb-4">TE RETAMOS A QUE TE RAPES LA CABEZA</p>
-            <button class="bg-yellow-400 text-black px-4 py-2 rounded">OBTENER</button>
-            <p class="text-sm mt-4">VALIDO HASTA EL 10/04/2024</p>
-        </div>
-        </div>
-       
+            @endforeach
+        @endif
     </div>
-    
-</div>
-
-
-</div>
-
-</body>
 </x-app-layout>
 

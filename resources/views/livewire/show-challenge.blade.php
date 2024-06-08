@@ -35,7 +35,6 @@
                                 </div>
                             </div>
 
-
                             <div class="flex flex-col md:w-1/4 p-2 items-center justify-center ">
                                 <div class="py-2">
                                     <livewire:DeleteChallenge :id="$reto->id" />

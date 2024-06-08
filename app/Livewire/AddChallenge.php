@@ -98,11 +98,11 @@ class AddChallenge extends Component
             <div class="flex flex-col sm:flex-wrap md:flex-row">
             <div class="mb-4 px-8">
                 <label class="block  px-20">Fecha de inicio:</label><br>
-                <input class="w-2-5 rounded-lg mb-4 bg-white text-black" type="date" wire:model="fecha_inicio"><br>
+                <input class="w-2-5 rounded-lg mb-4 bg-gray-300 text-black" type="date" wire:model="fecha_inicio"><br>
             </div>
             <div class="mb-4 ">
                 <label class="block  px-20">Fecha de finalización:</label><br>
-                <input class="w-2-5 rounded-lg mb-4 bg-white text-black" type="date" wire:model="fecha_final"><br>
+                <input class="w-2-5 rounded-lg mb-4 bg-gray-300 text-black" type="date" wire:model="fecha_final"><br>
             </div>
             </div>
 
