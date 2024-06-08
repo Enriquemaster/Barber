@@ -39,6 +39,10 @@ Route::get('/conocenos', function () {
     return view('conocenos');
 });
 
+Route::get('/tiposmembresia', function () {
+    return view('tiposmembresia');
+});
+
 Route::get('/validacion', function () {
     return view('validacion');
 });
@@ -59,9 +63,6 @@ Route::get('/retos', function () {
     //name ('retos');
 });
 
-Route::get('/tiposmembresia', function () {
-    return view('tiposmembresia');
-});
 
 Route::get('/servicios', function () {
     return view('servicios');
@@ -75,11 +76,12 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::get('/dashboard_admin', function () {
+        return view('dashboard_admin');
+    })->name('dashboard_admin');
 });
 
-Route::get('/dashboard_admin', function () {
-    return view('dashboard_admin');
-})->name('dashboard_admin');
 
 
 Route::view('/agregarRetos', 'agregarRetos')->name( 'agregarRetos');

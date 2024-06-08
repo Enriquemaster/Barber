@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <script src="{{ asset('js/FuncionesBarber.js') }}" defer></script>
@@ -35,7 +36,7 @@
         </div>
     </nav>
 
-    <div class="bg-zinc-700 md:mx-auto">
+    <div class="bg-black md:mx-auto">
         <div class=" mx-auto mt-8">
             @yield('content');
         </div>

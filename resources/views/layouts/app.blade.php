@@ -24,7 +24,7 @@
 
         <div class="min-h-screen bg-black">
             @livewire('navigation-menu')
-    
+
             <!-- Page Heading -->
             @if (isset($header))
                 <header class="bg-[#353231] shadow">
