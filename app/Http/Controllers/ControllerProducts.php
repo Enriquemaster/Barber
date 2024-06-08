@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Products; 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Response;
 
 
 class ControllerProducts extends Controller
@@ -12,6 +14,11 @@ class ControllerProducts extends Controller
     public function registrarProducto(Request $request)
     {
         try {
+            // Verificar si el usuario tiene el permiso 'crear producto'
+            if (!Auth::user()->hasPermissionTo('crear producto')) {
+                return redirect()->route('dashboard')->with('success', true);
+            }
+
             // Validación de campos
             $request->validate([
                 'nombre' => 'required|string|max:255',
@@ -19,19 +26,20 @@ class ControllerProducts extends Controller
                 'marca' => 'required|string',
                 'modelo' => 'required|string',
                 'precio' => 'required|numeric',
-                
             ]);
-    // Procesar la imagen
-    $nombreImagen = null;
-    if ($request->hasFile('foto')) {
-        // Obtener la imagen de la solicitud
-        $imagen = $request->file('foto');
-        // Generar un nombre único para la imagen
-        $nombreImagen = time() . '.' . $imagen->getClientOriginalExtension();
 
-        // Guardar la imagen en la carpeta de almacenamiento
-        $path = $imagen->storeAs('public/Recursos', $nombreImagen);
-    }
+            // Procesar la imagen
+            $nombreImagen = null;
+            if ($request->hasFile('foto')) {
+                // Obtener la imagen de la solicitud
+                $imagen = $request->file('foto');
+                // Generar un nombre único para la imagen
+                $nombreImagen = time() . '.' . $imagen->getClientOriginalExtension();
+
+                // Guardar la imagen en la carpeta de almacenamiento
+                $path = $imagen->storeAs('public/Recursos', $nombreImagen);
+            }
+
             $producto = new Products([
                 'nombre' => $request->input('nombre'),
                 'descripccion' => $request->input('descripccion'),
@@ -39,15 +47,13 @@ class ControllerProducts extends Controller
                 'modelo' => $request->input('modelo'),
                 'precio' => $request->input('precio'),
                 'foto' => $nombreImagen,
-                
             ]);    
             $producto->save();
             
-            return redirect()->route('accionesProductos')->with('success', true);
+            return response()->json(['message' => 'Producto creado con éxito'], 201);
         } catch (\Exception $e) {
-          
             \Log::error('Error al intentar guardar los datos: ' . $e->getMessage());
-            dd($e->getMessage());
+            return response()->json(['message' => 'Error al intentar guardar los datos'], 500);
         }
     }
 //////////////////////////////////////////////////////////////////////////

@@ -1,23 +1,5 @@
 <x-app-layout>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <link rel="stylesheet" href="{{ asset('CSS/style.css') }}">
-    @vite('resources/css/app.css')
-    <title>TecNM Campus Motul</title>
-</head>
-      <html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
-  <body>
+
     <div class="bg-black min-h-screen flex items-center justify-center p-4">
   <div class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-4">
     <div class="bg-zinc-900 p-6 rounded-lg flex flex-col justify-between bg-cover bg-center" style="background-image: url('IMG/Barber.jpg');">
