@@ -83,7 +83,26 @@ class ControllerProducts extends Controller
             'marca' => 'required',
             'modelo' => 'required',
             'precio' => 'required|numeric',
+            'foto' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
+
+        // Procesar la imagen si se ha enviado una nueva
+    if ($request->hasFile('foto')) {
+        $imagen = $request->file('foto');
+        if ($imagen->isValid()) {
+            // Eliminar la imagen existente si hay una
+            if ($producto->foto) {
+                // Eliminar la imagen anterior de la base de datos
+                $producto->update(['foto' => null]);
+            }
+
+            // Convertir la nueva imagen a base64 y asignarla al producto
+            $base64Image = base64_encode(file_get_contents($imagen->getPathname()));
+            $producto->update(['foto' => $base64Image]);
+        } else {
+            return redirect()->back()->with('error', 'Error al cargar la nueva imagen');
+        }
+    }
 
         // Actualiza los datos del producto
         $producto->update([
