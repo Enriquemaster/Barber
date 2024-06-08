@@ -26,19 +26,21 @@ class ControllerProducts extends Controller
                 'marca' => 'required|string',
                 'modelo' => 'required|string',
                 'precio' => 'required|numeric',
+                'foto' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
             ]);
 
             // Procesar la imagen
-            $nombreImagen = null;
-            if ($request->hasFile('foto')) {
-                // Obtener la imagen de la solicitud
-                $imagen = $request->file('foto');
-                // Generar un nombre único para la imagen
-                $nombreImagen = time() . '.' . $imagen->getClientOriginalExtension();
-
-                // Guardar la imagen en la carpeta de almacenamiento
-                $path = $imagen->storeAs('public/Recursos', $nombreImagen);
+        $base64Image = null;
+        if ($request->hasFile('foto')) {
+            // Obtener la imagen de la solicitud
+            $imagen = $request->file('foto');
+            if ($imagen->isValid()) {
+                // Convertir la imagen a base64
+                $base64Image = base64_encode(file_get_contents($imagen->getPathname()));
+            } else {
+                return response()->json(['message' => 'Error al cargar la imagen'], 400);
             }
+        }
 
             $producto = new Products([
                 'nombre' => $request->input('nombre'),
@@ -46,14 +48,19 @@ class ControllerProducts extends Controller
                 'marca' => $request->input('marca'),
                 'modelo' => $request->input('modelo'),
                 'precio' => $request->input('precio'),
+<<<<<<< HEAD
                 'foto' => $nombreImagen,
             ]);
+=======
+                'foto' => $base64Image,
+            ]);    
+>>>>>>> e4d675176645a2a10af43a19f64a6108ba80ffa2
             $producto->save();
 
             return response()->json(['message' => 'Producto creado con éxito'], 201);
         } catch (\Exception $e) {
             \Log::error('Error al intentar guardar los datos: ' . $e->getMessage());
-            return response()->json(['message' => 'Error al intentar guardar los datos'], 500);
+            return response()->json(['message' => 'Error al intentar guardar los datos' ], 500);
         }
     }
 //////////////////////////////////////////////////////////////////////////
@@ -103,6 +110,7 @@ class ControllerProducts extends Controller
       // Método para mostrar los productos
       public function acciones()
       {
+      
           $productos = Products::paginate(8);
           return view('accionesProductos', compact('productos'));
       }

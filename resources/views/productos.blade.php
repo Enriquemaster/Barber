@@ -9,7 +9,7 @@
         <div class="tarjeta rounded-lg shadow p-4 transition duration-300 ease-in-out bg-black hover:bg-zinc-800 text-white shadow-[8px_13px_238px_80px_rgba(45,_44,_42,_0.4)]">
             <div class="flex items-center justify-center" id="imagenquequieroguardar ">
                 <div class="bg-[#B1796C] w-52 h-52 relative rounded-full overflow-hidden shadow-[0px_2px_36px_5px_rgba(232,_167,_43,_0.72)]">
-                    <img src="{{ asset('storage/Recursos/' . $producto->foto) }}" alt="{{ $producto->nombre }}" class="w-full h-full object-cover">
+                    <img src="data:image/jpeg;base64,{{ $producto->foto }}" alt="" class="w-full h-full object-cover">
                 </div>
             </div>
             <h1 class="text-xl font-bold mt-4 text-center">{{ $producto->nombre }}</h1>

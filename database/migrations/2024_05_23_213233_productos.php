@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('marca')->nullable(); // Marca del producto, puede ser nula
             $table->string('modelo')->nullable(); // Modelo del producto, puede ser nula
             $table->decimal('precio', 8, 2); // Precio del producto
-            $table->string('foto')->nullable(); // Foto del producto, puede ser nula
+            $table->longText('foto')->nullable(); // Foto del producto, puede ser nula
             $table->timestamps(); // Campos created_at y updated_at
         });
     }

@@ -40,30 +40,30 @@
           </div>
         </div>
     <form method="post" action="{{ route('registrar-producto') }}"  class="relative z-10" enctype="multipart/form-data">
-              <!-- segundo div-->
-              <div class="flex flex-col space-y-4">
-                  <div class="bg-zinc-800 p-4 rounded-lg flex items-center">     
-                        <div class="mb-4 justify-center text-xs">
-                            <div class="flex items-center justify-center" id="lol">
-                                <input type="file" id="imagenInput" name="foto" class="hidden" accept="image/*">
-                                <div class="bg-amber-400 w-24 h-24 relative rounded-full overflow-hidden">
-                                    <div id="imagenPreview" class="w-full h-full bg-cover bg-center"></div>
-                                    <button type="button" onclick="document.getElementById('imagenInput').click()" class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-20 text-white hover:bg-opacity-50 transition"></button>
-                                </div>
-                            </div>
-                        </div>
-
-                          <div class=" px-4">
-                            <h3 class="p-2 text-amber-400 text-3xl font-thin" id="barbero">Cargar imagen del producto</h3>
-                            <p class="text-zinc-400 " id="contenido">Carga una imagen referente a el producto <br>lo mas clara posible. </p>
-                          </div>
-                  </div>
+    @csrf
+    <div class="flex flex-col space-y-4">
+        <div class="bg-zinc-800 p-4 rounded-lg flex items-center">
+            <div class="mb-4 justify-center text-xs">
+                <div class="flex items-center justify-center" id="lol">
+                    <input type="file" id="imagenInput" name="foto" class="hidden" accept="image/*">
+                    <div class="bg-amber-400 w-24 h-24 relative rounded-full overflow-hidden">
+                        <div id="imagenPreview" class="w-full h-full bg-cover bg-center"></div>
+                        <button type="button" onclick="document.getElementById('imagenInput').click()" class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-20 text-white hover:bg-opacity-50 transition"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="px-4">
+                <h3 class="p-2 text-amber-400 text-3xl font-thin" id="barbero">Cargar imagen del producto</h3>
+                <p class="text-zinc-400" id="contenido">Carga una imagen referente al producto lo más clara posible.</p>
+            </div>
+        </div>
+      
 
 
                   <!-- tercer div-->
                   <div class=" px-20 rounded-lg shadow-md w-full bg-zinc-800"> 
 
-                  @csrf
+                
                   <div class="mb-4  justify-center">
                   <div class="flex items-center justify-center" id="lol">
                   <h1 class="p-2 text-amber-400 text-4xl font-normal" id="barbero" >Datos del producto</h1>
