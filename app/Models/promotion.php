@@ -13,6 +13,7 @@ class promotion extends Model
         'descripcion',
         'fecha_inicio',
         'fecha_final',
+        'imagen',
     ];
 
     public function Memeber()

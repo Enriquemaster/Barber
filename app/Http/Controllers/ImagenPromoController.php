@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Member;
-use App\Models\promotion;
 use Illuminate\Http\Request;
 
-class PromotionController extends Controller
+class ImagenPromoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -35,17 +34,23 @@ class PromotionController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
-        $promotions = Member::find($id);
-        return view('agregarPromociones', compact('promotions'));
+        $promocion = Member::findOrFail($id);
 
+        // Asegúrate de que la propiedad 'imagen' esté disponible y sea la correcta
+        if ($promocion->promotion && $promocion->promotion->imagen) {
+            $imagePath = storage_path('app/public/' . $promocion->promotion->imagen);
+            return response()->file($imagePath);
+        }
+
+        return response()->json(['error' => 'Imagen no encontrada'], 404);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(promotion $promotion)
+    public function edit(string $id)
     {
         //
     }
@@ -53,7 +58,7 @@ class PromotionController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, promotion $promotion)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -61,19 +66,8 @@ class PromotionController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(promotion $promotion)
+    public function destroy(string $id)
     {
         //
-    }
-
-    public function promocionesClientes()
-    {
-
-        $promotions = Member::join('promotions', 'promotions.id', '=', 'members.promotion_id')
-            ->select('members.*', 'promotions.titulo', 'promotions.descripcion', 'promotions.fecha_inicio', 'promotions.fecha_final')
-            ->whereNotNull('members.promotion_id')
-            ->get();
-
-        return view('promocionesClientes', compact('promotions'));
     }
 }
