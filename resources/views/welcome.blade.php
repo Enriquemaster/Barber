@@ -16,7 +16,7 @@
             <h2 class="text-2xl md:text-4xl text-white text-center" id="titulo">INTRODUCCIÓN</h2>
 
            <div class="md:text-left mt-4 px-3">
-              <p class=" text-white text-justify md:text-justify md:text-2xl montserrat md:px-6 indent-6" id="contenido"> The Barber's House va más allá de ser simplemente una barbería. Desde su establecimiento en octubre de 2023, se ha comprometido a cultivar un estilo moderno-clásico, donde la personalización y la atención al cliente son nuestras joyas más preciadas. No solo proporcionamos servicios de calidad, sino que también ofrecemos una selección de productos profesionales para el cuidado del cabello.--}}
+              <p class=" text-white text-justify md:text-justify md:text-2xl montserrat md:px-6 indent-6" id="contenido"> The Barber's House va más allá de ser simplemente una barbería. Desde su establecimiento en octubre de 2023, se ha comprometido a cultivar un estilo moderno-clásico, donde la personalización y la atención al cliente son nuestras joyas más preciadas. No solo proporcionamos servicios de calidad, sino que también ofrecemos una selección de productos profesionales para el cuidado del cabello.
                 </p>
             </div>
        </div>
@@ -68,7 +68,6 @@
         </div>
     </div>
 
-
     <div class="flex justify-center" x-data="{ current: 0, interval: null, images: ['IMG/Corte1.png', 'IMG/Corte2.png', 'IMG/Corte3.png', 'IMG/Corte4.png', 'IMG/Corte5.png', 'IMG/Corte2.png'] }" x-init="interval = setInterval(() => { current = (current + 1) % (images.length * 3) }, 3000)">
         <div class="w-3/4 overflow-hidden py-10">
             <h3 class="text-white text-center Bodoni md:text-3xl" id="titulo">Nuestro trabajo</h3>
@@ -80,10 +79,6 @@
                         </div>
                     </template>
                 </div>
-            </div>
-            <div class="absolute inset-0 flex items-center justify-between">
-                <button @click="current = (current > 0) ? current - 1 : images.length * 3 - 1" class="bg-gray-800 text-white px-4 py-2 rounded-full">←</button>
-                <button @click="current = (current < images.length * 3 - 1) ? current + 1 : 0" class="bg-gray-800 text-white px-4 py-2 rounded-full">→</button>
             </div>
         </div>
     </div>
@@ -120,7 +115,6 @@
             <button class="bg-black text-white py-2 px-4 mt-8 rounded-md">SABER MÁS</button>
         </div>
     </div>
-
 
     <div class="flex flex-col md:flex-row items-center  md:items-start bg-zinc-900 py-10">
         <div class="p-8 md:w-1/2 text-center">

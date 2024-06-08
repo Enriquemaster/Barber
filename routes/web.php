@@ -3,13 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ControllerProducts;
 use App\Http\Controllers\ControllerServices;
-/*
-Rutas Clientes
-*/
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
 
 
 //Productos

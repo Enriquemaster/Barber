@@ -7,7 +7,7 @@
             {{-- Condición para verificar si hay datos --}}
             @if($retos->isEmpty())
                 {{-- Si no hay datos, muestra un mensaje --}}
-                <p>No hay retos existentes</p>
+                <p class="text-white">No hay retos existentes</p>
             @else
                 {{-- Si hay datos, itera sobre ellos --}}
                 @foreach ($retos as $reto)
