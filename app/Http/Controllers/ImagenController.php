@@ -34,11 +34,17 @@ class ImagenController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
-        $retos = Member::findOrFail($id);
+        $reto = Member::findOrFail($id);
 
-        return response($retos->imagen)->header('Content-Type', 'image/jpeg');
+        // Asegúrate de que la propiedad 'imagen' esté disponible y sea la correcta
+        if ($reto->challenge && $reto->challenge->imagen) {
+            $imagePath = storage_path('app/public/' . $reto->challenge->imagen);
+            return response()->file($imagePath);
+        }
+
+        return response()->json(['error' => 'Imagen no encontrada'], 404);
     }
 
     /**

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->text('recompensa');
             $table->date('fecha_inicio');
             $table->date('fecha_final');
-            $table->string('image_url')->nullable();
+            $table->string('imagen')->nullable();
             $table->timestamps();
 
         });

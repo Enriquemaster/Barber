@@ -6,6 +6,7 @@ use App\Http\Controllers\ControllerServices;
 
 
 
+
 //Productos
 Route::get('/productos', function () {
     return view('productos');
@@ -97,7 +98,7 @@ Route::middleware([
 });
 
 
-
+Route::get('image/{id}', [\App\Http\Controllers\ImagenController::class, 'show'])->name('image.show');
 Route::view('/agregarRetos', 'agregarRetos')->name( 'agregarRetos');
 //Route::get('/retos/{id}/editar', \App\Livewire\UpdateChallenge::class)->name('retos.editar');
 //Route::get('/retos/{id}', [\App\Http\Controllers\ChallengeController::class, 'show'])->name('agregarRetos');

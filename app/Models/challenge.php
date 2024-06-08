@@ -14,7 +14,7 @@ class Challenge extends Model
         'recompensa',
         'fecha_inicio',
         'fecha_final',
-        'image_url',
+        'imagen',
     ];
 
     public function members()
