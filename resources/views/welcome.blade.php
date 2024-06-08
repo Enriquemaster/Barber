@@ -10,32 +10,30 @@
     </div>
     <h1 class="absolute md:top-96 top-72 md:left-40 md:right-40 text-white text-center Bodoni md:text-5xl" name="Eslogan" id="Eslogan">DONDE EL ARTE DE SER BARBERO LE DA <hr> <hr> DISTINCIÓN AL CABALLERO <hr></h1>
     <a  href="{{url('/agendar')}}" class="absolute bg-yellow-600 text-white text-xl px-5 rounded-full hover:bg-yellow-800 focus:outline-none focus:ring focus:border-blue-100 md:px-10 md:py-2 Bodoni top-1/4 left-1/4  md:top-1/2 md:left-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2 md:translate-y-40 "name="agendar" id="agendar">Agendar cita</a>
+ <div class="flex flex-col md:flex-row p-4 md:p-8 text-center md:text-left items-center w-full md:w-11/12 mx-auto">
+       <div class="flex-1 md:mt-4 md:p-4 md:flex md:flex-col md:items-start">
 
-{{--    <div class="flex flex-col md:flex-row p-4 md:p-8 text-center md:text-left items-center w-full md:w-11/12 mx-auto">--}}
-{{--        <div class="flex-1 md:mt-4 md:p-4 md:flex md:flex-col md:items-start">--}}
+            <h2 class="text-2xl md:text-4xl text-white text-center" id="titulo">INTRODUCCIÓN</h2>
 
-{{--            <h2 class="text-2xl md:text-4xl text-white text-center" id="titulo">INTRODUCCIÓN</h2>--}}
+           <div class="md:text-left mt-4 px-3">
+              <p class=" text-white text-justify md:text-justify md:text-2xl montserrat md:px-6 indent-6" id="contenido"> The Barber's House va más allá de ser simplemente una barbería. Desde su establecimiento en octubre de 2023, se ha comprometido a cultivar un estilo moderno-clásico, donde la personalización y la atención al cliente son nuestras joyas más preciadas. No solo proporcionamos servicios de calidad, sino que también ofrecemos una selección de productos profesionales para el cuidado del cabello.--}}
+                </p>
+            </div>
+       </div>
 
-{{--            <div class="md:text-left mt-4 px-3">--}}
-{{--                <p class=" text-white text-justify md:text-justify md:text-2xl montserrat md:px-6 indent-6" id="contenido">--}}
-{{--                    The Barber's House va más allá de ser simplemente una barbería. Desde su establecimiento en octubre de 2023, se ha comprometido a cultivar un estilo moderno-clásico, donde la personalización y la atención al cliente son nuestras joyas más preciadas. No solo proporcionamos servicios de calidad, sino que también ofrecemos una selección de productos profesionales para el cuidado del cabello.--}}
-{{--                </p>--}}
-{{--            </div>--}}
-{{--        </div>--}}
+       <div class="flex md:flex-col  md:items-center">
+            <img src="{{ asset('IMG/imagen3.jpeg')}}" alt="Imagen 1" class="w-1/2 f-1/2 md:w-full md:h-auto  transform scale-80 p-4 mb-2 md:mb-0 mx-auto">
+        </div>
 
-{{--        <div class="flex md:flex-col  md:items-center">--}}
-{{--            <img src="{{ asset('IMG/imagen3.jpeg')}}" alt="Imagen 1" class="w-1/2 f-1/2 md:w-full md:h-auto  transform scale-80 p-4 mb-2 md:mb-0 mx-auto">--}}
-{{--        </div>--}}
-
-{{--        <div class="flex md:flex-col md:items-center">--}}
-{{--            <div class="max-w-full">--}}
-{{--                <img src="{{ asset('IMG/imagen1.jpeg')}}" alt="Imagen 2" class="h-auto transform scale-60 p-6 mb-2 md:mb-0">--}}
-{{--            </div>--}}
-{{--            <div class="max-w-full">--}}
-{{--                <img src="{{ asset('IMG/imagen2.jpeg')}}" alt="Imagen 3" class="h-auto transform scale-60 p-6">--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
+        <div class="flex md:flex-col md:items-center">
+            <div class="max-w-full">
+               <img src="{{ asset('IMG/imagen1.jpeg')}}" alt="Imagen 2" class="h-auto transform scale-60 p-6 mb-2 md:mb-0">
+           </div>
+           <div class="max-w-full">
+               <img src="{{ asset('IMG/imagen2.jpeg')}}" alt="Imagen 3" class="h-auto transform scale-60 p-6">
+            </div>
+       </div>
+    </div>
     <div class="flex flex-col items-center justify-center p-10 bg-[#2E2E2E]">
         <div class="flex flex-col md:flex-row items-center mx-auto px-4 w-full">
             <div class="md:w-2/3">
