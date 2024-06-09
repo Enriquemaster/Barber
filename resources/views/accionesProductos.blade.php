@@ -1,6 +1,5 @@
-      @vite(['resources/css/app.css', 'resources/js/app.js'])
-@role('Administrador')
 
+@role('Administrador')
 <x-app-layout>
 <div class="p-10 bg-black">
         <div class="max-w-7xl mx-auto  sm:px-6 lg:px-8">
@@ -89,8 +88,9 @@
 
     @endrole
 
-    @role('Cliente')
-
+   
+    @role('Cliente|Cliente-premium')
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 <div class="bg-black h-screen flex items-center justify-center">
     <img src="{{ asset('IMG/robot-403.png') }}" alt="No estas autorizado para ver esto" class="h-1/2">
 </div>

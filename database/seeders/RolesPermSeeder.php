@@ -65,17 +65,17 @@ class RolesPermSeeder extends Seeder
         $role2->givePermissionTo('ver productos');
         $role2->givePermissionTo('ver productos');
         //////////////////////////////////////////
-
-        $role3 = Role::create(['name' => 'Super-Admin']);
+        $role3 = Role::create(['name' => 'Cliente-premium']);
+        $role4 = Role::create(['name' => 'Super-Admin']);
 
         // ID del usuario existente
-        $userId = 1; // Cambia esto al ID del usuario que quieres asignar el rol
-        $userId2 = 2; // Cambia esto al ID del usuario que quieres asignar el rol
+        //$userId = 1; // Cambia esto al ID del usuario que quieres asignar el rol
+        //$userId2 = 2; // Cambia esto al ID del usuario que quieres asignar el rol
         // Obtener el usuario por su ID
-        $user = User::find($userId);
-        $user2 = User::find($userId2);
+        // $user = User::find($userId);
+       //  $user2 = User::find($userId2);
 
-        $user->assignRole($role1);
-        $user2->assignRole($role2);
+       //  $user->assignRole($role1);
+       //  $user2->assignRole($role2);
     }
     }

@@ -41,6 +41,12 @@ class User extends Authenticatable
     {
         return $this->belongsTo(customer::class);
     }
+
+    public function premiumCodes()
+    {
+        return $this->belongsToMany(membership_owner::class, 'tb_membership_owner', 'user_id', 'code_id')->withTimestamps();
+    }
+    
     /**
      * The attributes that should be hidden for serialization.
      *
