@@ -1,126 +1,71 @@
 <x-app-layout>
-
- <div class="flex items-center justify-center text-white text-5xl h-full">
-
-
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-  <div class="bg-zinc-900 text-white xl:p-8 p-4 rounded-lg space-y-4 h-full ">
-    <div class="flex flex-col md:flex-row items-center justify-between md:space-y-0 bg-zinc-900 rounded-lg  ">
-  <div class="relative flex flex-col items-center justify-center md:items-start md:w-3/4 bg-zinc-900 rounded-lg mr-4 md:h-60">
-    <video autoplay muted loop class="w-full h-full object-cover opacity-50">
-      <source src="VIDEO/Fondo1.mp4" type="video/mp4">
-      Tu navegador no soporta la reproducción de videos.
-    </video>
-    <h1 class="absolute inset-0 flex items-center justify-center text-white text-3xl md:text-4xl"  id="titulodashboard">Barber House</h1>
+    <div class="flex items-center justify-center bg-black bg-cover bg-center bg-no-repeat bg-opacity-50 w-full relative ">
+        <img src="{{ asset('IMG/dash-Cliente.png') }}" alt="login" class="object-cover w-1/2 h-full" />
     </div>
+    <div>
+        <a href="{{ url('/agendar') }}"
+           class="absolute bg-white text-black text-xl rounded-md px-5 hover:bg-yellow-800 focus:outline-none focus:ring focus:border-blue-100 md:px-10 md:py-2 Bodoni left-1/2 top-20 md:top-40 md:left-1/2 transform -translate-x-1/2"
+           id="agendar">Agendar cita</a>
+    </div>
+    <div class="container mx-auto px-4 py-8">
+        <h2 class="text-center text-3xl font-bold mb-8 text-white">¡Bienvenido a The Barber's House!</h2>
+        <h1 class="text-white p-5">
+            Nos alegra tenerte de vuelta, {{ Auth::user()->name }}. Estamos aquí para asegurarnos de que siempre luzcas tu mejor versión. Aquí tienes todo lo que necesitas para tu cuidado personal:
+        </h1>
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div class="text-center  transform transition duration-300 hover:scale-105 h-ful">
+                <p class="text-white text-xl font-semibold p-5">SERVICIOS</p>
+            <div x-data="{ current: 0 }" x-init="setInterval(() => current = (current + 1) % 3, 3000)" class="relative w-full h-64 overflow-hidden">
+                <div x-show="current === 0" class="absolute inset-0 transition-all duration-1000 px-5">
+                    <img src="{{ asset('Servis/Serv1.png') }}" alt="Corte de Cabello" class="w-full h-full object-cover">
+                </div>
+                <div x-show="current === 1" class="absolute inset-0 transition-all duration-1000">
+                    <img src="{{ asset('Servis/Serv2.jpg') }}" alt="Arreglo de Barba" class="w-full h-full object-cover">
+                </div>
+                <div x-show="current === 2" class="absolute inset-0 transition-all duration-1000">
+                    <img src="{{ asset('Servis/Serv3.jpg') }}" alt="Servicio de Limpieza Facial" class="w-full h-full object-cover">
+                </div>
+            </div>
+                <br><a href="/productos" class="bg-yellow-500 text-white text-bold px-6 py-2 px-5 rounded">VER MÁS</a>
+            </div>
+            <div class="text-center  transform transition duration-300 hover:scale-105 h-ful">
+                <p class="text-white text-xl font-semibold p-5">PROMOCIONES Y DESCUENTOS</p>
+                <img src="{{ asset('Servis/Promo.jpeg') }}" alt="Arreglo de Barba" class="w-full h-auto mb-4">
 
-    <div class="flex mt-4">
-    <p class="text-center bg-zinc-800 rounded-l-lg " id="titulodashboard" >Obten tu membresia</p>
-        <!-- Carrusel de imágenes -->
-        <div class="relative w-64 h-64 overflow-hidden bg-zinc-800 rounded-r-lg">
-            <img src="IMG/Producto1.png" alt="Imagen 1" class="carousel-image w-full h-full object-cover rounded-lg absolute transition-transform duration-1000 transform translate-x-0">
-            <img src="IMG/Producto2.png" alt="Imagen 2" class="carousel-image w-full h-full object-cover rounded-lg absolute transition-transform duration-1000 transform translate-x-full">
-            <img src="IMG/Producto3.png" alt="Imagen 3" class="carousel-image w-full h-full object-cover rounded-lg absolute transition-transform duration-1000 transform translate-x-full">
-            <!-- Agrega más imágenes según sea necesario -->
+            </div>
+            <div class="text-center  transform transition duration-300 hover:scale-105 h-ful">
+                <p class="text-white text-xl font-semibold p-5">NUESTROS DESAFÍOS</p>
+                <img src="https://placehold.co/600x400" alt="Servicio de Limpieza Facial" class="w-full h-auto mb-4">
+
+            </div>
         </div>
+    </div>
+    <div class=" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <h2 class="text-3xl font-extrabold text-center text-white mb-8">NUESTROS PRODUCTOS</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-white ">
+            <div class="text-center  transform transition duration-300 hover:scale-105 h-ful">
+                <img src="{{ asset('Products/Pomada-red.png') }}" alt="Pomada Clásica, Capital Grooming, 3.4 oz" class="mx-auto mb-4">
+                <h3 class="text-lg font-medium">POMADA CLÁSICA, CAPITAL GROOMING, 3.4 OZ</h3>
+                <p class="text-zinc-500">$ 320.00</p>
+            </div>
+            <div class="text-center  transform transition duration-300 hover:scale-105 h-ful">
+                <img src="{{ asset('Products/Pomada-blue.png') }}" alt="Pomada Mate, Capital Grooming, 3.4 oz" class="mx-auto mb-4">
+                <h3 class="text-lg font-medium">POMADA MATE, CAPITAL GROOMING, 3.4 OZ</h3>
+                <p class="text-zinc-500">$ 320.00</p>
+            </div>
+            <div class="text-center  transform transition duration-300 hover:scale-105 h-ful">
+                <img src="{{ asset('Products/Pomada-green.png') }}"alt="Bálsamo para Barba Aroma Lavanda, Don Porfirio, 80 g" class="mx-auto mb-4">
+                <h3 class="text-lg font-medium">BÁLSAMO PARA BARBA AROMA LAVANDA, DON PORFIRIO, 80 G</h3>
+                <p class="text-zinc-500">$ 398.00</p>
+            </div>
+            <div class="text-center  transform transition duration-300 hover:scale-105 h-ful">
+                <img src="{{ asset('Products/Pomada-yellow.png') }}" alt="Bálsamo para Barba, Man's Face Stuff, 3.6oz" class="mx-auto mb-4">
+                <h3 class="text-lg font-medium">BÁLSAMO PARA BARBA, MAN'S FACE STUFF, 3.6OZ</h3>
+                <p class="text-zinc-500">$ 320.00</p>
+            </div>
         </div>
-        
-    </div>
-
-    
-    
-  <div class="grid grid-cols-1 md:grid-cols-4 gap-4 pb-4">
-  <a href="/servicios">
-    <div class="bg-zinc-800 p-4 m-2 rounded-lg flex flex-col items-center transform transition duration-300 hover:scale-105 h-full" id="carouselContainer " >
-      <p class="text-center" id="titulodashboard">Servicios</p>
-      <img src="{{ asset('Icons/Product.png') }}" alt="High-quality Icons" class="w-auto h-56 mt-2 ">
-      <p class="text-center text-2xl" id="contenido">Disfrute de todos nuestros servicios</p>
-    </div> 
-    </a>
-
-    <a href="/productos">
-    <div class="bg-zinc-800 p-4 m-2 rounded-lg flex flex-col items-center transform transition duration-300 hover:scale-105 h-full">
-      <p class="text-center " id="titulodashboard" >Productos</p>
-      <img src="{{ asset('Icons/Product.png') }}" alt="High-quality Icons" class="w-auto h-56 mt-2 ">
-      <p class="text-center text-2xl" id="contenido">Los mejores productos a mejor precio</p>
-    </div>
-    </a>
-
-    <a href="/citas">
-    <div class="bg-zinc-800 p-4 m-2 rounded-lg flex flex-col items-center transform transition duration-300 hover:scale-105 h-full">
-      <p class="text-center" id="titulodashboard">Agenda tu cita</p>
-      <img src="{{ asset('Icons/Citas.png') }}" alt="High-quality Icons" class="w-full h-48 mt-8">
-      <p class="text-center text-2xl" id="contenido">Agenda tu cita te estamos esperando</p>
-    </div>
-    </a>
-
-    <a href="/retos">
-    <div class="bg-zinc-800 p-4 m-2 rounded-lg flex flex-col items-center transform transition duration-300 hover:scale-105 h-full">
-      <p class="text-center" id="titulodashboard">Conoce nuestros retos</p>
-<img src="{{ asset('Icons/Retos.png') }}" alt="High-quality Icons" class="w-auto h-48 mt-8 p-2">
-<p class="text-center text-2xl" id="contenido">Los mejores retos</p>
-    </div>
-  </div>
-  </a>
-  
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:h-full">
-       <!-- <div class="bg-zinc-800 p-4 rounded-lg flex flex-col items-center">
-      <p class="text-center text-7xl" id="titulodashboard" >Tenemos la mejor<br> valoración </p>
-      <div class="mt-4 w-full">
-        <div class="flex justify-between text-sm">
-          <span id="contenido">Clientes <br>felices</span>
-          <span id="contenido">Estan a gusto <br>con el servicio</span>
-     
-     
+        <div class="text-center mt-8">
+            <a href="/productos" class="bg-yellow-500 text-white text-bold px-6 py-2 rounded">VER TODO</a>
         </div>
-        <div class="flex justify-between text-sm mt-2">
-          <span id="contenido">Porcentaje</span>
-          <span id="contenido">75%</span>
-         
-        </div>
-        <div class="mt-4">
-          <div class="bg-purple-600 h-1 rounded-full" style="width: 75%;"></div>
-        </div>
-      </div>
     </div>
-    <div class="bg-zinc-800 p-4 rounded-lg flex flex-col items-center">
-      <p class="text-center">....</p>
-
-      <button class="mt-4 bg-purple-600 text-white py-2 px-4 rounded-lg">Button</button>
-    </div>
-  </div>-->
-</div>
- </div>
 </x-app-layout>
-
-<script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const images = document.querySelectorAll('.carousel-image');
-            let currentIndex = 0;
-
-            function showNextImage() {
-                const totalImages = images.length;
-                const currentImage = images[currentIndex];
-                currentIndex = (currentIndex + 1) % totalImages;
-                const nextImage = images[currentIndex];
-
-                // Move current image out of view
-                currentImage.classList.remove('translate-x-0');
-                currentImage.classList.add('translate-x-full');
-
-                // Prepare next image to slide in
-                nextImage.classList.remove('hidden');
-                nextImage.classList.remove('translate-x-full');
-                nextImage.classList.add('translate-x-0');
-
-                // Hide the current image after the animation
-                setTimeout(() => {
-                    currentImage.classList.add('hidden');
-                    currentImage.classList.remove('translate-x-full');
-                }, 800); // Duration of the transition
-            }
-
-            setInterval(showNextImage, 6500); // Cambia de imagen cada 2.5 segundos
-        });
-    </script>
-

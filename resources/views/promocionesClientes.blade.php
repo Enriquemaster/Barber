@@ -3,7 +3,7 @@
 @endphp
 <x-app-layout>
     <div class="bg-black text-white p-8">
-        <h2 class="text-center text-2xl font-bold mb-8">NUESTROS RETOS</h2>
+        <h2 class="text-center text-2xl font-bold mb-8">NUESTRAS PROMOCIONES Y DESCUENTOS</h2>
         @if($promotions->isEmpty())
             <p class="text-white">No hay retos existentes</p>
         @else
