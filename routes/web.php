@@ -3,8 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ControllerProducts;
 use App\Http\Controllers\ControllerServices;
-
-
+use App\Http\Controllers\controllerCodes;
+use App\Http\Controllers\controllerMembershipOwner;
 
 
 //Productos
@@ -76,8 +76,29 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/retosClientes', [\App\Http\Controllers\ChallengeController::class, 'retosClientes'])->name('retos.clientes');
+Route::get('/registrarMembresia', function () {
+    return view('registrarMembresia');
+});
 
+Route::get('/accionesMembresias', function () {
+    return view('accionesMembresias');
+});
+
+Route::get('/tuMembresia', function () {
+    return view('tuMembresia');
+ 
+});
+
+Route::get('/falloMembresia', function () {
+    return view('falloMembresia');
+})->name('falloMembresia');
+
+
+Route::post('/accionesMembresias', [controllerCodes::class, 'generarMembresia'])->name('accionesMembresias');
+Route::post('/registrarMembresia', [controllerMembershipOwner::class, 'verificarMembresia'])->name('registrarMembresia');
+Route::get('/accionesMembresias', [controllerMembershipOwner::class, 'obtenerDatosMembresias'])->name('accionesMembresias');
+Route::get('/registrarMembresia', [controllerMembershipOwner::class, 'mostrarDatos1'])->name('tuMembresia');
+Route::get('/retosClientes', [\App\Http\Controllers\ChallengeController::class, 'retosClientes'])->name('retos.clientes');
 Route::get('/promocionesClientes', [\App\Http\Controllers\PromotionController::class, 'promocionesClientes'])->name('promotions.clientes');
 
 
