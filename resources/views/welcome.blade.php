@@ -8,15 +8,14 @@
         Tu navegador no soporta la reproducción de videos.
     </video>
     </div>
-    <h1 class="absolute md:top-96 top-72 md:left-20 md:right-20 text-white text-center Bodoni md:text-5xl" name="Eslogan" id="Eslogan">DONDE EL ARTE DE SER BARBERO LE DA DISTINCIÓN AL CABALLERO </h1>
-    <a  href="{{url('/agendar')}}" class="absolute bg-yellow-600 text-white md:text-xl px-5 rounded-md hover:bg-yellow-800 focus:outline-none focus:ring focus:border-blue-100 md:px-10 md:py-2 Bodoni top-1/3 left-1/3  md:top-1/2 md:left-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2 md:translate-y-40 " id="agendar">Agendar cita</a>
+    <h1 class="absolute md:top-96 top-72 md:left-20 md:right-20 text-white text-center font-dmserifdisplay md:text-5xl" name="Eslogan" >DONDE EL ARTE DE SER BARBERO LE DA DISTINCIÓN AL CABALLERO </h1>
  <div class="flex flex-col md:flex-row p-4 md:p-8 text-center md:text-left items-center w-full md:w-11/12 mx-auto">
        <div class="flex-1 md:mt-4 md:p-4 md:flex md:flex-col md:items-start">
 
-            <h2 class="text-2xl md:text-4xl text-white text-center" id="titulo">INTRODUCCIÓN</h2>
+            <h2 class="text-2xl md:text-4xl text-white text-center font-bodoni">INTRODUCCIÓN</h2>
 
            <div class="md:text-left mt-4 px-3">
-              <p class=" text-white text-justify md:text-justify md:text-2xl montserrat md:px-6 indent-6" id="contenido"> The Barber's House va más allá de ser simplemente una barbería. Desde su establecimiento en octubre de 2023, se ha comprometido a cultivar un estilo moderno-clásico, donde la personalización y la atención al cliente son nuestras joyas más preciadas. No solo proporcionamos servicios de calidad, sino que también ofrecemos una selección de productos profesionales para el cuidado del cabello.
+              <p class=" text-white text-justify  md:text-xl font-montserrat md:px-6 ">The Barber's House va más allá de ser simplemente una barbería. Desde su establecimiento en octubre de 2023, se ha comprometido a cultivar un estilo moderno-clásico, donde la personalización y la atención al cliente son nuestras joyas más preciadas. No solo proporcionamos servicios de calidad, sino que también ofrecemos una selección de productos profesionales para el cuidado del cabello.
                 </p>
             </div>
        </div>
@@ -34,7 +33,7 @@
             </div>
        </div>
     </div>
-    <div class="flex flex-col items-center justify-center p-10 bg-zinc-900">
+    <div class="flex flex-col items-center justify-center p-10 bg-zinc-900 font-montserrat">
         <div class="flex flex-col md:flex-row items-center mx-auto px-4 w-full">
             <div class="md:w-2/3">
                 <h1 class="text-4xl font-bold mb-4 text-white">SERVICIOS DE <span class="text-yellow-500">BARBERÍA</span></h1>
@@ -58,7 +57,7 @@
                         <li class="font-bold">SERVICIOS PREMIUM</li>
                     </ul>
                 </div>
-                <button class="mt-6 bg-yellow-500 text-white py-2 px-4 rounded hover:bg-yellow-600">Ver más</button>
+                <button class="mt-6 font-montserrat font-bold bg-yellow-500 text-white py-2 px-4 rounded hover:bg-yellow-600">Ver más</button>
             </div>
             <div class="md:w-1/3 flex justify-center">
                 <div class="bg-yellow-500 rounded-full w-32 h-32 md:w-1/2 md:h-1/2 flex items-center justify-center">

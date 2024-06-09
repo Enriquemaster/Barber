@@ -17,11 +17,11 @@ class EliminarMembresia extends Component
 
             <x-confirmation-modal wire:model="modal">
                 <x-slot:title>
-                    <h1 class="text-2xl font-bold text-black ">Eliminar Membresia</h1>
+                    <h1 class="text-2xl font-bold text-black text-white">Eliminar Membresia</h1>
                 </x-slot:title>
                 <x-slot:content>
-                    <p class="text-xl">Esto borrará la Membresia con el usuario asociado y ya no sera cliente premium.</p>
-                    <p class="text-xl">¿Está seguro de hacerlo?</p>
+                    <p class="text-xl text-white">Esto borrará la Membresia con el usuario asociado y ya no sera cliente premium.</p>
+                    <p class="text-xl text-white">¿Está seguro de hacerlo?</p>
                 </x-slot:content>
                 <x-slot:footer>
                     <x-button wire:click="confirmar()">Eliminar Membresia</x-button>
@@ -39,7 +39,7 @@ class EliminarMembresia extends Component
 
     }
 
-    
+
     public function confirmar(){
 
         // Obtener el usuario asociado a la membresía

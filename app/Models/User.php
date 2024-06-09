@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
@@ -46,7 +47,12 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(membership_owner::class, 'tb_membership_owner', 'user_id', 'code_id')->withTimestamps();
     }
-    
+
+    public function citas(): BelongsToMany
+    {
+        return $this->belongsToMany(Citas::class, 'user_cita', 'user_id', 'cita_id')->withTimestamps();
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *

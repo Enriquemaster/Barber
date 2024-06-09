@@ -15,7 +15,10 @@ export default {
         extend: {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
-                'futura': ['Futura', 'sans-serif'],
+                futura: ['Futura', 'sans-serif'],
+                bodoni: ['Bodoni', 'serif'], // Agrega Bodoni
+                montserrat: ['Montserrat', 'sans-serif'], // Agrega Montserrat
+                dmserifdisplay: ['DM Serif Display', 'serif'], // Agrega DM Serif Display
             },
             height: {
                 '80vh': '80vh',

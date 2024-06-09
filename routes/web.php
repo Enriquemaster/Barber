@@ -86,7 +86,7 @@ Route::get('/accionesMembresias', function () {
 
 Route::get('/tuMembresia', function () {
     return view('tuMembresia');
- 
+
 });
 
 Route::get('/falloMembresia', function () {
@@ -121,6 +121,8 @@ Route::get('/retos/{id}/recompensa', [\App\Http\Controllers\ChallengeController:
 
 Route::get('image/{id}', [\App\Http\Controllers\ImagenController::class, 'show'])->name('image.show');
 Route::get('promotion/image/{id}', [\App\Http\Controllers\ImagenPromoController::class, 'show'])->name('promotion.image.show');
+
+Route::view('/agendar', 'agendar')->name( 'agendar');
 
 Route::view('/agregarPromociones', 'agregarPromociones')->name( 'agregarPromociones');
 Route::view('/agregarRetos', 'agregarRetos')->name( 'agregarRetos');

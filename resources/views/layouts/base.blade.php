@@ -16,7 +16,10 @@
 </head>
 <body class="bg-black">
 <nav class="bg-black w-full text-white flex flex-col md:flex-row md:text-center md:px-7 md:py-5 justify-center items-center">
-    <div class="flex flex-col md:flex-row md:gap-5 mt-4 text-center Bodoni">
+
+    <div class="flex flex-col md:flex-row md:gap-5 mt-4 text-center font-bodoni">
+       <img src="{{ asset('IMG/TheBarber3.png')}}" alt="logotipo" class="w-32 h-10 md:w-64 md:h-20 md:top-4" />
+
         <ul class="py-1 hover:underline">
             <li><a href="{{ url('/') }}">Inicio</a></li>
         </ul>
@@ -36,7 +39,7 @@
         @yield('content')
     </div>
 </div>
-<footer class="bg-[#272622] text-white w-full py-2 px-4 montserrat">
+<footer class="bg-[#272622] text-white w-full py-2 px-4 font-montserrat">
     <div class="container mx-auto justify-center">
         <div class="footer-content text-center">
             <a>© Copyright 2022 - The Barber's House</a>
