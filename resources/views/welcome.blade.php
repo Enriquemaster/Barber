@@ -2,14 +2,14 @@
 
 @section('content')
 
-    <div class="bg-black bg-cover bg-center bg-no-repeat bg-opacity-50 w-full h-full relative px-20">
+    <div class="bg-black bg-cover bg-center bg-no-repeat bg-opacity-50 w-full h-full relative md:px-36">
     <video autoplay muted loop class="w-full h-full object-cover opacity-50">
         <source src="VIDEO/Fondo1.mp4" type="video/mp4">
         Tu navegador no soporta la reproducción de videos.
     </video>
     </div>
-    <h1 class="absolute md:top-96 top-72 md:left-40 md:right-40 text-white text-center Bodoni md:text-5xl" name="Eslogan" id="Eslogan">DONDE EL ARTE DE SER BARBERO LE DA <hr> <hr> DISTINCIÓN AL CABALLERO <hr></h1>
-    <a  href="{{url('/agendar')}}" class="absolute bg-yellow-600 text-white text-xl px-5 rounded-full hover:bg-yellow-800 focus:outline-none focus:ring focus:border-blue-100 md:px-10 md:py-2 Bodoni top-1/4 left-1/4  md:top-1/2 md:left-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2 md:translate-y-40 "name="agendar" id="agendar">Agendar cita</a>
+    <h1 class="absolute md:top-96 top-72 md:left-20 md:right-20 text-white text-center Bodoni md:text-5xl" name="Eslogan" id="Eslogan">DONDE EL ARTE DE SER BARBERO LE DA DISTINCIÓN AL CABALLERO </h1>
+    <a  href="{{url('/agendar')}}" class="absolute bg-yellow-600 text-white md:text-xl px-5 rounded-md hover:bg-yellow-800 focus:outline-none focus:ring focus:border-blue-100 md:px-10 md:py-2 Bodoni top-1/3 left-1/3  md:top-1/2 md:left-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2 md:translate-y-40 " id="agendar">Agendar cita</a>
  <div class="flex flex-col md:flex-row p-4 md:p-8 text-center md:text-left items-center w-full md:w-11/12 mx-auto">
        <div class="flex-1 md:mt-4 md:p-4 md:flex md:flex-col md:items-start">
 
@@ -34,7 +34,7 @@
             </div>
        </div>
     </div>
-    <div class="flex flex-col items-center justify-center p-10 bg-[#2E2E2E]">
+    <div class="flex flex-col items-center justify-center p-10 bg-zinc-900">
         <div class="flex flex-col md:flex-row items-center mx-auto px-4 w-full">
             <div class="md:w-2/3">
                 <h1 class="text-4xl font-bold mb-4 text-white">SERVICIOS DE <span class="text-yellow-500">BARBERÍA</span></h1>

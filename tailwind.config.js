@@ -20,9 +20,18 @@ export default {
             height: {
                 '80vh': '80vh',
             },
+            spacing: {
+                '15': '15%',
+                '25': '25%',
+                '20': '20%',
+                '40': '40%',
+                '50': '50%',
+            },
+            translate: {
+                '-1/2': '-50%',
+            },
         },
     },
 
     plugins: [forms, typography],
 };
-
