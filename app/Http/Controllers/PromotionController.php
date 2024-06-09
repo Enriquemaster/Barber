@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Member;
 use App\Models\promotion;
 use Illuminate\Http\Request;
 
@@ -34,9 +35,11 @@ class PromotionController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(promotion $promotion)
+    public function show(string $id)
     {
-        //
+        $promotions = Member::find($id);
+        return view('agregarPromociones', compact('promotions'));
+
     }
 
     /**
@@ -61,5 +64,16 @@ class PromotionController extends Controller
     public function destroy(promotion $promotion)
     {
         //
+    }
+
+    public function promocionesClientes()
+    {
+
+        $promotions = Member::join('promotions', 'promotions.id', '=', 'members.promotion_id')
+            ->select('members.*', 'promotions.titulo', 'promotions.descripcion', 'promotions.fecha_inicio', 'promotions.fecha_final')
+            ->whereNotNull('members.promotion_id')
+            ->get();
+
+        return view('promocionesClientes', compact('promotions'));
     }
 }

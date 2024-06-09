@@ -15,33 +15,27 @@
     <title>Barberia</title>
 </head>
 <body class="bg-black">
-    <nav class="bg-black w-full text-white flex flex-col md:flex-row md:text-center md:px-7 md:py-5 justify-center items-center">
-{{--        <div class="absolute top-0 left-0 md:top-0 md:left-2">--}}
-{{--            <a href="{{url('')}}"><img   src="{{ asset('IMG/TheBarber2.png')}}" alt="logotipo" class="w-32 h-10 md:w-64 md:h-auto" /></a>--}}
-{{--        </div>--}}
-        <div class="flex flex-col md:flex-row md:gap-5 mt-4 text-center Bodoni">
-            <ul class="py-1 hover:underline">
-                <li><a href="{{url('')}}">Inicio</a></li>
-            </ul>
-            <ul class="py-1 hover:underline">
-                <li><a href="{{url('/conocenos')}}">Acerca de nosotros</a></li>
-            </ul>
-            <ul class="py-1 hover:underline">
-                <li><a href="{{ route('register') }}">Registro</a></li>
-            </ul>
-
-            <ul class="py-1 hover:underline">
-                <li><a href="{{ route('login') }}">Iniciar Sesión</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <div class="bg-black md:mx-auto">
-        <div class=" mx-auto mt-8">
-            @yield('content');
-        </div>
+<nav class="bg-black w-full text-white flex flex-col md:flex-row md:text-center md:px-7 md:py-5 justify-center items-center">
+    <div class="flex flex-col md:flex-row md:gap-5 mt-4 text-center Bodoni">
+        <ul class="py-1 hover:underline">
+            <li><a href="{{ url('/') }}">Inicio</a></li>
+        </ul>
+        <ul class="py-1 hover:underline">
+            <li><a href="{{ url('/conocenos') }}">Acerca de nosotros</a></li>
+        </ul>
+        <ul class="py-1 hover:underline">
+            <li><a href="{{ route('register') }}">Registro</a></li>
+        </ul>
+        <ul class="py-1 hover:underline">
+            <li><a href="{{ route('login') }}">Iniciar Sesión</a></li>
+        </ul>
     </div>
-</body>
+</nav>
+<div class="bg-black md:mx-auto">
+    <div class=" mx-auto mt-8">
+        @yield('content')
+    </div>
+</div>
 <footer class="bg-[#272622] text-white w-full py-2 px-4 montserrat">
     <div class="container mx-auto justify-center">
         <div class="footer-content text-center">
@@ -51,17 +45,14 @@
             <a>Barbería y cortes de cabello en Motul, Yucatán</a>
         </div>
         <div class="footer-content flex flex-nowrap items-center justify-center ">
-
             <div class="flex items-center mt-4">
                 <a href="#" class="text-white mx-2">Facebook</a>
                 <img src="IMG/Facebook.png" alt="Facebook Logo" class="w-[40px] h-[40px] mx-2">
             </div>
-
             <div class="flex items-center mt-4">
                 <a href="#" class="text-white mx-2">Instagram</a>
                 <img src="IMG/Instagram.png" alt="Instagram Logo" class="w-[40px] h-[40px] mx-2">
             </div>
-
             <div class="flex items-center mt-4">
                 <a href="#" class="text-white mx-2">TikTok</a>
                 <img src="IMG/Tik.png" alt="TikTok Logo" class="w-[40px] h-[40px] mx-2">
@@ -69,4 +60,5 @@
         </div>
     </div>
 </footer>
+</body>
 </html>

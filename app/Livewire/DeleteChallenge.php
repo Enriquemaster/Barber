@@ -23,11 +23,11 @@ class DeleteChallenge extends Component
 
             <x-confirmation-modal wire:model="modal">
                 <x-slot:title>
-                    <h1 class="text-2xl font-bold text-oxford ">Eliminación del reto</h1>
+                    <h1 class="text-2xl font-bold text-oxford text-white">Eliminación del reto</h1>
                 </x-slot:title>
                 <x-slot:content>
-                    <p class="text-xl">Esto borrará el reto y no es recuperable.</p>
-                    <p class="text-xl">¿Está seguro de hacerlo?</p>
+                    <p class="text-xl text-white">Esto borrará el reto y no es recuperable.</p>
+                    <p class="text-xl text-white">¿Está seguro de hacerlo?</p>
                 </x-slot:content>
                 <x-slot:footer>
                     <x-button wire:click="confirmarEliminacion()" class="px-4 py-5">Eliminar el reto</x-button>
