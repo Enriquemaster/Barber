@@ -1,6 +1,6 @@
 <x-app-layout>
-    <div class="flex items-center justify-center bg-black bg-cover bg-center bg-no-repeat bg-opacity-50 w-full relative ">
-        <img src="{{ asset('IMG/dash-Cliente.png') }}" alt="login" class="object-cover w-1/2 h-full" />
+    <div class="flex items-center justify-center bg-zinc-950 bg-cover bg-center bg-no-repeat bg-opacity-50 w-full relative ">
+        <img src="{{ asset('IMG/dash-Cliente.png') }}" alt="login" class="object-cover w-full h-full" />
     </div>
     <div>
         <a href="{{ url('/agendar') }}"

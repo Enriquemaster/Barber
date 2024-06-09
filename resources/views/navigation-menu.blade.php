@@ -1,5 +1,5 @@
 
-<nav x-data="{ open: false }" class="bg-black border-b border-gray-100">
+<nav x-data="{ open: false }" class="bg-black border-b border-black">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
         <div class="flex justify-between h-20 ">
@@ -45,10 +45,10 @@
 
 
     <!-- Menú desplegable para dispositivos móviles -->
-    <div class="md:hidden bg-black pt-6 ml-32 pb-4">
+    <div class="md:hidden bg-black pt-6 pb-4">
         <div x-data="{ open: false }">
             <!-- Botón del menú -->
-            <button @click="open = !open" class="text-white focus:outline-none bg-amber-700 rounded-md p-1 md:px-2 md:p-2" > Ver mas...
+            <button @click="open = !open" class="text-white focus:outline-none bg-amber-700 rounded-md px-5 md:px-2 md:p-2" > Ver mas...
 
             </button>
 
