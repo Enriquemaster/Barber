@@ -4,7 +4,7 @@
     </div>
     <div>
         <a href="{{ url('/agendar') }}"
-           class="absolute bg-white text-black text-xl rounded-md px-5 hover:bg-yellow-800 focus:outline-none focus:ring focus:border-blue-100 md:px-10 md:py-2 Bodoni left-1/2 top-20 md:top-40 md:left-1/2 transform -translate-x-1/2"
+           class="absolute text-black text-xl rounded-md px-5 bg-[#fff4e4] hover:bg-[#aba090] font-bold focus:outline-none focus:ring focus:border-blue-100 md:px-10 md:py-2 Bodoni left-1/2 top-20 md:top-40 md:left-1/2 transform -translate-x-1/2"
            id="agendar">Agendar cita</a>
     </div>
     <div class="container mx-auto px-4 py-8">
@@ -13,34 +13,44 @@
             Nos alegra tenerte de vuelta, {{ Auth::user()->name }}. Estamos aquí para asegurarnos de que siempre luzcas tu mejor versión. Aquí tienes todo lo que necesitas para tu cuidado personal:
         </h1>
         <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            <div class="text-center  transform transition duration-300 hover:scale-105 h-ful">
+            <div class="text-center transform transition duration-300 hover:scale-105 h-ful">
                 <p class="text-white text-xl font-semibold p-5">SERVICIOS</p>
-            <div x-data="{ current: 0 }" x-init="setInterval(() => current = (current + 1) % 3, 3000)" class="relative w-full h-64 overflow-hidden">
-                <div x-show="current === 0" class="absolute inset-0 transition-all duration-1000 px-5">
-                    <img src="{{ asset('Servis/Serv1.png') }}" alt="Corte de Cabello" class="w-full h-full object-cover">
-                </div>
-                <div x-show="current === 1" class="absolute inset-0 transition-all duration-1000">
-                    <img src="{{ asset('Servis/Serv2.jpg') }}" alt="Arreglo de Barba" class="w-full h-full object-cover">
-                </div>
-                <div x-show="current === 2" class="absolute inset-0 transition-all duration-1000">
-                    <img src="{{ asset('Servis/Serv3.jpg') }}" alt="Servicio de Limpieza Facial" class="w-full h-full object-cover">
-                </div>
+{{--                <div x-data="{ current: 0 }" x-init="setInterval(() => current = (current + 1) % 3, 3000)" class="relative w-full h-64 overflow-hidden">--}}
+{{--                    <div x-show="current === 0" class="absolute inset-0 transition-all duration-1000 px-5">--}}
+{{--                        <a href="{{ url('promocionesClientes') }}">--}}
+{{--                            <img src="{{ asset('Servis/Serv1.png') }}" alt="Corte de Cabello" class="w-full h-auto object-cover">--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
+{{--                    <div x-show="current === 1" class="absolute inset-0 transition-all duration-1000">--}}
+{{--                        <a href="{{ url('promocionesClientes') }}">--}}
+{{--                            <img src="{{ asset('Servis/Serv2.jpg') }}" alt="Arreglo de Barba" class="w-full h-auto object-cover">--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
+{{--                    <div x-show="current === 2" class="absolute inset-0 transition-all duration-1000">--}}
+{{--                        <a href="{{ url('promocionesClientes') }}">--}}
+{{--                            <img src="{{ asset('Servis/Serv3.jpg') }}" alt="Servicio de Limpieza Facial" class="w-full h-auto object-cover">--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+                <a href="{{ url('servicios') }}">
+                    <img src="{{ asset('Servis/Servicios1.jpeg') }}" alt="Arreglo de Barba" class="w-full h-auto mb-4">
+                </a>
             </div>
-                <br><a href="/productos" class="bg-yellow-500 text-white text-bold px-6 py-2 px-5 rounded">VER MÁS</a>
-            </div>
-            <div class="text-center  transform transition duration-300 hover:scale-105 h-ful">
+            <div class="text-center transform transition duration-300 hover:scale-105 h-ful">
                 <p class="text-white text-xl font-semibold p-5">PROMOCIONES Y DESCUENTOS</p>
-                <img src="{{ asset('Servis/Promo.jpeg') }}" alt="Arreglo de Barba" class="w-full h-auto mb-4">
-
+                <a href="{{ url('promocionesClientes') }}">
+                    <img src="{{ asset('Servis/Promo4.jpeg') }}" alt="Arreglo de Barba" class="w-full h-auto mb-4">
+                </a>
             </div>
-            <div class="text-center  transform transition duration-300 hover:scale-105 h-ful">
+            <div class="text-center transform transition duration-300 hover:scale-105 h-ful">
                 <p class="text-white text-xl font-semibold p-5">NUESTROS DESAFÍOS</p>
-                <img src="https://placehold.co/600x400" alt="Servicio de Limpieza Facial" class="w-full h-auto mb-4">
-
+                <a href="{{ url('retosClientes') }}">
+                    <img src="{{ asset('Servis/Desafio.jpeg') }}" alt="Servicio de Limpieza Facial" class="w-full h-auto mb-4">
+                </a>
             </div>
         </div>
-    </div>
-    <div class=" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <div class=" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <h2 class="text-3xl font-extrabold text-center text-white mb-8">NUESTROS PRODUCTOS</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-white ">
             <div class="text-center  transform transition duration-300 hover:scale-105 h-ful">
@@ -65,7 +75,7 @@
             </div>
         </div>
         <div class="text-center mt-8">
-            <a href="/productos" class="bg-yellow-500 text-white text-bold px-6 py-2 rounded">VER TODO</a>
+            <a href="/productos" class="bg-[#fff4e4] hover:bg-[#aba090] font-bold px-6 py-2 rounded">VER TODOS</a>
         </div>
     </div>
 </x-app-layout>
