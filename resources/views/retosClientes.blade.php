@@ -1,6 +1,8 @@
+
 @php
     use Carbon\Carbon;
 @endphp
+
 <x-app-layout>
     <div class="bg-black text-white p-8">
         <h2 class="text-center text-2xl font-bold mb-8">NUESTROS RETOS</h2>
@@ -21,4 +23,6 @@
         @endif
     </div>
 </x-app-layout>
+
+
 
