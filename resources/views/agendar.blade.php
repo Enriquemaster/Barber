@@ -9,11 +9,6 @@
                     <div class="flex items-center justify-center w-full md:w-1/3 py-2 md:py-5">
                         <h1 class="text-white text-center text-xl md:text-2xl">ADMINISTRAR CITAS</h1>
                     </div>
-
-                    <div class="flex items-center justify-center w-full md:w-1/3 py-2 md:py-5">
-                    <livewire:add-cita/>
-                    </div>
-                 
                 </div>
             </div>
             <div>
