@@ -27,10 +27,15 @@ class RolesSeeder extends Seeder
         $role1 = Role::where('name', 'Administrador')->first();
         $role2 = Role::where('name', 'Cliente')->first();
 
-        // Asignar roles a los usuarios
-        if ($user && $role1) {
-            $user->assignRole($role1);
+       // Eliminar el rol "Cliente" del usuario antes de asignar "Administrador"
+       if ($user && $role1) {
+        if ($user->hasRole('Cliente')) {
+            $user->removeRole('Cliente');
         }
+        $user->assignRole($role1);
+    }
+    
+
         if ($user2 && $role2) {
             $user2->assignRole($role2);
         }
