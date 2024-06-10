@@ -26,7 +26,7 @@
    <!--  <div class="absolute inset-0 bg-cover bg-center opacity-50" style="background-image: url('Carrusel/Barber1.jpg');"></div>-->
       <div class="">
          <!-- Background image -->
-        <h2 class="text-white text-3xl font-bold mb-2 opacity-200 ">Registro del producto<span class="text-amber-600">  <br>BARBER HOUSE</span></h2>
+        <h2 class="text-white text-3xl font-bold mb-2 opacity-200 font-dmserifdisplay">Registro del producto<span class="text-amber-600">  <br>BARBER HOUSE</span></h2>
      
       </div>
     </div>
@@ -36,7 +36,7 @@
    <div class="flex flex-col space-y-4 ">
         <div class="bg-zinc-800 p-4 rounded-lg flex items-center justify-center">
           <div>
-            <h3 class="text-amber-400 text-2xl bg-gradient-to-b from-amber-300 via-yellow-600 to-slate-100 bg-clip-text text-transparent font-bold" id="Eslogan3">Registro del producto</h3>
+            <h3 class="text-amber-400 text-2xl font-bold font-dmserifdisplay" >REGISTRO DEL PRODUCTO</h3>
           </div>
         </div>
     <form method="post" action="{{ route('registrar-producto') }}"  class="relative z-10" enctype="multipart/form-data">
@@ -54,7 +54,7 @@
             </div>
             <div class="px-4">
                 <h3 class="p-2 text-amber-400 text-3xl font-thin" id="barbero">Cargar imagen del producto</h3>
-                <p class="text-zinc-400" id="contenido">Carga una imagen referente al producto lo más clara posible.</p>
+                <p class="text-zinc-400 font-bodoni" >Carga una imagen referente al producto lo más clara posible.</p>
             </div>
         </div>
       
@@ -70,7 +70,7 @@
                     
                   </div>
                       <div class=" mr-2 mt-2">
-                          <label for="nombre" class="block text-lg italic font-sans-serif text-amber-400" id="contenido">Nombre del producto</label>
+                          <label for="nombre" class="block text-lg italic font-sans-serif text-amber-400 font-bodoni">Nombre del producto</label>
                           <input type="text" id="nombre" name="nombre" class="w-3/4 sm:w-11/12 px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300" placeholder="" required>
                           <span id="errorNombre" class="text-red-500 text-sm"></span>
                       </div>
@@ -78,26 +78,25 @@
 
 
                   <div class="mb-4">
-                    <label for="descripccion" class="block text-lg italic font-sans-serif text-amber-400" id="contenido">Descripcción</label>
+                    <label for="descripccion" class="block text-lg italic font-sans-serif text-amber-400 font-bodoni" >Descripcción</label>
                     <textarea id="descripccion" name="descripccion" class="w-3/4 sm:w-11/12 px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300" rows="2" placeholder="" required></textarea>
                     <span id="errorDescripccion" class="text-red-500 text-sm"></span>
                   </div>
 
                   <div class="mb-4">
-                      <label for="marca" class="block text-lg  italic font-sans-serif text-amber-400" id="contenido">Marca</label>
+                      <label for="marca" class="block text-lg  italic font-sans-serif text-amber-400 font-bodoni" >Marca</label>
                       <input type="text" id="marca" name="marca" class="w-3/4 sm:w-11/12 px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300" placeholder="" required>
                       <span id="errormarca" class="text-red-500 text-sm"></span>
                   </div>
                    <div class="mb-4">
-                            <label for="marca" class="block text-lg  italic font-sans-serif text-amber-400" id="contenido">Modelo</label>
+                            <label for="marca" class="block text-lg  italic font-sans-serif text-amber-400 font-bodoni">Modelo</label>
                            <input type="text" id="modelo" name="modelo" class="w-3/4 sm:w-11/12 px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300" placeholder="" required>
                             <span id="errorModelo" class="text-red-500 text-sm"></span>
                    </div>
 
                    <div class="mb-16">
-                            <label for="marca" class="block text-lg italic font-sans-serif text-amber-400 " id="contenido">precio</label>
+                            <label for="marca" class="block text-lg italic font-sans-serif text-amber-400 font-bodoni">precio</label>
                             <div class="relative">
-                              <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-700">$</span>
                            <input type="text" id="precio" name="precio" class="w-3/4 sm:w-11/12 px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300" placeholder="" required>
                            </div>
                            <span id="errorModelo" class="text-red-500 text-sm"></span>
@@ -112,7 +111,7 @@
          
           <div>
                 <div class="flex justify-between items-center mb-4">
-                    <button id="contenido" type="submit" class="font-sans-serif text-black px-8 py-2 mx-auto rounded-full focus:outline-none focus:ring focus:border-blue-300 bg-amber-400 font-bold">Registro</button>
+                    <button type="submit" class="font-sans-serif text-black px-8 py-2 mx-auto rounded-full focus:outline-none focus:ring focus:border-blue-300 bg-amber-400 font-bold font-bodoni">Registro</button>
                         <div class="flex relative">
                         </div>
                 </div>

@@ -1,5 +1,5 @@
 <x-app-layout>
-{{--      @vite(['resources/css/app.css', 'resources/js/app.js'])--}}
+   @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 
 
@@ -9,7 +9,7 @@
   <div class="bg-[#242222] md:p-5 rounded-lg ">
                 <div class="flex flex-col md:flex-row md:items-start">
                     <div class="flex items-center justify-center w-full md:w-1/3 py-2 md:py-5">
-                        <h1 class="text-white md:px-5 text-center text-xl md:text-2xl">SERVICIOS</h1>
+                        <h1 class="text-white md:px-5 text-center text-xl md:text-2xl font-dmserifdisplay">SERVICIOS</h1>
                         <img src="{{ asset('Icons/Retos.png') }}" alt="login" class="w-1/3 md:w-10 hidden md:block" />
                     </div>
 
@@ -18,7 +18,7 @@
                     </div>
 
                     <div class="flex items-center justify-center w-full md:w-1/3 py-2 md:py-5">
-                    <a href="/agregarServicios" class="bg-yellow-800 text-white py-1 px-2 rounded-lg">AGREGAR</a>
+                    <a href="/agregarServicios" class="bg-yellow-800 text-white py-1 px-2 rounded-lg font-dmserifdisplay">AGREGAR</a>
                     </div>
                 </div>
             </div>
@@ -35,9 +35,9 @@
         </button>
       </form> 
 
-    <table class="w-full sm:w-auto text-left">
+    <table class="w-full sm:w-auto text-left ">
       <thead>
-        <tr class="border-b">
+        <tr class="border-b ">
           <th class="py-2 px-4 font-bold text-zinc-800">CORTE</th>
             <th class="py-2 px-4 font-bold text-zinc-800">DESCRIPCIÓN</th>
           <th class="py-2 px-4 font-bold text-zinc-800">PRECIO</th>

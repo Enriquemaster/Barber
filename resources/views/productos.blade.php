@@ -12,17 +12,12 @@
                     <img src="data:image/jpeg;base64,{{ $producto->foto }}" alt="" class="w-full h-full object-cover">
                 </div>
             </div>
-            <h1 class="text-xl font-bold mt-4 text-center">{{ $producto->nombre }}</h1>
-            <p class="mt-2 mb-6 text-center">Descripcción: {{ $producto->descripccion }}</p>
-            <p class="mt-2 mb-6 text-center">Marca: {{ $producto->marca }} </p>
-            <p class="mt-2 mb-6 text-center">Modelo: {{ $producto->modelo }} </p>
-            <p class="mt-2 text-center"> Precio: ${{ $producto->precio }}</p>
+            <h1 class="text-xl font-bold mt-4 text-center font-bodoni">{{ $producto->nombre }}</h1>
+            <p class="mt-2 mb-6 text-center font-bodoni">Descripcción: {{ $producto->descripccion }}</p>
+            <p class="mt-2 mb-6 text-center font-bodoni">Marca: {{ $producto->marca }} </p>
+            <p class="mt-2 mb-6 text-center font-bodoni">Modelo: {{ $producto->modelo }} </p>
+            <p class="mt-2 text-center font-bodoni"> Precio: ${{ $producto->precio }}</p>
 
-            <div class="flex justify-center mt-4">
-    <button class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded">
-        Obtener
-    </button>
-</div>
         </div>
     @endforeach
       <!-- Enlaces de paginación -->
