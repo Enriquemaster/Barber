@@ -4,13 +4,14 @@
 
             <div class="border rounded-lg overflow-hidden shadow-lg">
                 <div class="bg-gray-200 px-4 py-2">
-                    <span class="font-semibold">{{ $cita->servicio }}</span>
+                    <span class="font-semibold">Servicio: {{ $cita['servicio'] }}</span>
+                <p>Cliente: {{ $cita['cliente'] }}</p>
                 </div>
-                <div class="px-4 py-4 space-y-5">
-                    <p> {{ $cita->barbero }}</p>
+            <div class="px-4 py-4 space-y-5 bg-white">
+                    <p>Barbero: {{ $cita['barbero'] }}</p>
+                    <p>Fecha: {{ $cita['fecha_registro'] }}</p>
                 </div>
-
-                <p>Fecha: {{ $cita->fecha }}</p>
+               
 
             </div>
         @endforeach

@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Products; 
+use App\Models\Products;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Response;
 
 
 class ControllerProducts extends Controller
 {
-   //////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////
     public function registrarProducto(Request $request)
     {
         try {
@@ -30,17 +30,17 @@ class ControllerProducts extends Controller
             ]);
 
             // Procesar la imagen
-        $base64Image = null;
-        if ($request->hasFile('foto')) {
-            // Obtener la imagen de la solicitud
-            $imagen = $request->file('foto');
-            if ($imagen->isValid()) {
-                // Convertir la imagen a base64
-                $base64Image = base64_encode(file_get_contents($imagen->getPathname()));
-            } else {
-                return response()->json(['message' => 'Error al cargar la imagen'], 400);
+            $base64Image = null;
+            if ($request->hasFile('foto')) {
+                // Obtener la imagen de la solicitud
+                $imagen = $request->file('foto');
+                if ($imagen->isValid()) {
+                    // Convertir la imagen a base64
+                    $base64Image = base64_encode(file_get_contents($imagen->getPathname()));
+                } else {
+                    return response()->json(['message' => 'Error al cargar la imagen'], 400);
+                }
             }
-        }
 
             $producto = new Products([
                 'nombre' => $request->input('nombre'),
@@ -49,18 +49,19 @@ class ControllerProducts extends Controller
                 'modelo' => $request->input('modelo'),
                 'precio' => $request->input('precio'),
                 'foto' => $base64Image,
-            ]);    
+            ]);
             $producto->save();
-            
-            return response()->json(['message' => 'Producto creado con éxito'], 201);
+
+            //return response()->json(['message' => 'Producto creado con éxito'], 201);
+            return redirect()->route('accionesProductos')->with('success', 'El producto ha guardado correctamente.');
         } catch (\Exception $e) {
             \Log::error('Error al intentar guardar los datos: ' . $e->getMessage());
-            return response()->json(['message' => 'Error al intentar guardar los datos' ], 500);
+            return response()->json(['message' => 'Error al intentar guardar los datos'], 500);
         }
     }
-//////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////
 
-     public function mostrarFormularioActualizar($id)
+    public function mostrarFormularioActualizar($id)
     {
         // Encuentra el producto por su ID
         $producto = Products::findOrFail($id);
@@ -68,11 +69,11 @@ class ControllerProducts extends Controller
         // Devuelve la vista con el formulario y los datos del producto
         return view('actualizarProductos', compact('producto'));
     }
-//////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////
     // Función para procesar la actualización del producto
     public function actualizar(Request $request, $id)
     {
-        
+
         // Encuentra el producto por su ID
         $producto = Products::findOrFail($id);
 
@@ -86,18 +87,18 @@ class ControllerProducts extends Controller
             'foto' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
-         // Procesar la imagen si se ha enviado una nueva
-    if ($request->hasFile('foto')) {
-        $imagen = $request->file('foto');
-        if ($imagen->isValid()) {
-            // Convertir la imagen a base64
-            $base64Image = base64_encode(file_get_contents($imagen->getPathname()));
-            // Asignar la nueva imagen al producto
-            $producto->foto = $base64Image;
-        } else {
-            return redirect()->back()->with('error', 'Error al cargar la nueva imagen');
+        // Procesar la imagen si se ha enviado una nueva
+        if ($request->hasFile('foto')) {
+            $imagen = $request->file('foto');
+            if ($imagen->isValid()) {
+                // Convertir la imagen a base64
+                $base64Image = base64_encode(file_get_contents($imagen->getPathname()));
+                // Asignar la nueva imagen al producto
+                $producto->foto = $base64Image;
+            } else {
+                return redirect()->back()->with('error', 'Error al cargar la nueva imagen');
+            }
         }
-    }
 
         // Actualiza los datos del producto
         $producto->update([
@@ -107,38 +108,59 @@ class ControllerProducts extends Controller
             'modelo' => $request->modelo,
             'precio' => $request->precio,
 
-            
+
         ]);
-        
-      
+
+
         // Redirige a alguna página después de la actualización (puedes ajustar esto según tus necesidades)
         return redirect()->route('accionesProductos')->with('success', 'El producto ha sido actualizado correctamente.');
     }
-//////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////
 
-      // Método para mostrar los productos
-      public function acciones()
-      {
-      
-          $productos = Products::paginate(8);
-          return view('accionesProductos', compact('productos'));
-      }
+    // Método para mostrar los productos
+    public function acciones()
+    {
 
-//////////////////////////////////////////////////////////////////////////
-public function buscarProductos(Request $request)
-{
-    $query = Products::query();
-
-    if ($request->has('buscar')) {
-        $buscar = $request->input('buscar');
-        $query->where('nombre', 'like', "%$buscar%");
+        $productos = Products::paginate(8);
+        return view('accionesProductos', compact('productos'));
     }
 
-    $productos = $query->paginate(9);
-    return view('productos', compact('productos'));
-}
-   
+    //////////////////////////////////////////////////////////////////////////
+    public function buscarProductos(Request $request)
+    {
+        $query = Products::query();
+
+        if ($request->has('buscar')) {
+            $buscar = $request->input('buscar');
+            $query->where('nombre', 'like', "%$buscar%");
+        }
+
+        $productos = $query->paginate(9);
+        return view('productos', compact('productos'));
+    }
+
+    /**
+     * Método para obtener todos los productos.
+     */
+    public function obtenerProductos()
+    {
+        try {
+            // Obtener todos los productos de la base de datos
+            $productos = Products::all();
+
+            // Devolver la respuesta en formato JSON
+            return response()->json([
+                'success' => true,
+                'data' => $productos
+            ], 200);
+        } catch (\Exception $e) {
+            \Log::error('Error al obtener los productos: ' . $e->getMessage());
+            return response()->json([
+                'success' => false,
+                'message' => 'Error al obtener los productos'
+            ], 500);
+        } 
+    }
 }
 
  //////////////////////////////////////////////////////////////////////////   
-

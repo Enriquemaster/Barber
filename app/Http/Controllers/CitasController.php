@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class CitasController extends Controller
 {
@@ -33,9 +34,46 @@ class CitasController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function detalle(string $user_id)
     {
-        //
+        try {
+        $citas = User::join('user_cita', 'users.id', '=', 'user_cita.user_id')
+            ->join('citas', 'citas.id', '=', 'user_cita.cita_id')
+            ->select('users.name as Cliente', 'citas.servicio', 'citas.barbero', 'citas.fecha as Fecha Registro')
+            ->where('users.id', $user_id)
+            ->get();
+            return response()->json([
+                'success' => true,
+                'data' => $citas
+            ], 200);
+        } catch (\Exception $e) {
+            \Log::error('Error al obtener las citas: ' . $e->getMessage());
+            return response()->json([
+                'success' => false,
+                'message' => 'Error al obtener las citas'
+            ], 500);
+        } 
+    }
+
+    public function listado()
+    {
+        try {
+        $citas = User::join('user_cita', 'users.id', '=', 'user_cita.user_id')
+            ->join('citas', 'citas.id', '=', 'user_cita.cita_id')
+            ->select('users.name as cliente', 'citas.servicio', 'citas.barbero', 'citas.fecha as fecha_registro')
+            ->get();
+            return response()->json([
+                'success' => true,
+                'data' => $citas
+            ], 200);
+            //echo "<pre>"; var_dump($citas); die;
+        } catch (\Exception $e) {
+            \Log::error('Error al obtener las citas: ' . $e->getMessage());
+            return response()->json([
+                'success' => false,
+                'message' => 'Error al obtener las citas'
+            ], 500);
+        } 
     }
 
     /**
