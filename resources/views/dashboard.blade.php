@@ -34,9 +34,7 @@
         <img src="{{ asset('IMG/dash-Cliente.png') }}" alt="login" class="object-cover w-full h-full" />
     </div>
     <div>
-        <a href="{{ url('/agendar') }}"
-           class="absolute text-black text-xl rounded-md px-5 bg-[#fff4e4] hover:bg-[#aba090] font-bold focus:outline-none focus:ring focus:border-blue-100 md:px-10 md:py-2 Bodoni left-1/2 top-20 md:top-40 md:left-1/2 transform -translate-x-1/2"
-           id="agendar">Agendar cita</a>
+        <livewire:add-cita/>
     </div>
     <div class="container mx-auto px-4 py-8">
         <h2 class="text-center text-3xl font-bold mb-8 text-white">¡Bienvenido a The Barber's House!</h2>
