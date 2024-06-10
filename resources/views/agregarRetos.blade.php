@@ -16,9 +16,7 @@
                     <div class="flex items-center justify-center w-full md:w-1/3 py-2 md:py-5">
                         <livewire:AddChallenge/>
                     </div>
-                    <div>
-                        <livewire:add-cita/>
-                    </div>
+                 
                 </div>
             </div>
             <div class="">

@@ -1,18 +1,22 @@
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
-<div class="p-4">
-    <p class="text-zinc-700 dark:text-zinc-300">
-        *** El cliente cuenta con 10 minutos de tolerancia o su cita será cancelada ***
-    </p>
-    <div class="flex items-center mt-2">
-        <input id="agree" type="checkbox" class="form-checkbox h-4 w-4 text-blue-600">
-        <label for="agree" class="ml-2 text-zinc-700 dark:text-zinc-300">I agree</label>
-    </div>
-</div>
-</body>
-</html>
+<x-app-layout>
+<div class="bg-[#242222] md:p-5 rounded-lg ">
+                <div class="flex flex-col md:flex-row md:items-start">
+                    <div class="flex items-center justify-center w-full md:w-1/3 py-2 md:py-5">
+                        <h1 class="text-white md:px-5 text-center text-xl md:text-2xl">MIS CITAS</h1>
+                        <img src="{{ asset('Icons/Retos.png') }}" alt="login" class="w-1/3 md:w-10 hidden md:block" />
+                    </div>
+
+                    <div class="flex items-center justify-center w-full md:w-1/3 py-2 md:py-5">
+                        <h1 class="text-white text-center text-xl md:text-2xl">ADMINISTRAR CITAS</h1>
+                    </div>
+
+                    <div class="flex items-center justify-center w-full md:w-1/3 py-2 md:py-5">
+                    <livewire:add-cita/>
+                    </div>
+                 
+                </div>
+            </div>
+            <div>
+                <livewire:show-cita/>
+            </div>
+</x-app-layout>
