@@ -1,6 +1,6 @@
 
 
-@role('Cliente|Administrador')
+@role('Cliente')
 <x-app-layout>
 @vite(['resources/css/app.css', 'resources/js/app.js'])
 <div class="bg-yellow-500 from-teal-900 to-teal-700 text-white p-8 mt-8 mx-8 ">
@@ -48,6 +48,16 @@
 </div>
 </x-app-layout>
 @endrole
+
+
+
+@role('Administrador')
+@vite(['resources/css/app.css', 'resources/js/app.js'])
+<div class="bg-black h-screen flex items-center justify-center">
+    <img src="{{ asset('IMG/robot-403.png') }}" alt="Tu eres el administrado de las membresías" class="h-1/2">
+</div>
+@endrole
+
 
 
 @role('Cliente-premium')

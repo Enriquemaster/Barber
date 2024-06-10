@@ -1,3 +1,4 @@
+@role('Administrador')
 <x-app-layout>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @vite('resources/css/app.css')
@@ -74,6 +75,22 @@
     </form>             
   </div>
 </x-app-layout>
+@endrole
+
+
+
+
+@role('Cliente|Cliente-premium')
+@vite(['resources/css/app.css', 'resources/js/app.js'])
+<div class="bg-black h-screen flex items-center justify-center">
+    <img src="{{ asset('IMG/robot-403.png') }}" alt="No estas autorizado para ver esto" class="h-1/2">
+</div>
+    @endrole
+
+
+
+
+
 
         <!-- Bootstrap JS y Popper.js -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-eMEnHw8gHEm02Ll6dPQndvqSMaL81gj9CSe5MAqN63pFpWqadqBQPYckJxXM+I1a" crossorigin="anonymous"></script>

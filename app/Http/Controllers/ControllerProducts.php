@@ -38,7 +38,7 @@ class ControllerProducts extends Controller
                     // Convertir la imagen a base64
                     $base64Image = base64_encode(file_get_contents($imagen->getPathname()));
                 } else {
-                    return response()->json(['message' => 'Error al cargar la imagen'], 400);
+                   
                 }
             }
 
@@ -56,7 +56,6 @@ class ControllerProducts extends Controller
             return redirect()->route('accionesProductos')->with('success', 'El producto ha guardado correctamente.');
         } catch (\Exception $e) {
             \Log::error('Error al intentar guardar los datos: ' . $e->getMessage());
-            return response()->json(['message' => 'Error al intentar guardar los datos'], 500);
         }
     }
     //////////////////////////////////////////////////////////////////////////

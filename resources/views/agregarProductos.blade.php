@@ -1,8 +1,10 @@
+@role('Administrador')
 <x-app-layout>
-    <div class="bg-black min-h-screen flex items-center justify-center p-4">
-        <div class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div class="bg-zinc-900 p-6 rounded-lg flex flex-col justify-between bg-cover bg-center opacity-70" style="background-image: url('Carrusel/Barber1.jpg');">
-                <div>
+<div class="bg-black min-h-screen flex items-center justify-center p-4">
+    <div class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-zinc-900 p-6 rounded-lg flex flex-col justify-between bg-cover bg-center opacity-70"
+            style="background-image: url('{{ asset('Carrusel/Barber1.jpg') }}');">
+            <div>
                     <h2 class="text-white text-3xl font-bold mb-2 opacity-200 font-dmserifdisplay">
                         Registro del producto<span class="text-amber-600"><br>BARBER HOUSE</span>
                     </h2>
@@ -67,7 +69,7 @@
 
                                 <div class="mb-16">
                                     <label for="precio" class="block text-lg italic text-amber-400 font-bodoni">Precio</label>
-                                    <input type="text" id="precio" name="precio" class="w-3/4 sm:w-11/12 px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300" required>
+                                    <input type="text" id="precio" name="precio" placeholder="Inserte el precio en MXN" class="w-3/4 sm:w-11/12 px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300" required>
                                     <span id="errorPrecio" class="text-red-500 text-sm"></span>
                                 </div>
                             </div>
@@ -84,6 +86,18 @@
         </div>
     </div>
 </x-app-layout>
+@endrole
+
+@role('Cliente|Cliente-premium')
+@vite(['resources/css/app.css', 'resources/js/app.js'])
+<div class="bg-black h-screen flex items-center justify-center">
+    <img src="{{ asset('IMG/robot-403.png') }}" alt="No estas autorizado para ver esto" class="h-1/2">
+</div>
+    @endrole
+
+
+
+
 
 <!-- Bootstrap JS y Popper.js -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-eMEnHw8gHEm02Ll6dPQndvqSMaL81gj9CSe5MAqN63pFpWqadqBQPYckJxXM+I1a" crossorigin="anonymous"></script>

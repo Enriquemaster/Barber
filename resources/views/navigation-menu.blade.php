@@ -33,7 +33,7 @@
 
         <li class="flex justify-end">
   <a href="/registrarMembresia" class="bg-slate-500 text-white font-semibold py-2 px-4 rounded-full flex items-center space-x-2">
-    <img src="https://placehold.co/20x20" alt="Crown Icon" class="h-8 w-8" />
+  <img src="{{ asset('Icons/Crown.png') }}" alt="Crown Icon" class="h-5 w-5"/>
     <span>Membresia</span>
   </a>
 </li>
@@ -60,7 +60,7 @@
                     <li><a href="{{ url('/productos') }}" class="block py-2 px-4 hover:bg-gray-700 text-white">Productos</a></li>
                 </ul>
                 <a href="/registrarMembresia" class="block bg-blue-900 text-white font-semibold py-2 px-4 my-2 rounded-full flex items-center space-x-2">
-                    <img src="https://placehold.co/20x20" alt="Crown Icon" class="h-5 w-5"/>
+                <img src="{{ asset('Icons/Crown.png') }}" alt="Crown Icon" class="h-5 w-5"/>
                     <span>Membresia</span>
                 </a>
             </div>
