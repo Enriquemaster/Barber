@@ -20,7 +20,7 @@
             @endforeach
 
             <div class="flex justify-center items-center mt-4">
-                {{ $servicios->links() }}
+                {{ $sicios->links() }}
             </div>
 
         </div>
