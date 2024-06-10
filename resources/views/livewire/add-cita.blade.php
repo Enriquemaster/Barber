@@ -13,7 +13,16 @@
             <form wire:submit.prevent="save" class="text-white">
                 <div class="px-4 sm:px-20">
                     <label class="block text-left">Servicio:</label><br>
-                    <input class="w-full rounded-lg mb-4 bg-white text-black"  type="text" wire:model="servicio"><br>
+                    <select wire:model="servicio" class="w-full rounded-lg mb-4 bg-white text-black">
+                        <option value="" disabled selected>Selecciona un servicio</option>
+                        <option value="Afeitado de cabeza">Afeitado de cabeza</option>
+                        <option value="Corte de cabello">Corte de cabello</option>
+                        <option value="Grecas">Grecas</option>
+                        <option value="Afeitado de barba">Afeitado de barba</option>
+                        <option value="Arreglo de barba">Arreglo de barba</option>
+                        <option value="Teñido de barba o cabello">Teñido de barba o cabello</option>
+                        <option value="Limpieza de ceja">Limpieza de ceja</option>
+                    </select><br>
                     <label class="block text-left ">Barbero:</label><br>
                     <div class="max-w-md mx-auto p-4">
                         <div class="space-y-4">

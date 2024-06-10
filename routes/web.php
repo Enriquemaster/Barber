@@ -68,9 +68,6 @@ Route::get('/Confirmacion', function () {
     return view('Confirmacion');
 });
 
-//Route::get('/agendar', [\App\Http\Controllers\CitasController::class, 'create'])
-//    ->name('agendar');
-
 
 Route::get('/', function () {
     return view('welcome');

@@ -24,11 +24,11 @@
                     </div>
                 </div>
             </div>
-            
+
    <div class="xl:flex xl:justify-center xl:p-12">
     <div class="bg-zinc-900 p-4">
   <div class="bg-zinc-200 rounded-lg p-4 overflow-x-auto">
-    
+
 
 
     <table class="w-full sm:w-auto text-left">
@@ -46,7 +46,7 @@
         <td class="border px-4 py-2">{{ $item['code'] }}</td>
         <td class="border px-4 py-2"> <livewire:eliminar-membresia :id="$item['id']" /></td>
             </tr>
-            
+
             @endforeach
       </tbody>
     </table>
@@ -57,19 +57,16 @@
    @foreach($codigosNoVinculados as $codigo)
     <p>{{ $codigo->code }}</p>
 @endforeach
-   
+
     </div>
         </div>
 
 
 
-        
+
   </div>
   </div>
   </div>
-</div>
-</div>
-</div>
 </div>
 </x-app-layout>
 @endrole

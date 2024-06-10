@@ -54,6 +54,6 @@ class AddCita extends Component
         $this->modal = false;
         $this->reset(['servicio', 'barbero', 'fecha', 'agree']);
         session()->flash('status', 'Cita creada exitosamente.');
-        $this->redirect('/agregarRetos');
+        $this->redirect('/dashboard');
     }
 }

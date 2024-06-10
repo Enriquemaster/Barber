@@ -7,7 +7,7 @@
             {{-- Condición para verificar si hay datos --}}
             @if($promotions->isEmpty())
                 {{-- Si no hay datos, muestra un mensaje --}}
-                <p class="text-white">No hay retos existentes</p>
+                <p class="text-white">No hay promociones existentes</p>
             @else
                 {{-- Si hay datos, itera sobre ellos --}}
                 @foreach ($promotions as $promotion)

@@ -12,7 +12,7 @@
                 {{-- Si hay datos, itera sobre ellos --}}
                 @foreach ($retos as $reto)
 
-                    <div class="bg-gray-100 p-8 rounded-lg shadow-md w-full max-w-4xl ">
+                    <div class="bg-gray-100 p-8 rounded-lg shadow-md w-full max-w-4xl font-dmserifdisplay ">
                         <h1 class="text-center text-2xl font-bold mb-4">"{{ strtoupper($reto->titulo) }}"</h1>
                         <hr class="border-t-2 border-black mb-4">
                         <div  class="flex flex-col md:flex-row md:items-start py-2">
@@ -37,10 +37,6 @@
 
                             <div class="flex flex-col md:w-1/4 p-2 items-center justify-center ">
                                 <div class="py-2">
-                                    <livewire:DeleteChallenge :id="$reto->id" />
-                                </div>
-
-                                <div>
                                     <livewire:DeleteChallenge :id="$reto->id" />
                                 </div>
                             </div>

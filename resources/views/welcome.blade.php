@@ -54,10 +54,10 @@
                         <li>Mascarilla negra</li>
                         <li>Mascarilla negra con colágeno</li>
                         <li>Alta frecuencia (barba y cabello)</li>
-                        <li class="font-bold">SERVICIOS PREMIUM</li>
+                        <li class="font-bold">SERVICIOS PREMIUM</li><br>
                     </ul>
                 </div>
-                <button class="mt-6 font-montserrat font-bold bg-yellow-600 text-white py-2 px-4 rounded hover:bg-yellow-800">Ver más</button>
+                <a href="{{ route('login') }}" class="mt-6 font-montserrat font-bold bg-yellow-600 text-white py-2 px-4 rounded hover:bg-yellow-800">Ver más</a>
             </div>
             <div class="md:w-1/3 flex justify-center">
                 <div class="bg-yellow-500 rounded-full w-32 h-32 md:w-1/2 md:h-1/2 flex items-center justify-center">
@@ -112,8 +112,8 @@
                 <li><span class="font-bold font-bodoni">3. INGRESA </span> el código de nuestra tarjeta en el apartado de membresías.
                 <li><span class="font-bold font-bodoni">3. DISFRUTA</span> de los beneficios y diviértete</li>
             </ul>
-            <p class="text-lg md:text-xl mt-4 font-bodoni">¡Así de fácil! Obtén acceso a nuestras exclusivas ventajas con nuestra membresía premium.</p>
-            <button class="bg-black text-white py-2 px-4 mt-8 rounded-md font-bodoni  hover:bg-zinc-900">SABER MÁS</button>
+            <p class="text-lg md:text-xl mt-4 font-bodoni">¡Así de fácil! Obtén acceso a nuestras exclusivas ventajas con nuestra membresía premium.</p><br>
+            <a href="{{ route('login') }}" class="bg-black text-white py-2 px-4 mt-8 rounded-md font-bodoni hover:bg-zinc-900">SABER MÁS</a>
         </div>
     </div>
 
@@ -129,7 +129,6 @@
                 <p class="text-xl text-yellow-500">DOMINGO</p>
                 <p class="text-2xl text-zinc-800 dark:text-zinc-200">10:00 HR - 16:00 HR</p>
             </div>
-            <button class="mt-8 bg-yellow-600 hover:bg-yellow-800 text-white py-2 px-4 rounded-md font-bold">AGENDAR SERVICIO</button>
         </div>
         <div class="md:w-1/2">
             <h1 class="text-2xl text-center dark:text-zinc-200 md:p-7 font-bodoni">Visítanos en nuestro establecimiento</h1>
