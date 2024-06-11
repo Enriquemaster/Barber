@@ -109,7 +109,7 @@
             <ul class="text-lg md:text-xl mt-4 space-y-2 font-bodoni">
                 <li><span class="font-bold font-bodoni ">1. ACUDE</span> a nuestro establecimiento y solicítala.</li>
                 <li><span class="font-bold font-bodoni">2. REGISTRATE</span> en nuestro sistema.</li>
-                <li><span class="font-bold font-bodoni">3. INGRESA </span> el código de nuestra tarjeta en el apartado de membresías.
+                <li><span class="font-bold font-bodoni">3. INGRESA </span> el código de nuestra tarjeta en el apartado de membresías.</li>
                 <li><span class="font-bold font-bodoni">3. DISFRUTA</span> de los beneficios y diviértete</li>
             </ul>
             <p class="text-lg md:text-xl mt-4 font-bodoni">¡Así de fácil! Obtén acceso a nuestras exclusivas ventajas con nuestra membresía premium.</p><br>

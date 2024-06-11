@@ -87,13 +87,13 @@ class AddPromotions extends Component
                 <!-- Cambiar input por textarea -->
                 <input class="w-full rounded-lg mb-4 bg-white text-black" wire:model="descripcion"><br>
             </div>
-            <div class="flex flex-col sm:flex-wrap md:flex-row">
+            <div class="flex flex-col sm:flex-wrap md:flex-row items-center justify-center">
             <div class="mb-4 px-8">
-                <label class="block  px-20">Fecha de inicio:</label><br>
+                <label class="block  px-20">Inicia:</label><br>
                 <input class="w-2-5 rounded-lg mb-4 bg-gray-300 text-black" type="date" wire:model="fecha_inicio"><br>
             </div>
             <div class="mb-4 ">
-                <label class="block  px-20">Fecha de finalización:</label><br>
+                <label class="block  px-20">Finaliza :</label><br>
                 <input class="w-2-5 rounded-lg mb-4 bg-gray-300 text-black" type="date" wire:model="fecha_final"><br>
             </div>
             </div>
