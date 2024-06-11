@@ -14,10 +14,10 @@ class AddPromotions extends Component
 
     // propiedades públicas del componente
     public $modal = false;
-    public $titulo= ''; // Almacena el nombre de la asignatura
-    public $descripcion = ''; // Almacena la descripción de la asignatura
-    public $fecha_inicio = ''; // Almacena el nombre de la carrera
-    public $fecha_final = ''; // Almacena el nombre de la carrera
+    public $titulo= '';
+    public $descripcion = '';
+    public $fecha_inicio = '';
+    public $fecha_final = '';
     public $imagen;
 
 
