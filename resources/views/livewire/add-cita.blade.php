@@ -55,7 +55,7 @@
                     </div>
                 </div>
                 <div class="flex justify-center mt-5">
-                    <button type="submit" class='inline-flex items-center px-4 py-2 bg-green-700 hover:bg-blue-700 text-white font-bold rounded' wire:disabled="!$agree">Guardar</button>
+                    <button type="submit" class='inline-flex items-center px-8 py-2 bg-yellow-600 hover:bg-yellow-800 text-white font-bold rounded' wire:disabled="!$agree">Agendar</button>
                 </div>
             </form>
         </x-slot:content>
