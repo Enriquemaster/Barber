@@ -50,7 +50,7 @@
     <div>
         <livewire:add-cita/>
     </div>
-    <div class="container mx-auto px-4 py-8">
+    <div class="container mx-auto px-4 py-8 ">
         <h2 class="text-center text-3xl font-bold mb-8 text-white">¡Bienvenido a The Barber's House!</h2>
         <h1 class="text-white p-5">
             Nos alegra tenerte de vuelta, {{ Auth::user()->name }}. Estamos aquí para asegurarnos de que siempre luzcas tu mejor versión. Aquí tienes todo lo que necesitas para tu cuidado personal:
