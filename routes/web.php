@@ -53,6 +53,7 @@ Route::get('/servicios', [ControllerServices::class, 'buscarServicios'])->name('
 
 
 
+
 Route::get('/conocenos', function () {
     return view('conocenos');
 });
@@ -77,9 +78,8 @@ Route::get('/registrarMembresia', function () {
     return view('registrarMembresia');
 });
 
-Route::get('/accionesMembresias', function () {
-    return view('accionesMembresias');
-});
+
+Route::get('/accionesMembresias', [controllerMembershipOwner::class, 'mostrarClientes'])->name('accionesMembresias');
 
 Route::get('/tuMembresia', function () {
     return view('tuMembresia');

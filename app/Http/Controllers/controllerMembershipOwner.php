@@ -13,14 +13,14 @@ class controllerMembershipOwner extends Controller
     {
         // Obtén el código ingresado por el usuario desde el formulario
         $codigoIngresado = $request->input('codigoTarjeta');
-    
+
         // Busca el código ingresado en la tabla de códigos
         $codigo = Codes::where('code', $codigoIngresado)->first();
-    
+
         if ($codigo) {
             // Verifica si el código ya está asociado a cualquier usuario
             $asociacionExistente = membership_owner::where('code_id', $codigo->id)->exists();
-    
+
             if ($asociacionExistente) {
                 // Si el código ya está asociado a cualquier usuario, muestra un mensaje de error
                 return redirect()->route('falloMembresia')->with('fail', 'Membresía fallo: El código ya está en uso.');
@@ -38,7 +38,7 @@ class controllerMembershipOwner extends Controller
                     return redirect()->route('falloMembresia')->with('fail', 'Membresía fallo:');
                     }
 
-                 
+
             // Crea una nueva entrada en la tabla pivote con el user_id y code_id asociados
             membership_owner::create([
                 'user_id' => $user->id,
@@ -128,6 +128,15 @@ public function mostrarDatos1()
     return view('registrarMembresia', ['data' => $data]);
 }
 
+public function mostrarClientes()
+{
+    // Obtiene todos los usuarios con el rol 'Cliente'
+    $clientes = User::whereHas('roles', function($query) {
+        $query->where('name', 'Cliente');
+    })->get();
+
+    return view('accionesMembresias', ['clientes' => $clientes]);
+}
 
 }
 

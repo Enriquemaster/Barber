@@ -14,7 +14,6 @@
     DISFRUTA DE VENTAJAS SOLO PARA MIEMBROS REGISTRADOS<br>
         TU TARJETA, TU CLAVE A UNA EXPERIENCIA PREMIUM<br>
       </p>
-      <button class="bg-black text-white py-2 px-4 rounded-lg font-bodoni">SABER MÁS</button>
     </div>
     <div class="lg:w-1/2 mt-8 lg:mt-0">
     <img src="{{ asset('IMG/Tarjetas2.png')}}" alt="tarjeta" class="w-full h-full ">
