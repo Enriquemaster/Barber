@@ -79,9 +79,9 @@
       <p class="mb-4 text-black font-bodoni xl:text-2xl">¡Felicidades! ahora tienes acceso a beneficios exclusivos.</p>
       <h1 class="mb-2 text-black font-bodoni xl:text-2xl"> Titular de la membresia: {{ $item['nombre_usuario'] }}</h1>
       <h1 class="mb-8 text-black font-bodoni xl:text-2xl "> Codigo de la membresia: {{ $item['code'] }}</h1>
-      @endforeach
-      <button class="bg-black text-white py-2 px-4 rounded-lg font-bodoni">Ir a los retos</button>
-    </div>
+      @endforeach      
+      <a class="bg-black text-white py-2 px-4 rounded-lg font-bodoni" href="/retosClientes">Ir a los retos</a>
+    </div> 
 
     <div class="lg:w-2/3 mt-8 lg:mt-0 ">
       <img src="{{ asset('IMG/Tarjetas2.png')}}" alt="tarjeta" class="w-full h-full object-cover">

@@ -19,18 +19,14 @@
                     </div>
                 </div>
             </div>
-            <div class="flex justify-center mt-8">
-                <div class="w-48 h-48">
-                    <canvas id="clientesChart" width="100" height="100"></canvas>
-                </div>
-            </div>
+
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
                 <!-- Primer contenedor -->
-                <div class="mb-4 ">
+                <div class="mb-4 overflow-x-auto">
                     <h2 class="text-2xl font-bold mb-4 text-center text-white font-dmserifdisplay">Clientes Premium</h2>
-                    <table class="table-auto w-full bg-zinc-200 ">
-                        <thead class="bg-zinc-400 ">
-                        <tr class="border-b ">
+                    <table class="min-w-full bg-zinc-200">
+                        <thead class="bg-zinc-400">
+                        <tr class="border-b">
                             <th class="py-2 px-4 font-bold text-zinc-800 font-bodoni text-center">Nombre</th>
                             <th class="py-2 px-4 font-bold text-zinc-800 font-bodoni text-center">Membresia</th>
                             <th class="py-2 px-4 font-bold text-zinc-800 font-bodoni text-center">Tipo</th>
@@ -40,10 +36,10 @@
                         <tbody>
                         @foreach($data1 as $item)
                             <tr class="border-b font-bodoni">
-                                <td class="border px-4 py-2 text-center py-2">{{ $item['nombre_usuario'] }}</td>
-                                <td class="border px-4 py-2 text-center py-2">{{ $item['code'] }}</td>
-                                <td class="border px-4 py-2 text-center py-2">{{ $item['role'] }}</td>
-                                <td class="border px-4 py-2 text-center py-2"><livewire:eliminar-membresia :id="$item['id']" /></td>
+                                <td class="border px-4 py-2 text-center">{{ $item['nombre_usuario'] }}</td>
+                                <td class="border px-4 py-2 text-center">{{ $item['code'] }}</td>
+                                <td class="border px-4 py-2 text-center">{{ $item['role'] }}</td>
+                                <td class="border px-4 py-2 text-center"><livewire:eliminar-membresia :id="$item['id']" /></td>
                             </tr>
                         @endforeach
                         </tbody>
@@ -51,23 +47,23 @@
                 </div>
 
                 <!-- Segundo contenedor -->
-                <div class="mb-4">
-                    <h2 class="text-white text-2xl font-bold mb-4 text-center font-dmserifdisplay">Clientes</h2> <!-- Título del segundo contenedor -->
+                <div class="mb-4 overflow-x-auto">
+                    <h2 class="text-white text-2xl font-bold mb-4 text-center font-dmserifdisplay">Clientes</h2>
                     <div class="bg-zinc-200 rounded-md">
-                        <table class="table-auto w-full h-full font-bodoni">
+                        <table class="min-w-full font-bodoni">
                             <thead class="bg-zinc-400">
                             <tr>
-                                <th class="text-center py-2">Nombre</th>
-                                <th class="text-center py-2">Correo</th>
-                                <th class="text-center py-2">Tipo</th>
+                                <th class="py-2 text-center">Nombre</th>
+                                <th class="py-2 text-center">Correo</th>
+                                <th class="py-2 text-center">Tipo</th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($clientes as $cliente)
                                 <tr>
-                                    <td class="text-center py-2">{{ $cliente->name }}</td>
-                                    <td class="text-center py-2">{{ $cliente->email }}</td>
-                                    <td class="text-center py-2">{{ $cliente->role_description }}</td>
+                                    <td class="border px-4 py-2 text-center">{{ $cliente->name }}</td>
+                                    <td class="border px-4 py-2 text-center">{{ $cliente->email }}</td>
+                                    <td class="bg-zinc-200 border px-4 py-2 text-center">{{ $cliente->role_description }}</td>
                                 </tr>
                             @endforeach
                             </tbody>
@@ -76,26 +72,29 @@
                 </div>
             </div>
         </div>
+        <div class="flex justify-between mx-auto w-3/4 mb-6PHP">
+            <div class="w-5/12">
+                <div class="bg-zinc-300 text-center rounded-md">
+                    <h3 class="font-bold font-bodoni bg-yellow-600 p-2 text-white">Códigos premium existentes</h3>
+                    @foreach($codigosNoVinculados as $codigo)
+                        <p class="font-bodoni">{{ $codigo->code }}</p>
+                    @endforeach
+                </div>
+            </div>
 
-        <div class="flex items-center justify-center mx-auto w-3/4 ">
-            <div class="bg-zinc-300 text-center rounded-md">
-                <h3 class="font-bold font-bodoni bg-yellow-600 p-2 text-white ">Códigos premium existentes</h3>
-                @foreach($codigosNoVinculados as $codigo)
-                    <p class="font-bodoni">{{ $codigo->code }}</p>
-                @endforeach
+            <div class="w-5/12">
+                <div class="w-48 h-48 text-white text-center rounded-md font-bodoni">
+                    <canvas id="clientesChart" width="100" height="100"></canvas>
+                    <p>Porcentaje: {{ round($porcentajeClientesPremium) }}%</p>
+                    <p>Porcentaje: {{ round($porcentajeClientesBasicos) }}%</p>
+                </div>
             </div>
         </div>
-        <div class="mt-4 text-center text-white">
-            <p>Número Clientes premium: {{ $numeroClientesPremium }} Porcentaje: {{ round($porcentajeClientesPremium) }}%</p>
-            <p>Número Clientes básicos: {{ $numeroClienteBasicos }} Porcentaje: {{ round($porcentajeClientesBasicos) }}%</p>
-        </div>
-
-
     </div>
 
 </x-app-layout>
-
 @endrole
+
 
 @role('Cliente|Cliente-premium')
 <div class="bg-black h-screen flex items-center justify-center">
@@ -104,7 +103,6 @@
 @endrole
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const numeroClientesPremium = {{ $numeroClientesPremium }};
@@ -121,12 +119,12 @@
                     label: 'Número de Clientes',
                     data: [numeroClientesPremium, numeroClienteBasicos],
                     backgroundColor: [
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 99, 132, 0.2)'
+                        'rgba(208, 140, 4)', // Amarillo fuerte para Clientes Premium
+                        'rgba(16, 39, 156)'
                     ],
                     borderColor: [
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 99, 132, 1)'
+                        'rgba(208, 140, 4)', // Borde amarillo fuerte para Clientes Premium
+                        'rgba(16, 39, 156)'
                     ],
                     borderWidth: 1
                 }]
