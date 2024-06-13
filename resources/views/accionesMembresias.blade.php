@@ -1,5 +1,3 @@
-@vite(['resources/css/app.css', 'resources/js/app.js'])
-
 @role('Administrador')
 <x-app-layout>
     <div class="p-10 bg-black">
@@ -21,53 +19,55 @@
                     </div>
                 </div>
             </div>
-            <div class="xl:flex xl:justify-center xl:p-12">
-                <div class="bg-zinc-900 p-4">
-                    <div class="bg-zinc-200 rounded-lg p-4 overflow-x-auto">
-                        <table class="w-full sm:w-auto text-left">
-                            <thead>
-                            <tr class="border-b">
-                                <th class="py-2 px-4 font-bold text-zinc-800 font-bodoni">Nombre del dueño de la membresia</th>
-                                <th class="py-2 px-4 font-bold text-zinc-800 font-bodoni">Caracteres de la membresia (8 caracteres)</th>
-                                <th class="py-2 px-4 font-bold text-zinc-800 font-bodoni">Eliminar membresia</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            @foreach($data1 as $item)
-                                <tr class="border-b font-bodoni">
-                                    <td class="border px-4 py-2">{{ $item['nombre_usuario'] }}</td>
-                                    <td class="border px-4 py-2">{{ $item['code'] }}</td>
-                                    <td class="border px-4 py-2"><livewire:eliminar-membresia :id="$item['id']" /></td>
-                                </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
-                        <div class="bg-yellow-500 p-4 mt-4 rounded-lg">
-                            <h1 class="font-bold font-bodoni">Codigos premium existentes</h1>
-                            @foreach($codigosNoVinculados as $codigo)
-                                <p class="font-bodoni">{{ $codigo->code }}</p>
-                            @endforeach
-                        </div>
-                    </div>
+            <div class="flex justify-center mt-8">
+                <div class="w-48 h-48">
+                    <canvas id="clientesChart" width="100" height="100"></canvas>
                 </div>
             </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+                <!-- Primer contenedor -->
+                <div class="mb-4 ">
+                    <h2 class="text-2xl font-bold mb-4 text-center text-white font-dmserifdisplay">Clientes Premium</h2>
+                    <table class="table-auto w-full bg-zinc-200 ">
+                        <thead class="bg-zinc-400 ">
+                        <tr class="border-b ">
+                            <th class="py-2 px-4 font-bold text-zinc-800 font-bodoni text-center">Nombre</th>
+                            <th class="py-2 px-4 font-bold text-zinc-800 font-bodoni text-center">Membresia</th>
+                            <th class="py-2 px-4 font-bold text-zinc-800 font-bodoni text-center">Tipo</th>
+                            <th class="py-2 px-4 font-bold text-zinc-800 font-bodoni text-center">Acción</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($data1 as $item)
+                            <tr class="border-b font-bodoni">
+                                <td class="border px-4 py-2 text-center py-2">{{ $item['nombre_usuario'] }}</td>
+                                <td class="border px-4 py-2 text-center py-2">{{ $item['code'] }}</td>
+                                <td class="border px-4 py-2 text-center py-2">{{ $item['role'] }}</td>
+                                <td class="border px-4 py-2 text-center py-2"><livewire:eliminar-membresia :id="$item['id']" /></td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                </div>
 
-
-            <div class="xl:flex xl:justify-center xl:p-12">
-                <div class="bg-zinc-900 p-4">
-                    <div class="bg-zinc-200 rounded-lg p-4 overflow-x-auto">
-                        <table>
-                            <thead>
+                <!-- Segundo contenedor -->
+                <div class="mb-4">
+                    <h2 class="text-white text-2xl font-bold mb-4 text-center font-dmserifdisplay">Clientes</h2> <!-- Título del segundo contenedor -->
+                    <div class="bg-zinc-200 rounded-md">
+                        <table class="table-auto w-full h-full font-bodoni">
+                            <thead class="bg-zinc-400">
                             <tr>
-                                <th>Nombre del Cliente</th>
-                                <th>Email del Cliente</th>
+                                <th class="text-center py-2">Nombre</th>
+                                <th class="text-center py-2">Correo</th>
+                                <th class="text-center py-2">Tipo</th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($clientes as $cliente)
                                 <tr>
-                                    <td>{{ $cliente->name }}</td>
-                                    <td>{{ $cliente->email }}</td>
+                                    <td class="text-center py-2">{{ $cliente->name }}</td>
+                                    <td class="text-center py-2">{{ $cliente->email }}</td>
+                                    <td class="text-center py-2">{{ $cliente->role_description }}</td>
                                 </tr>
                             @endforeach
                             </tbody>
@@ -76,8 +76,25 @@
                 </div>
             </div>
         </div>
+
+        <div class="flex items-center justify-center mx-auto w-3/4 ">
+            <div class="bg-zinc-300 text-center rounded-md">
+                <h3 class="font-bold font-bodoni bg-yellow-600 p-2 text-white ">Códigos premium existentes</h3>
+                @foreach($codigosNoVinculados as $codigo)
+                    <p class="font-bodoni">{{ $codigo->code }}</p>
+                @endforeach
+            </div>
+        </div>
+        <div class="mt-4 text-center text-white">
+            <p>Número Clientes premium: {{ $numeroClientesPremium }} Porcentaje: {{ round($porcentajeClientesPremium) }}%</p>
+            <p>Número Clientes básicos: {{ $numeroClienteBasicos }} Porcentaje: {{ round($porcentajeClientesBasicos) }}%</p>
+        </div>
+
+
     </div>
+
 </x-app-layout>
+
 @endrole
 
 @role('Cliente|Cliente-premium')
@@ -85,3 +102,68 @@
     <img src="{{ asset('IMG/robot-403.png') }}" alt="No estas autorizado para ver esto" class="h-1/2">
 </div>
 @endrole
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const numeroClientesPremium = {{ $numeroClientesPremium }};
+        const porcentajeClientesPremium = {{ round($porcentajeClientesPremium) }};
+        const numeroClienteBasicos = {{ $numeroClienteBasicos }};
+        const porcentajeClientesBasicos = {{ round($porcentajeClientesBasicos) }};
+
+        const ctx = document.getElementById('clientesChart').getContext('2d');
+        const clientesChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Clientes Premium', 'Clientes Básicos'],
+                datasets: [{
+                    label: 'Número de Clientes',
+                    data: [numeroClientesPremium, numeroClienteBasicos],
+                    backgroundColor: [
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 99, 132, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 99, 132, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.parsed !== null) {
+                                    label += context.parsed + ' (' + Math.round(context.parsed / (numeroClientesPremium + numeroClienteBasicos) * 100) + '%)';
+                                }
+                                return label;
+                            }
+                        }
+                    },
+                    datalabels: {
+                        color: '#fff',
+                        anchor: 'end',
+                        align: 'start',
+                        offset: 10,
+                        formatter: (value, ctx) => {
+                            let percentage = value / ctx.chart.data.datasets[0].data.reduce((a, b) => a + b) * 100;
+                            return `${value} (${percentage.toFixed(1)}%)`;
+                        }
+                    }
+                }
+            }
+        });
+    });
+</script>

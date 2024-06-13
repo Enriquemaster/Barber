@@ -88,46 +88,73 @@ class controllerMembershipOwner extends Controller
 
 
 
-public function obtenerDatosMembresias()
+    public function obtenerDatosMembresias()
     {
         // Obtiene todos los registros de la tabla pivote
         $memberships = membership_owner::all();
 
+        $totalClientes = 0;
+        $totalClientesPremium = 0;
         // Itera sobre cada registro para obtener el nombre de usuario y el código asociado
         $data1 = [];
         foreach ($memberships as $membership) {
             $user = User::find($membership->user_id);
             $code = Codes::find($membership->code_id);
+            $role = $user->roles->pluck('name')->first();
 
             // Agrega el nombre de usuario y el código a los datos
             $data1[] = [
                 'id' => $membership->id,
                 'nombre_usuario' => $user->name,
                 'code' => $code->code,
+                'role' => $role,
             ];
-
-            
         }
 
+        // Obtener todos los códigos que no están enlazados
+        $codigosNoVinculados = Codes::select('code')
+            ->whereNotIn('id', function ($query) {
+                $query->select('code_id')->from('tb_membership_owner');
+            })
+            ->get();
 
-          // Obtener todos los códigos que no están enlazados
-    $codigosNoVinculados = Codes::select('code')
-    ->whereNotIn('id', function ($query) {
-        $query->select('code_id')->from('tb_membership_owner');
-    })
-    ->get();
+        // Obtiene todos los usuarios con el rol 'Cliente'
+        $clientes = User::whereHas('roles', function($query) {
+            $query->where('name', 'Cliente');
+        })->get();
 
-      // Obtiene todos los usuarios con el rol 'Cliente'
-      $clientes = User::whereHas('roles', function($query) {
-        $query->where('name', 'Cliente');
-    })->get();
+        $premium = User::whereHas('roles', function($query) {
+            $query->where('name', 'Cliente-premium');
+        })->get();
 
+        // Obtiene todos los usuarios con sus roles y asigna la descripción personalizada
+        $clientesConRoles = $clientes->map(function ($cliente) {
+            $cliente->role_description = 'Cliente básico'; // Asigna la descripción personalizada
+            return $cliente;
+        });
+        $totalClientes=count($clientes);
+        $totalClientesPremium=count($premium);
+//        echo"<pre>"; var_dump($totalClientes,$totalClientesPremium); die;
+        $totalUsuarios = $totalClientes + $totalClientesPremium;
 
-        return view('accionesMembresias', ['data1' => $data1, 'codigosNoVinculados' => $codigosNoVinculados, 'clientes' => $clientes ]);
+        $porcentajeClientesPremium = ($totalClientesPremium / $totalUsuarios) * 100;
+        $porcentajeClientesBasicos = ($totalClientes / $totalUsuarios) * 100 ;
+
+        return view('accionesMembresias', [
+            'data1' => $data1,
+            'codigosNoVinculados' => $codigosNoVinculados,
+            'clientes' => $clientesConRoles,
+             'porcentajeClientesPremium' => $porcentajeClientesPremium,
+            'porcentajeClientesBasicos' => $porcentajeClientesBasicos,
+            'numeroClienteBasicos'=>$totalClientes,
+            'numeroClientesPremium'=>$totalClientesPremium
+        ]);
     }
 
 
-public function mostrarDatos1()
+
+
+    public function mostrarDatos1()
 {
     $data = $this->obtenerDatosMembresia();
 
@@ -135,15 +162,6 @@ public function mostrarDatos1()
     return view('registrarMembresia', ['data' => $data]);
 }
 
-public function mostrarClientes()
-{
-    // Obtiene todos los usuarios con el rol 'Cliente'
-    $clientes = User::whereHas('roles', function($query) {
-        $query->where('name', 'Cliente');
-    })->get();
-
-    return view('accionesMembresias', ['clientes' => $clientes]);
-}
 
 }
 
