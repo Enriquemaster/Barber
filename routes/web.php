@@ -79,8 +79,6 @@ Route::get('/registrarMembresia', function () {
 });
 
 
-Route::get('/accionesMembresias', [controllerMembershipOwner::class, 'mostrarClientes'])->name('accionesMembresias');
-
 Route::get('/tuMembresia', function () {
     return view('tuMembresia');
 
@@ -97,7 +95,6 @@ Route::get('/accionesMembresias', [controllerMembershipOwner::class, 'obtenerDat
 Route::get('/registrarMembresia', [controllerMembershipOwner::class, 'mostrarDatos1'])->name('tuMembresia');
 Route::get('/retosClientes', [\App\Http\Controllers\ChallengeController::class, 'retosClientes'])->name('retos.clientes');
 Route::get('/promocionesClientes', [\App\Http\Controllers\PromotionController::class, 'promocionesClientes'])->name('promotions.clientes');
-
 
 
 Route::middleware([

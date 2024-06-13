@@ -105,6 +105,8 @@ public function obtenerDatosMembresias()
                 'nombre_usuario' => $user->name,
                 'code' => $code->code,
             ];
+
+            
         }
 
 
@@ -115,8 +117,13 @@ public function obtenerDatosMembresias()
     })
     ->get();
 
+      // Obtiene todos los usuarios con el rol 'Cliente'
+      $clientes = User::whereHas('roles', function($query) {
+        $query->where('name', 'Cliente');
+    })->get();
 
-        return view('accionesMembresias', ['data1' => $data1, 'codigosNoVinculados' => $codigosNoVinculados]);
+
+        return view('accionesMembresias', ['data1' => $data1, 'codigosNoVinculados' => $codigosNoVinculados, 'clientes' => $clientes ]);
     }
 
 
