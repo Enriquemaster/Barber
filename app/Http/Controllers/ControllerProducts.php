@@ -38,7 +38,7 @@ class ControllerProducts extends Controller
                     // Convertir la imagen a base64
                     $base64Image = base64_encode(file_get_contents($imagen->getPathname()));
                 } else {
-                   
+
                 }
             }
 
@@ -137,7 +137,35 @@ class ControllerProducts extends Controller
         $productos = $query->paginate(9);
         return view('productos', compact('productos'));
     }
+    public function destroy($id)
+    {
+        $producto = Products::find($id);
+        if ($producto) {
+            $producto->delete();
+            return response()->json(['message' => 'Producto eliminado correctamente']);
+        } else {
+            return response()->json(['message' => 'Producto no encontrado'], 404);
+        }
+    }
 
+    public function show($id)
+    {
+        $producto = Products::findOrFail($id);
+        return response()->json($producto);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $producto = Products::findOrFail($id);
+        $producto->update($request->all());
+        return response()->json($producto);
+    }
+
+    public function store(Request $request)
+    {
+        $producto = Products::create($request->all());
+        return response()->json($producto);
+    }
     /**
      * Método para obtener todos los productos.
      */
@@ -158,8 +186,8 @@ class ControllerProducts extends Controller
                 'success' => false,
                 'message' => 'Error al obtener los productos'
             ], 500);
-        } 
+        }
     }
 }
 
- //////////////////////////////////////////////////////////////////////////   
+ //////////////////////////////////////////////////////////////////////////
