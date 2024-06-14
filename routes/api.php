@@ -21,3 +21,10 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::post('/registrar', [AuthController::class, 'registrar']);
 Route::post('/logout', [AuthController::class, 'logout'])
     ->middleware('auth:sanctum');
+
+
+Route::delete('/productos/{id}', [ControllerProducts::class, 'destroy']);
+Route::get('/productos/{id}', [ControllerProducts::class, 'show']);
+Route::put('/productos/{id}', [ControllerProducts::class, 'update']);
+Route::post('/productos', [ControllerProducts::class, 'store']);
+
