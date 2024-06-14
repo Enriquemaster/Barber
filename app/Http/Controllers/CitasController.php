@@ -66,7 +66,6 @@ class CitasController extends Controller
                 'success' => true,
                 'data' => $citas
             ], 200);
-            //echo "<pre>"; var_dump($citas); die;
         } catch (\Exception $e) {
             \Log::error('Error al obtener las citas: ' . $e->getMessage());
             return response()->json([

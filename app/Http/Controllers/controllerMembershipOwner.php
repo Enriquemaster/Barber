@@ -37,46 +37,40 @@ class controllerMembershipOwner extends Controller
                     // Si el código ya está asociado al usuario, muestra un mensaje de error
                     return redirect()->route('falloMembresia')->with('fail', 'Membresía fallo:');
                     }
-
-
             // Crea una nueva entrada en la tabla pivote con el user_id y code_id asociados
             membership_owner::create([
                 'user_id' => $user->id,
                 'code_id' => $codigo->id,
             ]);
 
-            // Elimina el rol "cliente" si el usuario lo tiene
+            // Elimino el rol "cliente" si el usuario tiene la membresia
             if ($user->hasRole('Cliente')) {
                 $user->removeRole('Cliente');
             }
 
-   // Asigna el rol "premium" al usuario
+   // Asigno el rol "premium" si el usuario ingresa lamembresia correcta
    $user->assignRole('Cliente-premium');
 
-            // Redirige al usuario a alguna página de éxito o muestra un mensaje
+            // Redirigo al usuario a alguna página de éxito o muestra un mensaje
             return redirect()->route('tuMembresia')->with('success', '¡Membresía registrada con éxito!');
         } else {
             // Si el código no existe, muestra un mensaje de error
             return redirect()->route('falloMembresia')->with('fail', 'Membresía fallo:');
         }
     }
-
-
-
+////////////////////////////////////////////////////////////////////////////
     public function obtenerDatosMembresia()
     {
-      // Obtiene el usuario autenticado
+      // Obtengo el usuario autenticado
     $user = Auth::user();
 
-    // Obtiene todos los registros de la tabla pivote para el usuario autenticado
+    // Obttengo todos los registros de la tabla pivote para el usuario autenticado
     $memberships = membership_owner::where('user_id', $user->id)->get();
 
-    // Itera sobre cada registro para obtener el nombre de usuario y el código asociado
+    // Itero sobre cada registro para obtener el nombre de usuario y el código asociado
     $data = [];
     foreach ($memberships as $membership) {
         $code = Codes::find($membership->code_id);
-
-        // Agrega el nombre de usuario y el código a los datos
         $data[] = [
             'nombre_usuario' => $user->name, // Usamos el nombre del usuario autenticado
             'code' => $code->code,
@@ -86,16 +80,15 @@ class controllerMembershipOwner extends Controller
     return $data;
 }
 
-
-
+//////////////////////////////////////////////////////////////////////////
     public function obtenerDatosMembresias()
     {
-        // Obtiene todos los registros de la tabla pivote
+        // Obtengo todos los registros de la tabla pivote
         $memberships = membership_owner::all();
 
         $totalClientes = 0;
         $totalClientesPremium = 0;
-        // Itera sobre cada registro para obtener el nombre de usuario y el código asociado
+        // Itero sobre cada registro para obtener el nombre de usuario y el código asociado
         $data1 = [];
         foreach ($memberships as $membership) {
             $user = User::find($membership->user_id);
@@ -111,14 +104,14 @@ class controllerMembershipOwner extends Controller
             ];
         }
 
-        // Obtener todos los códigos que no están enlazados
+        // Obtengo todos los códigos que no están enlazados
         $codigosNoVinculados = Codes::select('code')
             ->whereNotIn('id', function ($query) {
                 $query->select('code_id')->from('tb_membership_owner');
             })
             ->get();
 
-        // Obtiene todos los usuarios con el rol 'Cliente'
+        // aqui obrtengo todos los usuarios con el rol 'Cliente'
         $clientes = User::whereHas('roles', function($query) {
             $query->where('name', 'Cliente');
         })->get();
@@ -127,14 +120,13 @@ class controllerMembershipOwner extends Controller
             $query->where('name', 'Cliente-premium');
         })->get();
 
-        // Obtiene todos los usuarios con sus roles y asigna la descripción personalizada
+        // Obtengo todos los usuarios con sus roles y asigno la descripción personalizada
         $clientesConRoles = $clientes->map(function ($cliente) {
-            $cliente->role_description = 'Cliente básico'; // Asigna la descripción personalizada
+            $cliente->role_description = 'Cliente básico'; // Asigno la descripción personalizada
             return $cliente;
         });
         $totalClientes=count($clientes);
         $totalClientesPremium=count($premium);
-//        echo"<pre>"; var_dump($totalClientes,$totalClientesPremium); die;
         $totalUsuarios = $totalClientes + $totalClientesPremium;
 
         $porcentajeClientesPremium = ($totalClientesPremium / $totalUsuarios) * 100;
@@ -150,22 +142,16 @@ class controllerMembershipOwner extends Controller
             'numeroClientesPremium'=>$totalClientesPremium
         ]);
     }
-
-
-
-
+////////////////////////////////////////////////////
     public function mostrarDatos1()
 {
     $data = $this->obtenerDatosMembresia();
 
-    // Pasa los datos a la segunda vista
+    // Paso los datos a la segunda vista esto me sirve para mostrar la membresia
     return view('registrarMembresia', ['data' => $data]);
 }
-
-
 }
-
-
+////////////////////////////////////////////////////////////////
 
 
 

@@ -10,7 +10,7 @@ class ControllerServices extends Controller
      public function registrarServicio(Request $request)
      {
          try {
-             // Validación de campos
+             // Valido los campos
              $request->validate([
                  'corte' => 'required|string|max:255',
                  'descripccion' => 'required|string',
@@ -38,10 +38,10 @@ class ControllerServices extends Controller
 
       public function mostrarFormularioActualizar($id)
      {
-         // Encuentra el producto por su ID
+         // Encuentro el servico por su ID
          $servicio = Services::findOrFail($id);
 
-         // Devuelve la vista con el formulario y los datos del producto
+         // Devuelvo la vista con el formulario y los datos del servicio
          return view('actualizarServicios', compact('servicio'));
      }
  ////////////////////////////////////////////////////////////////////////
@@ -50,17 +50,17 @@ class ControllerServices extends Controller
      public function actualizar(Request $request, $id)
      {
 
-         // Encuentra el producto por su ID
+         // Encuentro el servicio por su ID
          $servicio = Services::findOrFail($id);
 
-         // Valida los datos del formulario
+         // Valido los datos del formulario
          $request->validate([
              'corte' => 'required',
              'descripccion' => 'required',
              'precio' => 'required|numeric',
          ]);
 
-         // Actualiza los datos del producto
+         // Actualizo los datos del servicio
          $servicio->update([
              'corte' => $request->corte,
              'descripccion' => $request->descripccion,
@@ -69,7 +69,6 @@ class ControllerServices extends Controller
 
          ]);
 
-         // Redirige a alguna página después de la actualización (puedes ajustar esto según tus necesidades)
          return redirect()->route('accionesServicios')->with('success', 'El servicio ha sido actualizado correctamente.');
      }
      ///////////////////////////////////////////////////////////////////////

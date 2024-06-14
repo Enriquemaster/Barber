@@ -14,7 +14,7 @@ class ControllerProducts extends Controller
     public function registrarProducto(Request $request)
     {
         try {
-            // Verificar si el usuario tiene el permiso 'crear producto'
+            // Verifico si el usuario tiene el permiso 'crear producto'
             if (!Auth::user()->hasPermissionTo('crear producto')) {
                 return redirect()->route('dashboard')->with('success', true);
             }
@@ -29,6 +29,7 @@ class ControllerProducts extends Controller
                 'foto' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
             ]);
 
+            //uso un formato para convertir la imagen y subirla a la base de datos llamado Base64
             // Procesar la imagen
             $base64Image = null;
             if ($request->hasFile('foto')) {
@@ -62,7 +63,7 @@ class ControllerProducts extends Controller
 
     public function mostrarFormularioActualizar($id)
     {
-        // Encuentra el producto por su ID
+        // Encuentro el producto por su ID
         $producto = Products::findOrFail($id);
 
         // Devuelve la vista con el formulario y los datos del producto
@@ -73,10 +74,9 @@ class ControllerProducts extends Controller
     public function actualizar(Request $request, $id)
     {
 
-        // Encuentra el producto por su ID
+        // Encuentro el producto por su ID
         $producto = Products::findOrFail($id);
 
-        // Valida los datos del formulario
         $request->validate([
             'nombre' => 'required',
             'descripccion' => 'required',
@@ -111,7 +111,7 @@ class ControllerProducts extends Controller
         ]);
 
 
-        // Redirige a alguna página después de la actualización (puedes ajustar esto según tus necesidades)
+        // Redirijo a alguna página después de la actualización (puedes ajustar esto según tus necesidades)
         return redirect()->route('accionesProductos')->with('success', 'El producto ha sido actualizado correctamente.');
     }
     //////////////////////////////////////////////////////////////////////////
@@ -144,10 +144,9 @@ class ControllerProducts extends Controller
     public function obtenerProductos()
     {
         try {
-            // Obtener todos los productos de la base de datos
+           
             $productos = Products::all();
 
-            // Devolver la respuesta en formato JSON
             return response()->json([
                 'success' => true,
                 'data' => $productos
