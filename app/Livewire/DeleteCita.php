@@ -7,27 +7,17 @@ use Livewire\Component;
 
 class DeleteCita extends Component
 {
-    // Propiedades del componente
+
     public $modal = false;
     public $reserva;
-
-    // Método para inicializar el componente con datos
     public function mount($id)
     {
-        // Busca la cita por su ID y la almacena en la propiedad $reserva
         $this->reserva = Citas::find($id);
-
-        // Manejar el caso donde la cita no se encuentra
         if (!$this->reserva) {
-            // Puedes redireccionar a una página de error o mostrar un mensaje aquí
-            // Por ejemplo:
-            // $this->redirect('/error');
-            // O mostrar un mensaje de error
             session()->flash('message', 'La cita no se encontró.');
         }
     }
 
-    // Método para renderizar el componente
     public function render()
     {
         return <<<'HTML'

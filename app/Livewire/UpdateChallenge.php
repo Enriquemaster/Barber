@@ -1,8 +1,5 @@
 <?php
-
-
 namespace App\Livewire;
-
 use App\Models\Challenge;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -18,7 +15,6 @@ class UpdateChallenge extends Component
     public $recompensa = '';
     public $fecha_inicio = '';
     public $fecha_final = '';
-
     public function mount($id)
     {
         $this->challenge_id = $id;

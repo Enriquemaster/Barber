@@ -41,14 +41,30 @@
             </div>
         </div>
     </div>
+
+    <div class="flex justify-center mt-8">
+            <a href="{{ route('dashboardJuegos') }}" class="bg-[#10BBDA] text-white rounded-lg shadow-md py-3 px-6 text-center transform transition duration-300 hover:scale-105">
+                VER VIDEOJUEGOS
+            </a>
+        </div>
+        
     @endrole
 
     @role('Cliente|Cliente-premium')
     <div class="flex items-center justify-center bg-zinc-950 bg-cover bg-center bg-no-repeat bg-opacity-50 w-full relative font-bodoni ">
         <img src="{{ asset('IMG/dash-Cliente.png') }}" alt="login" class="object-cover w-full h-full" />
     </div>
+
+    <div class="flex justify-center mt-8">
+            <a href="{{ route('dashboardJuegos') }}" class="bg-[#10BBDA] text-white rounded-lg shadow-md py-3 px-6 text-center transform transition duration-300 hover:scale-105">
+                VER VIDEOJUEGOS
+            </a>
+        </div>
+        
     <div>
         <livewire:add-cita/>
+
+        
     </div>
     <div class="container mx-auto px-4 py-8 ">
         <h2 class="text-center text-3xl font-bold mb-8 text-white font-bodoni">¡Bienvenido a The Barber's House!</h2>

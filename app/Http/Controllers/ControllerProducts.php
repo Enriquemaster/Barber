@@ -18,7 +18,6 @@ class ControllerProducts extends Controller
             if (!Auth::user()->hasPermissionTo('crear producto')) {
                 return redirect()->route('dashboard')->with('success', true);
             }
-
             // Validación de campos
             $request->validate([
                 'nombre' => 'required|string|max:255',
@@ -28,7 +27,6 @@ class ControllerProducts extends Controller
                 'precio' => 'required|numeric',
                 'foto' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
             ]);
-
             //uso un formato para convertir la imagen y subirla a la base de datos llamado Base64
             // Procesar la imagen
             $base64Image = null;
@@ -39,10 +37,8 @@ class ControllerProducts extends Controller
                     // Convertir la imagen a base64
                     $base64Image = base64_encode(file_get_contents($imagen->getPathname()));
                 } else {
-
                 }
             }
-
             $producto = new Products([
                 'nombre' => $request->input('nombre'),
                 'descripccion' => $request->input('descripccion'),
@@ -60,7 +56,6 @@ class ControllerProducts extends Controller
         }
     }
     //////////////////////////////////////////////////////////////////////////
-
     public function mostrarFormularioActualizar($id)
     {
         // Encuentro el producto por su ID

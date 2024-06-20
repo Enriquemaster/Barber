@@ -5,6 +5,7 @@ use App\Http\Controllers\ControllerProducts;
 use App\Http\Controllers\ControllerServices;
 use App\Http\Controllers\controllerCodes;
 use App\Http\Controllers\controllerMembershipOwner;
+use App\Http\Controllers\ControllerProduct;
 
 
 //Productos
@@ -89,12 +90,54 @@ Route::get('/falloMembresia', function () {
 })->name('falloMembresia');
 
 
+
+
 Route::post('/accionesMembresias', [controllerCodes::class, 'generarMembresia'])->name('accionesMembresias');
 Route::post('/registrarMembresia', [controllerMembershipOwner::class, 'verificarMembresia'])->name('registrarMembresia');
 Route::get('/accionesMembresias', [controllerMembershipOwner::class, 'obtenerDatosMembresias'])->name('accionesMembresias');
 Route::get('/registrarMembresia', [controllerMembershipOwner::class, 'mostrarDatos1'])->name('tuMembresia');
 Route::get('/retosClientes', [\App\Http\Controllers\ChallengeController::class, 'retosClientes'])->name('retos.clientes');
 Route::get('/promocionesClientes', [\App\Http\Controllers\PromotionController::class, 'promocionesClientes'])->name('promotions.clientes');
+
+
+
+
+
+
+
+
+Route::get('/dashboardJuegos', function () {
+    return view('dashboardJuegos');
+})->name('dashboardJuegos');
+
+Route::get('/verProductos', function () {
+    return view('verProductos');
+})->name('verProductos');
+
+
+Route::get('/registrarProductos', function () {
+    return view('registrarProductos');
+})->name('registrarProductos');
+
+Route::get('/accionesProductoss', function () {
+    return view('accionesProductoss');
+})->name('accionesProductoss');
+
+Route::get('/actualizarProducto', function () {
+    return view('actualizarProducto');
+})->name('actualizarProducto');
+
+
+
+
+Route::get('/accionesProductoss', [ControllerProduct::class, 'acciones'])->name('accionesProductoss');
+Route::get('/verProductos', [ControllerProduct::class, 'acciones1'])->name('verProductos');
+Route::post('/registrarProductos', [ControllerProduct::class, 'registrarProducto'])->name('registrarProductos');
+Route::put('/producto/{id}/actualizar', [ControllerProduct::class, 'actualizar'])->name('productos.actualizar');
+Route::get('/producto/{id}/actualizar', [ControllerProduct::class, 'mostrarFormularioActualizar'])->name('productos.actualizar.formulario');
+Route::delete('/productos/{id}', [ControllerProduct::class, 'eliminarProducto'])->name('productos.eliminar');
+
+
 
 
 Route::middleware([
